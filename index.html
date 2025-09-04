@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Profil Perusahaan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style untuk transisi carousel */
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Style untuk kotak fitur */
+        .feature-box {
+            border-top: 2px solid #ef4444; /* red-500 */
+            border-right: 2px dashed #e5e7eb; /* gray-200 */
+            border-bottom: 2px dashed #e5e7eb; /* gray-200 */
+            border-left: 2px dashed #e5e7eb; /* gray-200 */
+        }
+        /* Transisi untuk panah di Event */
+        .group:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navbar -->
+    <header class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-gray-900">
+                    Perusahaan<span class="text-red-500">Kita</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="#" class="font-semibold text-red-500">Beranda</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Kemitraan</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Tentang Kami</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Kontak</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Carousel -->
+        <section id="hero-carousel" class="relative w-full h-screen overflow-hidden">
+            <!-- Carousel Items -->
+            <div class="carousel-item opacity-100">
+                <img src="https://placehold.co/1920x1080/fee2e2/b91c1c?text=Slide+1" alt="Gambar Latar Belakang 1" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item opacity-0">
+                <img src="https://placehold.co/1920x1080/fecaca/991b1b?text=Slide+2" alt="Gambar Latar Belakang 2" class="w-full h-full object-cover">
+            </div>
+            <div class="carousel-item opacity-0">
+                <img src="https://placehold.co/1920x1080/ffedd5/d97706?text=Slide+3" alt="Gambar Latar Belakang 3" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Overlay Gelap -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Teks di Tengah -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 z-10">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Membangun Masa Depan Bersama</h1>
+                <p class="text-lg md:text-xl max-w-2xl mb-8">Bergabunglah dengan program kemitraan kami dan raih kesuksesan dengan model bisnis yang telah terbukti.</p>
+                <a href="#" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                    Jadi Mitra Sekarang
+                </a>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Kolom Gambar -->
+                    <div class="relative w-full max-w-sm mx-auto md:mx-0">
+                        <!-- Kotak Background -->
+                        <div class="absolute bottom-0 left-0 w-[90%] h-[70%] bg-red-100 rounded-lg z-0 transform -translate-x-4 translate-y-4"></div>
+                        <!-- Foto Orang -->
+                        <img src="https://placehold.co/400x500/fecaca/7f1d1d?text=Foto+Profil" alt="Foto Profil Pendiri" class="relative z-10 rounded-lg shadow-2xl w-full">
+                    </div>
+                    <!-- Kolom Teks -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pesan dari Pendiri</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            "Kami percaya bahwa kolaborasi adalah kunci pertumbuhan. Sejak awal, visi kami adalah menciptakan ekosistem di mana setiap mitra dapat berkembang dan mencapai potensi penuh mereka. Mari kita ciptakan kisah sukses bersama."
+                        </p>
+                        <a href="#" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                            Lihat Profil Saya
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Highlights Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Event Highlights</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Event Card 1 -->
+                    <div class="group bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/ef4444/ffffff?text=Seminar+Bisnis" alt="Event 1" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-500 mb-2">Jakarta, Indonesia</p>
+                            <h3 class="text-xl font-bold mb-4">18 Januari 2025</h3>
+                            <a href="#" class="inline-flex items-center text-red-500 font-semibold">
+                                Lihat lengkapnya
+                                <i data-lucide="arrow-right" class="ml-2 h-5 w-5 arrow-icon transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Event Card 2 -->
+                    <div class="group bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="overflow-hidden">
+                             <img src="https://placehold.co/600x400/f97316/ffffff?text=Product+Launch" alt="Event 2" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                         <div class="p-6">
+                            <p class="text-gray-500 mb-2">Surabaya, Indonesia</p>
+                            <h3 class="text-xl font-bold mb-4">25 Februari 2025</h3>
+                            <a href="#" class="inline-flex items-center text-red-500 font-semibold">
+                                Lihat lengkapnya
+                                <i data-lucide="arrow-right" class="ml-2 h-5 w-5 arrow-icon transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Event Card 3 -->
+                    <div class="group bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/10b981/ffffff?text=Mitra+Gathering" alt="Event 3" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-500 mb-2">Bandung, Indonesia</p>
+                            <h3 class="text-xl font-bold mb-4">12 Maret 2025</h3>
+                             <a href="#" class="inline-flex items-center text-red-500 font-semibold">
+                                Lihat lengkapnya
+                                <i data-lucide="arrow-right" class="ml-2 h-5 w-5 arrow-icon transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Kemitraan Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                    Jadi Mitra Kami dan Dapatkan <span class="bg-red-500 text-white px-3 py-1 rounded-md inline-block">46 Juta/Bulan</span>
+                </h2>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed mb-16">
+                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan mengajak <strong>1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami. Dalam waktu <strong>1 tahun</strong>, potensi penghasilan bisa mencapai <strong>Rp46 juta per bulan</strong>. Sebuah peluang bisnis yang mudah dijalankan, tanpa <strong>perlu stok</strong> atau <strong>modal besar</strong>.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-red-100 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="coffee" class="h-14 w-14 text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
+                        <p class="text-gray-600 px-4">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col items-center">
+                         <div class="bg-red-100 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="h-14 w-14 text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
+                        <p class="text-gray-600 px-4">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col items-center">
+                         <div class="bg-red-100 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="calendar-check" class="h-14 w-14 text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">1 Tahun Konsisten</h3>
+                        <p class="text-gray-600 px-4">Konsisten selama <strong>12 bulan</strong>, dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan</strong>.</p>
+                    </div>
+                </div>
+                <div class="mt-16">
+                     <a href="#" class="inline-flex items-center bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        Pelajari Selengkapnya
+                        <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Kolom Teks -->
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Produk Kami</h2>
+                        <p class="text-gray-600 leading-relaxed mb-8">
+                           Perusahaan kami menghadirkan produk berkualitas untuk mendukung kesehatan, mencegah penyakit, dan mempercepat pemulihan. Tersedia berbagai produk perawatan dari dalam hingga luar, lengkap untuk gaya hidup sehat!
+                        </p>
+                        <a href="#" class="inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                            Profil Produk Kami
+                        </a>
+                    </div>
+                    <!-- Kolom Slider Gambar -->
+                    <div id="product-slider" class="relative w-full h-96">
+                        <!-- Product Images -->
+                        <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-100">
+                             <img src="https://placehold.co/800x600/fecaca/dc2626?text=Produk+Kesehatan" alt="Produk Kesehatan" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                             <img src="https://placehold.co/800x600/fee2e2/b91c1c?text=Perawatan+Kulit" alt="Produk Perawatan Kulit" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                         <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                             <img src="https://placehold.co/800x600/ffedd5/f97316?text=Makanan+Sehat" alt="Produk Makanan Sehat" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        
+                        <!-- Dots Navigation -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10" id="slider-dots">
+                            <!-- Dots akan dibuat oleh JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- "Mengapa Harus Menjadi Mitra" Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        Mengapa Harus Menjadi <span class="text-red-500">Mitra Kami</span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-6xl mx-auto">
+                    <!-- Kolom Kiri -->
+                    <div class="space-y-8">
+                        <!-- Item 1 -->
+                        <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-red-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Menguntungkan & Berpotensi Besar</h3>
+                                <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                                    <li>Model Bisnis Duplikasi & Residual Income.</li>
+                                    <li>Jika diterapkan dengan disiplin, bisnis ini menciptakan <i>passive income</i> yang stabil dan berkembang.</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Item 2 -->
+                        <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-red-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Dukungan Sistem & Pelatihan Berkelanjutan</h3>
+                                <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                                    <li>Member mendapatkan panduan lengkap untuk memulai bisnis.</li>
+                                    <li>Pelatihan rutin dari para mentor yang sudah sukses.</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Item 3 -->
+                        <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm">
+                             <div class="flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-red-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Permintaan Pasar yang Besar & Berkelanjutan</h3>
+                                <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                                    <li>Tren kesehatan meningkat, terutama setelah pandemi.</li>
+                                    <li>Produk dapat digunakan oleh berbagai segmen pasar.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan -->
+                    <div class="space-y-8">
+                         <!-- Item 4 -->
+                        <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm">
+                             <div class="flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-red-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Produk Premium & Terbukti Efektif</h3>
+                                <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                                    <li>Jalur Produksi Satu Atap yang Unik, dari budidaya hingga distribusi.</li>
+                                    <li>Tidak ada campur tangan pihak ketiga, sehingga kualitas terjaga.</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Item 5 -->
+                        <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm">
+                             <div class="flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-red-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Bahan Baku Berkualitas Tinggi</h3>
+                                <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                                    <li>Menggunakan bahan herbal terbaik yang ditanam di taman pribadi.</li>
+                                    <li>Metode budidaya khusus memastikan kadar bahan aktif tetap tinggi.</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Item 6 -->
+                        <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-red-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Teruji Secara Ilmiah & Mendapatkan Sertifikasi Internasional</h3>
+                                <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                                    <li>Diuji oleh laboratorium bersertifikat untuk memastikan keamanan.</li>
+                                    <li>Mendapatkan sertifikat makanan kesehatan dan paten multi-nasional.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-xl shadow-2xl" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=fLqC8C3R1a8c9b9f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jadilah Bagian Dari Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-16">
+                    Jadilah bagian dari <span class="bg-red-500 text-white px-3 py-1 rounded-md">Juwara Bersama</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+                    <!-- Kolom Kiri -->
+                    <div class="space-y-6 text-left">
+                        <!-- Item 1 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-red-500">
+                            <i data-lucide="gem" class="h-8 w-8 text-gray-500 group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-gray-700 group-hover:text-white transition-colors duration-300">Dibimbing Langsung oleh Janesse Gan</span>
+                        </a>
+                        <div class="border-b border-gray-200"></div>
+                        <!-- Item 2 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-red-500">
+                            <i data-lucide="users-2" class="h-8 w-8 text-gray-500 group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-gray-700 group-hover:text-white transition-colors duration-300">Komunitas yang Suportif & Eksklusif</span>
+                        </a>
+                    </div>
+                    <!-- Kolom Kanan -->
+                    <div class="space-y-6 text-left">
+                         <!-- Item 3 (Highlighted) -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg bg-red-500">
+                            <i data-lucide="banknote" class="h-8 w-8 text-white"></i>
+                            <span class="font-semibold text-lg text-white">Potensi Penghasilan yang Tak Terbatas</span>
+                        </a>
+                        <div class="border-b border-gray-200"></div>
+                        <!-- Item 4 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-red-500">
+                            <i data-lucide="monitor-play" class="h-8 w-8 text-gray-500 group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-gray-700 group-hover:text-white transition-colors duration-300">Akses ke Webinar dan Event Eksklusif</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 PerusahaanKita. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Logika Carousel Sederhana
+        document.addEventListener('DOMContentLoaded', function () {
+            const carouselItems = document.querySelectorAll('#hero-carousel .carousel-item');
+            let currentItem = 0;
+
+            function showItem(index) {
+                carouselItems.forEach((item, i) => {
+                    item.style.opacity = i === index ? '1' : '0';
+                });
+            }
+
+            function nextItem() {
+                currentItem = (currentItem + 1) % carouselItems.length;
+                showItem(currentItem);
+            }
+
+            // Ganti slide setiap 5 detik
+            setInterval(nextItem, 5000);
+
+            // Logika Slider Produk
+            const productSlides = document.querySelectorAll('#product-slider .product-slide');
+            const dotsContainer = document.getElementById('slider-dots');
+            let currentSlide = 0;
+
+            if (productSlides.length > 0) {
+                // Buat dots
+                productSlides.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('h-3', 'w-3', 'rounded-full', 'transition-colors');
+                    dot.classList.add(index === 0 ? 'bg-red-500' : 'bg-gray-300', 'hover:bg-red-400');
+                    dot.addEventListener('click', () => {
+                        showProductSlide(index);
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+                
+                const dots = dotsContainer.querySelectorAll('button');
+
+                function showProductSlide(index) {
+                    productSlides.forEach((slide, i) => {
+                        slide.classList.toggle('opacity-100', i === index);
+                        slide.classList.toggle('opacity-0', i !== index);
+                    });
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('bg-red-500', i === index);
+                        dot.classList.toggle('bg-gray-300', i !== index);
+                    });
+                    currentSlide = index;
+                }
+
+                function nextProductSlide() {
+                    const nextIndex = (currentSlide + 1) % productSlides.length;
+                    showProductSlide(nextIndex);
+                }
+
+                // Ganti slide produk setiap 4 detik
+                setInterval(nextProductSlide, 4000);
+            }
+        });
+    </script>
+</body>
+</html>
