@@ -59,6 +59,10 @@
         .group:hover .arrow-icon {
             transform: translateX(4px);
         }
+        /* Mencegah klik pada iframe video latar belakang */
+        #background-video-player iframe {
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-brand-light text-brand-dark">
@@ -364,12 +368,18 @@
             </div>
         </section>
 
-        <!-- Video Section -->
-        <section class="bg-brand-light">
-            <div class="relative w-full h-[40vh] overflow-hidden">
-                <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=fLqC8C3R1a8c9b9f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Interactive Video Section -->
+        <section id="interactive-video-section" class="relative w-full h-[40vh] overflow-hidden cursor-pointer group">
+            <!-- Div for the background player -->
+            <div id="background-video-player" class="absolute top-0 left-0 w-full h-full scale-125"></div>
+            <!-- Overlay and Play Button -->
+            <div id="video-overlay" class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
+                <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:bg-white/40 transition-colors duration-300 transform group-hover:scale-110">
+                     <i data-lucide="play" class="h-12 w-12 md:h-16 md:w-16 text-white fill-white ml-2"></i>
+                </div>
             </div>
         </section>
+
 
         <!-- Jadilah Bagian Dari Section -->
         <section class="py-20 bg-white">
@@ -472,14 +482,29 @@
         <span>ID</span>
         <i data-lucide="chevron-up" class="h-5 w-5"></i>
     </button>
+    
+    <!-- Video Modal -->
+    <div id="video-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 transition-opacity duration-300">
+        <div class="bg-black w-full max-w-4xl aspect-video relative">
+            <!-- Close Button -->
+            <button id="close-modal-btn" class="absolute -top-10 right-0 text-white hover:text-gray-300 z-10">
+                <i data-lucide="x" class="h-8 w-8"></i>
+            </button>
+            <!-- Div for the modal player -->
+            <div id="modal-video-player" class="w-full h-full"></div>
+        </div>
+    </div>
 
 
+    <!-- YouTube IFrame API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         // Inisialisasi Lucide Icons
         lucide.createIcons();
 
         // Logika Carousel Sederhana
         document.addEventListener('DOMContentLoaded', function () {
+            // ... (Kode carousel dan slider produk tetap sama) ...
             const carouselItems = document.querySelectorAll('#hero-carousel .carousel-item');
             let currentItem = 0;
 
@@ -493,24 +518,18 @@
                 currentItem = (currentItem + 1) % carouselItems.length;
                 showItem(currentItem);
             }
-
-            // Ganti slide setiap 5 detik
             setInterval(nextItem, 5000);
 
-            // Logika Slider Produk
             const productSlides = document.querySelectorAll('#product-slider .product-slide');
             const dotsContainer = document.getElementById('slider-dots');
             let currentSlide = 0;
 
             if (productSlides.length > 0) {
-                // Buat dots
                 productSlides.forEach((_, index) => {
                     const dot = document.createElement('button');
                     dot.classList.add('h-3', 'w-3', 'rounded-full', 'transition-colors');
                     dot.classList.add(index === 0 ? 'bg-brand-primary' : 'bg-gray-300', 'hover:bg-brand-primary/70');
-                    dot.addEventListener('click', () => {
-                        showProductSlide(index);
-                    });
+                    dot.addEventListener('click', () => showProductSlide(index));
                     dotsContainer.appendChild(dot);
                 });
                 
@@ -532,10 +551,75 @@
                     const nextIndex = (currentSlide + 1) % productSlides.length;
                     showProductSlide(nextIndex);
                 }
-
-                // Ganti slide produk setiap 4 detik
                 setInterval(nextProductSlide, 4000);
             }
+        });
+
+        // Logika YouTube Player
+        let bgPlayer, modalPlayer;
+        const videoId = 'dQw4w9WgXcQ'; // Ganti dengan ID video YouTube Anda
+
+        // Fungsi ini akan dipanggil oleh YouTube API setelah script-nya termuat
+        function onYouTubeIframeAPIReady() {
+            // Player untuk latar belakang
+            bgPlayer = new YT.Player('background-video-player', {
+                videoId: videoId,
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'fs': 0,
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'autohide': 0,
+                    'mute': 1,
+                    'playlist': videoId // Diperlukan agar loop bekerja
+                },
+                events: {
+                    'onReady': function(event) {
+                        event.target.playVideo();
+                    }
+                }
+            });
+
+            // Player untuk modal
+            modalPlayer = new YT.Player('modal-video-player', {
+                videoId: videoId,
+                playerVars: {
+                    'controls': 1,
+                    'showinfo': 0,
+                    'modestbranding': 1
+                }
+            });
+        }
+        
+        // Event Listeners untuk membuka dan menutup modal
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoSection = document.getElementById('interactive-video-section');
+            const videoModal = document.getElementById('video-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            // Buka modal
+            videoSection.addEventListener('click', () => {
+                videoModal.classList.remove('hidden');
+                modalPlayer.playVideo();
+            });
+
+            // Tutup modal
+            function closeModal() {
+                videoModal.classList.add('hidden');
+                modalPlayer.stopVideo();
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+            // Tutup juga saat mengklik area gelap di luar video
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeModal();
+                }
+            });
         });
     </script>
 </body>
