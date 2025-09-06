@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Perusahaan Kita</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Palet warna lama dipertahankan jika masih digunakan di tempat lain
+                        'brand-primary': '#6B7C98',
+                        'brand-dark': '#5E5653',
+                        'brand-light': '#E9E6E7',
+                        'brand-muted': '#7B7F8A',
+                        'brand-accent': '#AB978C',
+                        // Menambahkan warna oranye dari navbar baru
+                        'brand-orange': '#F97316', // orange-500
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gallery-item {
+            transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+        }
+        /* Kelas untuk menyembunyikan item galeri dengan animasi */
+        .gallery-item.hidden {
+            transform: scale(0.9);
+            opacity: 0;
+            width: 0 !important;
+            height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden;
+        }
+          .daftar-cuan-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+        /* Styling untuk tombol Daftar & Cuan */
+        .daftar-cuan-btn {
+            background: linear-gradient(90deg, #F97316, #EA580C);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark">
+
+    <!-- Header & Navbar (Kode Baru dari Anda) -->
+    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <!-- Menggunakan placeholder untuk logo -->
+                        <img src="/images/Logo.png" alt="Logo" class="h-24 w-24 object-contain">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links (Desktop) -->
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="index.html" class="nav-link text-gray-700 font-semibold hover:text-orange-500">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Profile</a></li>
+                    <li><a href="gallery.html" class="nav-link text-orange-500 font-semibold transition-colors">Gallery</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Belanja</a></li>
+                    <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Bisnis 111</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">FAQ</a></li>
+                </ul>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Tombol Daftar & Cuan -->
+                    <a href="daftar.html" 
+                       class="daftar-cuan-btn text-white px-4 py-2 rounded-lg shadow-lg font-bold text-sm text-center leading-tight whitespace-nowrap">
+                        Daftar<br>&<br>Cuan
+                    </a>
+
+                    <!-- Mobile Menu Button (Hamburger) -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-24"> <!-- Menambahkan padding top untuk memberi ruang di bawah navbar fixed -->
+        <!-- Main Gallery Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <p class="text-brand-orange font-semibold mb-2">Dokumentasi</p>
+                    <h1 class="text-3xl md:text-4xl font-bold text-brand-dark">NAME</h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-brand-muted">
+                        Telah menginspirasi banyak orang melalui perjalanan suksesnya bersama Company.
+                    </p>
+                </div>
+                
+                <!-- NEW Filter Buttons for Main Gallery -->
+                <div id="main-gallery-filters" class="flex justify-center mb-10">
+                    <div class="bg-gray-200 p-1.5 rounded-lg flex flex-wrap justify-center gap-1">
+                        <button class="filter-btn active bg-white text-brand-orange shadow-sm py-2 px-5 rounded-md text-sm font-semibold" data-filter="indonesia">INDONESIA</button>
+                        <button class="filter-btn bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="malaysia">MALAYSIA</button>
+                        <button class="filter-btn bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="taiwan">TAIWAN</button>
+                        <button class="filter-btn bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="seminar">SEMINAR 2025</button>
+                    </div>
+                </div>
+                
+                <!-- Image Grid for Main Gallery -->
+                <div id="main-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Konten galeri tetap sama -->
+                    <div class="gallery-item" data-category="indonesia">
+                        <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Indonesia+1" alt="Galeri Indonesia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-category="indonesia">
+                        <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Indonesia+2" alt="Galeri Indonesia 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item" data-category="indonesia">
+                        <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Indonesia+3" alt="Galeri Indonesia 3" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item hidden" data-category="malaysia">
+                        <img src="https://placehold.co/600x400/7B7F8A/ffffff?text=Malaysia+1" alt="Galeri Malaysia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                     <div class="gallery-item hidden" data-category="malaysia">
+                        <img src="https://placehold.co/600x400/7B7F8A/ffffff?text=Malaysia+2" alt="Galeri Malaysia 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item hidden" data-category="taiwan">
+                        <img src="https://placehold.co/600x400/AB978C/ffffff?text=Taiwan+1" alt="Galeri Taiwan 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item hidden" data-category="seminar">
+                        <img src="https://placehold.co/600x400/5E5653/ffffff?text=Seminar+1" alt="Galeri Seminar 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item hidden" data-category="seminar">
+                        <img src="https://placehold.co/600x400/5E5653/ffffff?text=Seminar+2" alt="Galeri Seminar 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zoom Meeting Gallery Section -->
+        <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-brand-orange font-semibold mb-2">Dokumentasi</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-12">Zoom Meeting</h2>
+                
+                <!-- NEW Filter Buttons for Zoom Gallery -->
+                <div id="zoom-gallery-filters" class="flex justify-center mb-10">
+                    <div class="bg-gray-200 p-1.5 rounded-lg flex flex-wrap justify-center gap-1">
+                        <button class="filter-btn-zoom active bg-white text-brand-orange shadow-sm py-2 px-5 rounded-md text-sm font-semibold" data-filter="malaysia-zoom">MALAYSIA ZOOM MEETING</button>
+                        <button class="filter-btn-zoom bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="indonesia-zoom">INDONESIA ZOOM MEETING</button>
+                    </div>
+                </div>
+
+                <!-- Image Grid for Zoom Gallery -->
+                <div id="zoom-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <!-- Konten galeri tetap sama -->
+                     <div class="gallery-item-zoom" data-category="malaysia-zoom">
+                        <img src="https://placehold.co/800x600/7B7F8A/ffffff?text=Malaysia+Zoom+1" alt="Zoom Malaysia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item-zoom" data-category="malaysia-zoom">
+                        <img src="https://placehold.co/800x600/7B7F8A/ffffff?text=Malaysia+Zoom+2" alt="Zoom Malaysia 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                    <div class="gallery-item-zoom hidden" data-category="indonesia-zoom">
+                        <img src="https://placehold.co/800x600/6B7C98/ffffff?text=Indonesia+Zoom+1" alt="Zoom Indonesia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <div class="flex space-x-4 mb-6">
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="youtube"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="music-4"></i> <!-- Placeholder for TikTok -->
+                </a>
+            </div>
+            <p class="text-brand-muted">&copy; 2025 Company.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Language Switcher -->
+    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+        <span class="text-xl">🇮🇩</span>
+        <span>ID</span>
+        <i data-lucide="chevron-up" class="h-5 w-5"></i>
+    </button>
+    
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reusable filter function
+            function setupGalleryFilter(filterButtonsSelector, galleryItemsSelector) {
+                const filterButtons = document.querySelectorAll(filterButtonsSelector);
+                const galleryItems = document.querySelectorAll(galleryItemsSelector);
+
+                if (filterButtons.length === 0) return;
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filter = button.getAttribute('data-filter');
+
+                        // Update button styles
+                        filterButtons.forEach(btn => {
+                            btn.classList.remove('active', 'bg-white', 'text-brand-orange', 'shadow-sm');
+                            btn.classList.add('bg-transparent', 'text-gray-600');
+                        });
+                        button.classList.add('active', 'bg-white', 'text-brand-orange', 'shadow-sm');
+                        button.classList.remove('bg-transparent', 'text-gray-600');
+
+                        // Show/hide gallery items
+                        let visibleItems = 0;
+                        galleryItems.forEach(item => {
+                            const itemCategory = item.getAttribute('data-category');
+                            if (itemCategory === filter) {
+                                item.classList.remove('hidden');
+                                visibleItems++;
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Setup for Main Gallery
+            setupGalleryFilter('#main-gallery-filters .filter-btn', '#main-gallery-grid .gallery-item');
+
+            // Setup for Zoom Gallery
+            setupGalleryFilter('#zoom-gallery-filters .filter-btn-zoom', '#zoom-gallery-grid .gallery-item-zoom');
+        });
+    </script>
+</body>
+</html>
