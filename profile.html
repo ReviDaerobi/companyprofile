@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Perusahaan Kita</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#6B7C98', // Dusty Blue
+                        'brand-primary-dark': '#5a6a86',
+                        'brand-dark': '#5E5653',    // Dark Taupe
+                        'brand-light': '#E9E6E7',   // Light Gray
+                        'brand-muted': '#7B7F8A',   // Slate Blue/Gray
+                        'brand-accent': '#AB978C',  // Muted Brown/Beige
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Mencegah klik pada iframe video latar belakang */
+        #background-video-player iframe {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark">
+
+    <!-- Header & Navbar (Sama seperti di Beranda) -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-brand-dark">
+                    Perusahaan<span class="text-brand-primary">Kita</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="index.html" class="text-brand-muted hover:text-brand-primary transition-colors">Beranda</a></li>
+                    <li><a href="#" class="text-brand-muted hover:text-brand-primary transition-colors">Kemitraan</a></li>
+                    <li><a href="profile.html" class="font-semibold text-brand-primary">Tentang Kami</a></li>
+                    <li><a href="#" class="text-brand-muted hover:text-brand-primary transition-colors">Kontak</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Interactive Video Section (Sama seperti di Beranda) -->
+        <section id="interactive-video-section" class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden cursor-pointer group">
+            <!-- Div for the background player -->
+            <div id="background-video-player" class="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 scale-[1.7]"></div>
+            <!-- Overlay and Play Button -->
+            <div id="video-overlay" class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
+                <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:bg-white/40 transition-colors duration-300 transform group-hover:scale-110">
+                     <i data-lucide="play" class="h-12 w-12 md:h-16 md:w-16 text-white fill-white ml-2"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Profile Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Kolom Gambar -->
+                    <div class="relative w-full max-w-sm mx-auto md:mx-0">
+                        <!-- Kotak Background -->
+                        <div class="absolute inset-0 bg-brand-primary rounded-lg z-0 transform translate-x-4 translate-y-4"></div>
+                        <!-- Foto Orang -->
+                        <img src="https://placehold.co/400x500/ab978c/5e5653?text=Janesse+Gan" alt="Foto Profil Janesse Gan" class="relative z-10 rounded-lg shadow-2xl w-full">
+                    </div>
+                    <!-- Kolom Teks -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Halo, saya <span class="text-brand-primary">Janesse Gan</span></h2>
+                        <div class="space-y-4 text-brand-muted leading-relaxed">
+                            <p>
+                                Perjalanan saya dimulai dari sebuah keyakinan sederhana: bahwa siapa pun bisa mencapai <strong>kebebasan finansial</strong> asalkan punya tekad dan mau berusaha. Dengan semangat itu, saya melangkah—belajar, bekerja keras, dan terus bertumbuh.
+                            </p>
+                            <p>
+                                Puji syukur, hari ini saya telah mencapai level <strong>Triple Diamond</strong> dan membina lebih dari <strong>50.000 member</strong> di Malaysia, Singapura, dan Indonesia.
+                            </p>
+                            <p>
+                                Namun, yang paling membahagiakan bukan hanya pencapaian pribadi, tapi kesempatan untuk membantu lebih dari <strong>200 pasangan</strong> meraih kehidupan yang lebih baik lewat Company.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mitra di Tiga Negara Section -->
+        <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                    Mitra Saya di <span class="text-brand-primary">Tiga Negara</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-brand-muted leading-relaxed mb-12">
+                    Saya memiliki jaringan mitra yang sangat luas, dengan lebih dari 50.000 orang yang tersebar di tiga negara: Indonesia, Malaysia, dan Singapura.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Image Card 1 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/800x500/6B7C98/ffffff?text=Mitra+di+Jakarta" alt="Mitra di Jakarta" class="rounded-md w-full object-cover">
+                        <p class="mt-4 font-semibold text-brand-dark">Jakarta, Indonesia</p>
+                    </div>
+                     <!-- Image Card 2 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/800x500/7B7F8A/ffffff?text=Mitra+di+Surabaya" alt="Mitra di Surabaya" class="rounded-md w-full object-cover">
+                        <p class="mt-4 font-semibold text-brand-dark">Surabaya, Indonesia</p>
+                    </div>
+                     <!-- Image Card 3 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/800x500/AB978C/ffffff?text=Mitra+di+Malaysia" alt="Mitra di Malaysia" class="rounded-md w-full object-cover">
+                        <p class="mt-4 font-semibold text-brand-dark">Kuala Lumpur, Malaysia</p>
+                    </div>
+                     <!-- Image Card 4 -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="https://placehold.co/800x500/5E5653/ffffff?text=Mitra+di+Singapura" alt="Mitra di Singapura" class="rounded-md w-full object-cover">
+                        <p class="mt-4 font-semibold text-brand-dark">Singapura</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktivitas Saya (YT Shorts) Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+                    Saksikan <span class="text-brand-primary">Aktivitas Saya</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-brand-muted leading-relaxed mb-12">
+                    Ikuti berbagai kegiatan dan momen berharga yang saya jalani, baik dalam pekerjaan maupun keseharian.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- YouTube Short 1 -->
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                     <!-- YouTube Short 2 -->
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/mG0da_3S4C4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                     <!-- YouTube Short 3 -->
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/c-Q4N1N4zlA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="py-24 bg-brand-primary text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-2xl font-bold tracking-wider mb-4">GABUNG MITRA SAYA</h3>
+                <a href="#" class="inline-block border-2 border-white text-white font-bold tracking-widest py-3 px-8 rounded-md transition-colors hover:bg-white hover:text-brand-primary">
+                    SEKARANG!
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Sama seperti di Beranda) -->
+    <footer class="bg-white py-8">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <div class="flex space-x-4 mb-6">
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="youtube"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="music-4"></i> <!-- Placeholder for TikTok -->
+                </a>
+            </div>
+            <p class="text-brand-muted">&copy; 2025 Company.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Language Switcher (Sama seperti di Beranda) -->
+    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+        <span class="text-xl">🇮🇩</span>
+        <span>ID</span>
+        <i data-lucide="chevron-up" class="h-5 w-5"></i>
+    </button>
+    
+    <!-- Video Modal (Sama seperti di Beranda) -->
+    <div id="video-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 transition-opacity duration-300">
+        <div class="bg-black w-full max-w-4xl aspect-video relative">
+            <!-- Close Button -->
+            <button id="close-modal-btn" class="absolute -top-10 right-0 text-white hover:text-gray-300 z-10">
+                <i data-lucide="x" class="h-8 w-8"></i>
+            </button>
+            <!-- Div for the modal player -->
+            <div id="modal-video-player" class="w-full h-full"></div>
+        </div>
+    </div>
+
+
+    <!-- YouTube IFrame API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Logika YouTube Player
+        let bgPlayer, modalPlayer;
+        const videoId = 'dQw4w9WgXcQ'; // Ganti dengan ID video YouTube Anda
+
+        function onYouTubeIframeAPIReady() {
+            bgPlayer = new YT.Player('background-video-player', {
+                videoId: videoId,
+                playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': videoId },
+                events: { 'onReady': function(event) { event.target.playVideo(); } }
+            });
+
+            modalPlayer = new YT.Player('modal-video-player', {
+                videoId: videoId,
+                playerVars: { 'controls': 1, 'showinfo': 0, 'modestbranding': 1 }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoSection = document.getElementById('interactive-video-section');
+            const videoModal = document.getElementById('video-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            if (videoSection) {
+                 videoSection.addEventListener('click', () => {
+                    videoModal.classList.remove('hidden');
+                    modalPlayer.playVideo();
+                });
+            }
+
+            function closeModal() {
+                videoModal.classList.add('hidden');
+                modalPlayer.stopVideo();
+            }
+
+            if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            
+            if(videoModal) videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
