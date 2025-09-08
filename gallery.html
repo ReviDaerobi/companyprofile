@@ -23,13 +23,14 @@
                 extend: {
                     colors: {
                         // Palet warna lama dipertahankan jika masih digunakan di tempat lain
-                        'brand-primary': '#6B7C98',
-                        'brand-dark': '#5E5653',
-                        'brand-light': '#E9E6E7',
-                        'brand-muted': '#7B7F8A',
-                        'brand-accent': '#AB978C',
+                     'brand-primary': '#B91C1C',      // Rich Red (was Dusty Blue)
+                        'brand-primary-dark': '#991B1B', // Darker Red (was darker blue)
+                        'brand-dark': '#1F2937',     // Dark Gray for text (was Dark Taupe)
+                        'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
+                        'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
                         // Menambahkan warna oranye dari navbar baru
-                        'brand-orange': '#F97316', // orange-500
+                        'brand-orange': '#B91C1C', // orange-500
                     }
                 }
             }
@@ -80,23 +81,24 @@
                 
                 <!-- Navigation Links (Desktop) -->
                 <ul class="hidden lg:flex items-center space-x-6">
-                    <li><a href="index.html" class="nav-link text-gray-700 font-semibold hover:text-orange-500">Beranda</a></li>
-                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Profile</a></li>
-                    <li><a href="gallery.html" class="nav-link text-orange-500 font-semibold transition-colors">Gallery</a></li>
-                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Shuang Hor</a></li>
-                    <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Belanja</a></li>
-                    <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Bisnis 111</a></li>
-                    <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Testimoni</a></li>
-                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">FAQ</a></li>
+                    <li><a href="index.html" class="nav-link text-gray-700 font-semibold hover:text-red-700">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                    <li><a href="gallery.html" class="nav-link text-red-700 font-semibold transition-colors">Gallery</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                    <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
                 </ul>
 
                 <!-- Right Side Actions -->
                 <div class="flex items-center space-x-4">
-                    <!-- Tombol Daftar & Cuan -->
-                    <a href="daftar.html" 
-                       class="daftar-cuan-btn text-white px-4 py-2 rounded-lg shadow-lg font-bold text-sm text-center leading-tight whitespace-nowrap">
-                        Daftar<br>&<br>Cuan
-                    </a>
+                               <!-- Floating Language Switcher -->
+    <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+        <span class="text-xl">🇮🇩</span>
+        <span>ID</span>
+        <i data-lucide="chevron-down" class="h-5 w-5"></i>
+    </button>
 
                     <!-- Mobile Menu Button (Hamburger) -->
                     <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
@@ -121,11 +123,11 @@
                 
                 <!-- NEW Filter Buttons for Main Gallery -->
                 <div id="main-gallery-filters" class="flex justify-center mb-10">
-                    <div class="bg-gray-200 p-1.5 rounded-lg flex flex-wrap justify-center gap-1">
-                        <button class="filter-btn active bg-white text-brand-orange shadow-sm py-2 px-5 rounded-md text-sm font-semibold" data-filter="indonesia">INDONESIA</button>
-                        <button class="filter-btn bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="malaysia">MALAYSIA</button>
-                        <button class="filter-btn bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="taiwan">TAIWAN</button>
-                        <button class="filter-btn bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="seminar">SEMINAR 2025</button>
+                    <div class="bg-brand-primary p-1.5 rounded-lg flex flex-wrap justify-center gap-1">
+                        <button class="filter-btn active bg-white text-brand-primary shadow-sm py-2 px-5 rounded-md text-sm hover:bg-gray-300/50 font-semibold" data-filter="indonesia">INDONESIA</button>
+                        <button class="filter-btn bg-transparent text-white py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="malaysia">MALAYSIA</button>
+                        <button class="filter-btn bg-transparent text-white py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="taiwan">TAIWAN</button>
+                        <button class="filter-btn bg-transparent text-white py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="seminar">SEMINAR 2025</button>
                     </div>
                 </div>
                 
@@ -133,28 +135,28 @@
                 <div id="main-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Konten galeri tetap sama -->
                     <div class="gallery-item" data-category="indonesia">
-                        <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Indonesia+1" alt="Galeri Indonesia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Indonesia+1" alt="Galeri Indonesia 1" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item" data-category="indonesia">
-                        <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Indonesia+2" alt="Galeri Indonesia 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Indonesia+2" alt="Galeri Indonesia 2" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item" data-category="indonesia">
-                        <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Indonesia+3" alt="Galeri Indonesia 3" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Indonesia+3" alt="Galeri Indonesia 3" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item hidden" data-category="malaysia">
-                        <img src="https://placehold.co/600x400/7B7F8A/ffffff?text=Malaysia+1" alt="Galeri Malaysia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Malaysia+1" alt="Galeri Malaysia 1" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                      <div class="gallery-item hidden" data-category="malaysia">
-                        <img src="https://placehold.co/600x400/7B7F8A/ffffff?text=Malaysia+2" alt="Galeri Malaysia 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Malaysia+2" alt="Galeri Malaysia 2" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item hidden" data-category="taiwan">
-                        <img src="https://placehold.co/600x400/AB978C/ffffff?text=Taiwan+1" alt="Galeri Taiwan 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Taiwan+1" alt="Galeri Taiwan 1" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item hidden" data-category="seminar">
-                        <img src="https://placehold.co/600x400/5E5653/ffffff?text=Seminar+1" alt="Galeri Seminar 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Seminar+1" alt="Galeri Seminar 1" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item hidden" data-category="seminar">
-                        <img src="https://placehold.co/600x400/5E5653/ffffff?text=Seminar+2" alt="Galeri Seminar 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Seminar+2" alt="Galeri Seminar 2" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -168,9 +170,9 @@
                 
                 <!-- NEW Filter Buttons for Zoom Gallery -->
                 <div id="zoom-gallery-filters" class="flex justify-center mb-10">
-                    <div class="bg-gray-200 p-1.5 rounded-lg flex flex-wrap justify-center gap-1">
-                        <button class="filter-btn-zoom active bg-white text-brand-orange shadow-sm py-2 px-5 rounded-md text-sm font-semibold" data-filter="malaysia-zoom">MALAYSIA ZOOM MEETING</button>
-                        <button class="filter-btn-zoom bg-transparent text-gray-600 py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="indonesia-zoom">INDONESIA ZOOM MEETING</button>
+                    <div class="bg-brand-primary p-1.5 rounded-lg flex flex-wrap justify-center gap-1">
+                        <button class="filter-btn-zoom active bg-white text-brand-orange shadow-sm py-2 px-5 rounded-md hover:bg-gray-300/50 text-sm font-semibold" data-filter="malaysia-zoom">MALAYSIA ZOOM MEETING</button>
+                        <button class="filter-btn-zoom bg-transparent text-white py-2 px-5 rounded-md text-sm font-semibold hover:bg-gray-300/50" data-filter="indonesia-zoom">INDONESIA ZOOM MEETING</button>
                     </div>
                 </div>
 
@@ -178,13 +180,13 @@
                 <div id="zoom-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                     <!-- Konten galeri tetap sama -->
                      <div class="gallery-item-zoom" data-category="malaysia-zoom">
-                        <img src="https://placehold.co/800x600/7B7F8A/ffffff?text=Malaysia+Zoom+1" alt="Zoom Malaysia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/800x600/B91C1C/ffffff?text=Malaysia+Zoom+1" alt="Zoom Malaysia 1" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item-zoom" data-category="malaysia-zoom">
-                        <img src="https://placehold.co/800x600/7B7F8A/ffffff?text=Malaysia+Zoom+2" alt="Zoom Malaysia 2" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/800x600/B91C1C/ffffff?text=Malaysia+Zoom+2" alt="Zoom Malaysia 2" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                     <div class="gallery-item-zoom hidden" data-category="indonesia-zoom">
-                        <img src="https://placehold.co/800x600/6B7C98/ffffff?text=Indonesia+Zoom+1" alt="Zoom Indonesia 1" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <img src="https://placehold.co/800x600/B91C1C/ffffff?text=Indonesia+Zoom+1" alt="Zoom Indonesia 1" class="rounded-lg shadow-md w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -212,12 +214,12 @@
         </div>
     </footer>
 
-    <!-- Floating Language Switcher -->
-    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-        <span class="text-xl">🇮🇩</span>
-        <span>ID</span>
-        <i data-lucide="chevron-up" class="h-5 w-5"></i>
-    </button>
+          <!-- Tombol Daftar & Cuan -->
+                <a href="daftar.html" 
+                   class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+                    <center>Daftar <br>&<br>Cuan</center>
+                </a>
+
     
     <script>
         // Inisialisasi Lucide Icons
@@ -238,10 +240,10 @@
                         // Update button styles
                         filterButtons.forEach(btn => {
                             btn.classList.remove('active', 'bg-white', 'text-brand-orange', 'shadow-sm');
-                            btn.classList.add('bg-transparent', 'text-gray-600');
+                            btn.classList.add('bg-transparent', 'text-white');
                         });
-                        button.classList.add('active', 'bg-white', 'text-brand-orange', 'shadow-sm');
-                        button.classList.remove('bg-transparent', 'text-gray-600');
+                        button.classList.add('active', 'bg-white', 'text-brand-primary', 'shadow-sm');
+                        button.classList.remove('bg-transparent', 'text-white');
 
                         // Show/hide gallery items
                         let visibleItems = 0;
