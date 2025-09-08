@@ -22,12 +22,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-primary': '#6B7C98', // Dusty Blue
-                        'brand-primary-dark': '#5a6a86',
-                        'brand-dark': '#5E5653',    // Dark Taupe
-                        'brand-light': '#E9E6E7',   // Light Gray
-                        'brand-muted': '#7B7F8A',   // Slate Blue/Gray
-                        'brand-accent': '#AB978C',  // Muted Brown/Beige
+                        'brand-primary': '#B91C1C',      // Rich Red (was Dusty Blue)
+                        'brand-primary-dark': '#991B1B', // Darker Red (was darker blue)
+                        'brand-dark': '#1F2937',     // Dark Gray for text (was Dark Taupe)
+                        'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
+                        'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
                     }
                 }
             }
@@ -37,7 +37,7 @@
     <style>
 
         .daftar-cuan-btn {
-            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            background: linear-gradient(135deg, #B91C1C 0%, #b82727 100%);
             transition: all 0.3s ease;
         }
         .daftar-cuan-btn:hover {
@@ -59,7 +59,7 @@
         }
         /* Style untuk kotak fitur */
         .feature-box {
-            border-top: 2px solid #6B7C98; /* brand-primary */
+            border-top: 2px solid #B91C1C; /* brand-primary */
             border-right: 2px dashed #e5e7eb; /* gray-200 */
             border-bottom: 2px dashed #e5e7eb; /* gray-200 */
             border-left: 2px dashed #e5e7eb; /* gray-200 */
@@ -89,14 +89,14 @@
             
             <!-- Navigation Links (Desktop) -->
             <ul class="hidden lg:flex items-center space-x-6">
-                <li><a href="index.html" class="nav-link active font-semibold text-orange-500">Beranda</a></li>
-                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Profile</a></li>
-                <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Gallery</a></li>
-                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Shuang Hor</a></li>
-                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Belanja</a></li>
-                <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Bisnis 111</a></li>
-                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Testimoni</a></li>
-                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">FAQ</a></li>
+                <li><a href="index.html" class="nav-link active font-semibold text-red-500">Beranda</a></li>
+                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">Profile</a></li>
+                <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">Gallery</a></li>
+                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">Shuang Hor</a></li>
+                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">Belanja</a></li>
+                <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">Bisnis 111</a></li>
+                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">Testimoni</a></li>
+                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-500 font-medium transition-colors">FAQ</a></li>
             </ul>
 
             <!-- Right Side Actions -->
@@ -121,13 +121,13 @@
         <section id="hero-carousel" class="relative w-full h-screen overflow-hidden">
             <!-- Carousel Items -->
             <div class="carousel-item opacity-100">
-                <img src="https://placehold.co/1920x1080/6b7c98/e9e6e7?text=Slide+1" alt="Gambar Latar Belakang 1" class="w-full h-full object-cover">
+                <img src="https://placehold.co/1920x1080/B91C1C/e9e6e7?text=Slide+1" alt="Gambar Latar Belakang 1" class="w-full h-full object-cover">
             </div>
             <div class="carousel-item opacity-0">
-                <img src="https://placehold.co/1920x1080/7b7f8a/e9e6e7?text=Slide+2" alt="Gambar Latar Belakang 2" class="w-full h-full object-cover">
+                <img src="https://placehold.co/1920x1080/B91C1C/e9e6e7?text=Slide+2" alt="Gambar Latar Belakang 2" class="w-full h-full object-cover">
             </div>
             <div class="carousel-item opacity-0">
-                <img src="https://placehold.co/1920x1080/ab978c/e9e6e7?text=Slide+3" alt="Gambar Latar Belakang 3" class="w-full h-full object-cover">
+                <img src="https://placehold.co/1920x1080/B91C1C/e9e6e7?text=Slide+3" alt="Gambar Latar Belakang 3" class="w-full h-full object-cover">
             </div>
 
             <!-- Overlay Gelap -->
@@ -152,7 +152,7 @@
                         <!-- Kotak Background -->
                         <div class="absolute bottom-0 left-0 w-[90%] h-[70%] bg-brand-accent/30 rounded-lg z-0 transform -translate-x-4 translate-y-4"></div>
                         <!-- Foto Orang -->
-                        <img src="https://placehold.co/400x500/ab978c/5e5653?text=Foto+Profil" alt="Foto Profil Pendiri" class="relative z-10 rounded-lg shadow-2xl w-full">
+                        <img src="https://placehold.co/400x500/B91C1C/fff?text=Foto+Profil" alt="Foto Profil Pendiri" class="relative z-10 rounded-lg shadow-2xl w-full">
                     </div>
                     <!-- Kolom Teks -->
                     <div class="text-center md:text-left">
@@ -160,7 +160,7 @@
                         <p class="text-brand-muted leading-relaxed mb-6">
                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                         </p>
-                        <a href="#" class="inline-block bg-brand-dark hover:bg-black text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        <a href="#" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
                             Lihat Profil Saya
                         </a>
                     </div>
@@ -178,7 +178,7 @@
                     <!-- Event Card 1 -->
                     <div class="group bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/6B7C98/ffffff?text=Seminar+Bisnis" alt="Event 1" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Seminar+Bisnis" alt="Event 1" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
                         <div class="p-6">
                             <p class="text-brand-muted mb-2">Jakarta, Indonesia</p>
@@ -192,7 +192,7 @@
                     <!-- Event Card 2 -->
                     <div class="group bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="overflow-hidden">
-                             <img src="https://placehold.co/600x400/7B7F8A/ffffff?text=Product+Launch" alt="Event 2" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
+                             <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Product+Launch" alt="Event 2" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
                          <div class="p-6">
                             <p class="text-brand-muted mb-2">Surabaya, Indonesia</p>
@@ -206,7 +206,7 @@
                     <!-- Event Card 3 -->
                     <div class="group bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/AB978C/ffffff?text=Mitra+Gathering" alt="Event 3" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/B91C1C/ffffff?text=Mitra+Gathering" alt="Event 3" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
                         <div class="p-6">
                             <p class="text-brand-muted mb-2">Bandung, Indonesia</p>
@@ -283,13 +283,13 @@
                     <div id="product-slider" class="relative w-full h-96">
                         <!-- Product Images -->
                         <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-100">
-                             <img src="https://placehold.co/800x600/6B7C98/ffffff?text=Produk+Kesehatan" alt="Produk Kesehatan" class="w-full h-full object-contain rounded-lg">
+                             <img src="https://placehold.co/800x600/B91C1C/ffffff?text=Produk+Kesehatan" alt="Produk Kesehatan" class="w-full h-full object-contain rounded-lg">
                         </div>
                         <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
-                             <img src="https://placehold.co/800x600/7B7F8A/ffffff?text=Perawatan+Kulit" alt="Produk Perawatan Kulit" class="w-full h-full object-contain rounded-lg">
+                             <img src="https://placehold.co/800x600/B91C1C/ffffff?text=Perawatan+Kulit" alt="Produk Perawatan Kulit" class="w-full h-full object-contain rounded-lg">
                         </div>
                          <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
-                             <img src="https://placehold.co/800x600/AB978C/ffffff?text=Makanan+Sehat" alt="Produk Makanan Sehat" class="w-full h-full object-contain rounded-lg">
+                             <img src="https://placehold.co/800x600/B91C1C/ffffff?text=Makanan+Sehat" alt="Produk Makanan Sehat" class="w-full h-full object-contain rounded-lg">
                         </div>
                         
                         <!-- Dots Navigation -->
@@ -454,7 +454,7 @@
                         <p class="text-brand-muted leading-relaxed mb-6">
                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                         </p>
-                        <a href="#" class="inline-block bg-brand-dark hover:bg-black text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        <a href="#" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
                             Baca Kisah Lainnya
                         </a>
                     </div>
@@ -463,7 +463,7 @@
                         <!-- Kotak Background -->
                         <div class="absolute bottom-0 right-0 w-[90%] h-[70%] bg-brand-accent/30 rounded-lg z-0 transform translate-x-4 translate-y-4"></div>
                         <!-- Foto Orang -->
-                        <img src="https://placehold.co/400x500/ab978c/e9e6e7?text=Mitra+Sukses" alt="Foto Profil Mitra Sukses" class="relative z-10 rounded-lg shadow-2xl w-full">
+                        <img src="https://placehold.co/400x500/B91C1C/e9e6e7?text=Mitra+Sukses" alt="Foto Profil Mitra Sukses" class="relative z-10 rounded-lg shadow-2xl w-full">
                     </div>
                 </div>
             </div>

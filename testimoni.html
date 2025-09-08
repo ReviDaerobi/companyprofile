@@ -17,18 +17,16 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
-        // Custom Tailwind CSS Configuration
+        // Custom Tailwind CSS Configuration with new "Merah Putih" theme
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-primary': '#6B7C98',
-                        'brand-dark': '#5E5653',
-                        'brand-light': '#E9E6E7',
-                        'brand-muted': '#7B7F8A',
-                        'brand-accent': '#AB978C',
-                        'brand-orange': '#F97316',
-                        'brand-red-cta': '#EF4444', // red-500
+                        'brand-red': '#B91C1C',      // A rich red (Tailwind's red-700)
+                        'brand-red-dark': '#991B1B', // Darker red for hover (red-800)
+                        'brand-dark': '#1F2937',     // Dark gray for text (gray-800)
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text (gray-500)
+                        'brand-light': '#F9FAFB',    // Very light gray for backgrounds (gray-50)
                     }
                 }
             }
@@ -39,36 +37,41 @@
         /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF; /* Dominant white background */
         }
-        /* Styling untuk tombol Daftar & Cuan */
+        /* New style for the main button */
         .daftar-cuan-btn {
-            background: linear-gradient(90deg, #F97316, #EA580C);
+            background-color: #B91C1C; /* brand-red */
+            transition: background-color 0.3s ease;
+        }
+        .daftar-cuan-btn:hover {
+            background-color: #991B1B; /* brand-red-dark */
         }
     </style>
 </head>
-<body class="bg-gray-100 text-brand-dark">
+<body class="text-brand-dark">
 
-    <!-- Header & Navbar (Sama seperti di halaman lain) -->
-    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-100">
+    <!-- Header & Navbar (Sama seperti di halaman lain, disesuaikan dengan tema merah) -->
+    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-200">
         <div class="container mx-auto px-6">
             <nav class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center">
-                        <img src="/images/Logo.png" alt="Logo" class="h-24 w-24 object-contain">
+                        <img src="https://placehold.co/96x96/FFFFFF/B91C1C?text=Logo" alt="Logo" class="h-24 w-24 object-contain">
                     </a>
                 </div>
                 
                 <!-- Navigation Links (Desktop) -->
                 <ul class="hidden lg:flex items-center space-x-6">
-                    <li><a href="index.html" class="nav-link text-gray-700 font-semibold hover:text-orange-500">Beranda</a></li>
-                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Profile</a></li>
-                    <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Gallery</a></li>
-                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Shuang Hor</a></li>
-                    <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Belanja</a></li>
-                    <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">Bisnis 111</a></li>
-                    <li><a href="testimoni.html" class="nav-link text-orange-500 font-semibold transition-colors">Testimoni</a></li>
-                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-orange-500 font-medium transition-colors">FAQ</a></li>
+                    <li><a href="index.html" class="nav-link text-brand-dark font-semibold hover:text-brand-red">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Profile</a></li>
+                    <li><a href="gallery.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Gallery</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="belanja.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Belanja</a></li>
+                    <li><a href="bisnis.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Bisnis 111</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-brand-red font-semibold transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">FAQ</a></li>
                 </ul>
 
                 <!-- Right Side Actions -->
@@ -81,7 +84,7 @@
 
                     <!-- Mobile Menu Button (Hamburger) -->
                     <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-                        <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                        <i data-lucide="menu" class="h-6 w-6 text-brand-dark"></i>
                     </button>
                 </div>
             </nav>
@@ -90,14 +93,14 @@
 
     <main class="pt-24"> <!-- Padding top untuk navbar fixed -->
         <!-- Testimoni Section -->
-        <section class="py-20">
+        <section class="py-20 bg-brand-light">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h1 class="text-3xl md:text-4xl font-bold text-brand-dark">
-                        Testimoni Mitra <span class="text-brand-red-cta">NAME</span>
+                        Testimoni Mitra <span class="text-brand-red">Name</span>
                     </h1>
-                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
-                        Ikuti perjalanan para mitra NAME yang telah meraih kesuksesan bersama Shuang Hor
+                    <p class="mt-4 max-w-2xl mx-auto text-brand-muted">
+                        Ikuti perjalanan para mitra Name yang telah meraih kesuksesan bersama Shuang Hor
                     </p>
                 </div>
                 
@@ -140,13 +143,13 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-16 bg-brand-red-cta">
+        <section class="py-16 bg-brand-red">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-center text-white">
                     <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left mb-6 md:mb-0">
                         Mau Bergabung dan Menjadi<br>Sukses Seperti Mereka?
                     </h2>
-                    <a href="daftar.html" class="inline-flex items-center bg-white text-gray-800 font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-200 transition-colors">
+                    <a href="daftar.html" class="inline-flex items-center bg-white text-brand-red font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-200 transition-colors">
                         <i data-lucide="minus" class="mr-3 h-5 w-5"></i>
                         Daftar Sekarang
                     </a>
@@ -190,3 +193,4 @@
     </script>
 </body>
 </html>
+
