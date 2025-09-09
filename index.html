@@ -28,8 +28,15 @@
                         'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
                         'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
                         'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
+                    },
+                    height: {
+                    '110': '35rem', // Ini setara dengan 440px
+                    },
+                    width:{
+                        '110': "50rem",
                     }
                 }
+                
             }
         }
     </script>
@@ -156,20 +163,20 @@
         <!-- Profile Section -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 -gap12 items-center">
                     <!-- Kolom Gambar -->
-                    <div class="relative w-full max-w-sm mx-auto md:mx-0">
+                    <div class="relative w-110 max-w-sm mx-auto md:mx-0">
                         <!-- Kotak Background -->
-                        <div class="absolute bottom-0 left-0 w-[90%] h-[70%] bg-brand-accent/30 rounded-lg z-0 transform -translate-x-4 translate-y-4"></div>
+                        <div class="absolute bottom-0 left-0 w-[90%] h-[90%] bg-brand-accent/30 rounded-lg z-0 transform -translate-x-4 translate-y-4"></div>
                         <!-- Foto Orang -->
-                        <img src="https://placehold.co/400x500/B91C1C/fff?text=Foto+Profil" alt="Foto Profil Pendiri" class="relative z-10 rounded-lg shadow-2xl w-full">
+                        <img src="/images/profile2.jpg" alt="Foto Profil Pendiri" class="relative w-110 h-110 object-[65%_100%] z-10 object-cover rounded-lg shadow-2xl">
                     </div>
                     <!-- Kolom Teks -->
                     <div class="text-center md:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Pesan dari Pendiri</h2>
-                        <p class="text-brand-muted leading-relaxed mb-6">
-                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                        </p>
+                     <p class="text-brand-muted leading-relaxed mb-6">
+    Sudahkah anda ikut serta menjadi bagian bisnis termudah di dunia? Bersama kami: saya Rieta Fuad dan upline Daisy Fuad dengan arahan dari mentor Triple Diamond Ms. Janesse Gan, yuk gabung tim <strong>Pasti Juwara</strong>. Anda <strong>bisa bekerja dari HP dimana saja, kapan saja</strong> dan <strong>tidak diperlukan pengalaman. Sambil menikmati kopi sehat SH Juwara Cafe, mari menjadi lebih sehat dan mendapat cuan serta meningkatkan kualitas hidup anda.</strong>
+</p>
                         <a href="#" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
                             Lihat Profil Saya
                         </a>
@@ -237,17 +244,16 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
                     Jadi Mitra Kami dan Dapatkan <span class="bg-brand-primary text-white px-3 py-1 rounded-md inline-block">46 Juta/Bulan</span>
                 </h2>
-                <p class="max-w-3xl mx-auto text-brand-muted leading-relaxed mb-16">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <p class="max-w-4xl mx-auto text-base text-brand-muted leading-relaxed mb-16">
+                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan <strong>mengajak 1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami. Dalam waktu <strong>1 tahun,</strong> potensi penghasilan bisa mencapai <strong>Rp46 juta per bulan.</strong> Sebuah peluang bisnis yang mudah dijalankan, tanpa <strong>perlu stok</strong> atau <strong>modal besar.</strong>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
                     <!-- Feature 1 -->
                     <div class="flex flex-col items-center">
                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
                             <i data-lucide="coffee" class="h-14 w-14 text-brand-primary"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
-                        <p class="text-brand-muted px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="text-brand-muted px-4">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
                     </div>
                     <!-- Feature 2 -->
                     <div class="flex flex-col items-center">
@@ -255,7 +261,7 @@
                             <i data-lucide="users" class="h-14 w-14 text-brand-primary"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
-                        <p class="text-brand-muted px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="text-brand-muted px-4">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama</p>
                     </div>
                     <!-- Feature 3 -->
                     <div class="flex flex-col items-center">
@@ -263,7 +269,7 @@
                             <i data-lucide="calendar-check" class="h-14 w-14 text-brand-primary"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-2">1 Tahun Konsisten</h3>
-                        <p class="text-brand-muted px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="text-brand-muted px-4">Konsisten selama <strong>12 bulan,</strong> dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan.</strong></p>
                     </div>
                 </div>
                 <div class="mt-16">
