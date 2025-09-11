@@ -43,6 +43,23 @@
 
     <style>
 
+           .custom-border-box {
+            position: relative;
+            border-top: 2px solid #333;
+            border-bottom: 2px solid #333;
+            border-left: 2px dashed #333;
+            border-right: 2px dashed #333;
+            margin: 15px 5px;
+            padding: 20px;
+        }
+
+        @media (min-width: 1660px) {
+            .custom-border-box {
+
+                margin: 15px 400px;
+            }
+        }
+
         .daftar-cuan-btn {
       
             transition: all 0.3s ease;
@@ -360,91 +377,127 @@
         </section>
         
         <!-- "Mengapa Harus Menjadi Mitra" Section -->
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-brand-light">
+             <div class="custom-border-box">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                     <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
-                        Mengapa Harus Menjadi <span class="text-brand-primary">Mitra Kami</span>
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+                        Mengapa Harus Menjadi <span class="text-brand-primary">Mitra Shuang Hor</span>
                     </h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <!-- Item 1 -->
-                    <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm h-full">
-                        <div class="flex-shrink-0">
-                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary mt-1"></i>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10 max-w-6xl mx-auto">
+                    <!-- Kolom Kiri -->
+                    <div class="space-y-8">
+                        <h3 class="text-2xl font-bold text-brand-dark border-b-2 border-brand-red pb-2 inline-block">Menguntungkan & Berpotensi Besar</h3>
+                        <!-- Item 1-->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="arrow-right-circle" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Model Bisnis Berbasis Duplikasi & Residual Income</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Menggunakan konsep Bisnis 111 (1 bulan beli 1 box kopi, 1 bulan ajak 1 teman, 1 tahun konsisten).<br>
+•	Jika diterapkan dengan disiplin, bisnis ini menciptakan passive income yang stabil dan berkembang.
+</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Menguntungkan & Berpotensi Besar</h3>
-                            <ul class="list-disc list-inside text-brand-muted mt-1 space-y-1">
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
+                        <!-- Item 2-->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="arrow-right-circle" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Dukungan Sistem & Pelatihan Berkelanjutan</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Member mendapatkan panduan lengkap untuk memulai bisnis, termasuk strategi pemasaran dan edukasi produk.<br>
+•	Pelatihan rutin dari para mentor yang sudah sukses di bisnis ini
+</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm h-full">
-                         <div class="flex-shrink-0">
-                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary mt-1"></i>
+                        <!-- Item 3-->
+                        <div class="flex items-start space-x-4">
+                             <i data-lucide="arrow-right-circle" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Permintaan Pasar yang Besar & Berkelanjutan</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Tren kesehatan meningkat, terutama setelah pandemi, sehingga produk kesehatan seperti Ganoderma semakin diminati.<br>
+•	Produk dapat digunakan oleh berbagai segmen pasar (keluarga, pekerja, lansia, atlet, dll.)
+</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Produk Premium & Terbukti Efektif</h3>
-                            <ul class="list-disc list-inside text-brand-muted mt-1 space-y-1">
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
+                        <!-- Item 4-->
+                        <div class="flex items-start space-x-4">
+                             <i data-lucide="arrow-right-circle" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Modal Awal Terjangkau, Potensi Keuntungan Besar</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Tidak perlu stok barang dalam jumlah besar.<br>
+•	Bisa dijalankan secara online maupun offline.<br>
+•	Skema bonus dan komisi yang menarik, terutama dengan membangun tim penjualan.
+</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm h-full">
-                        <div class="flex-shrink-0">
-                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary mt-1"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Dukungan Sistem & Pelatihan Berkelanjutan</h3>
-                            <ul class="list-disc list-inside text-brand-muted mt-1 space-y-1">
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm h-full">
-                         <div class="flex-shrink-0">
-                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary mt-1"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Bahan Baku Berkualitas Tinggi</h3>
-                            <ul class="list-disc list-inside text-brand-muted mt-1 space-y-1">
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm h-full">
-                         <div class="flex-shrink-0">
-                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary mt-1"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Permintaan Pasar yang Besar & Berkelanjutan</h3>
-                            <ul class="list-disc list-inside text-brand-muted mt-1 space-y-1">
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
+                        <!-- Item 5-->
+                        <div class="flex items-start space-x-4">
+                             <i data-lucide="arrow-right-circle" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Brand yang Kuat & Legalitas Terjamin</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Sudah berdiri lebih dari 37 tahun dengan jaringan internasional di berbagai negara.<br>
+•	Punya sertifikasi dan izin resmi, sehingga aman untuk dipasarkan.
+
+</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- Item 6 -->
-                    <div class="feature-box flex items-start bg-white p-6 rounded-lg shadow-sm h-full">
-                        <div class="flex-shrink-0">
-                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary mt-1"></i>
+                    <!-- Kolom Kanan -->
+                    <div class="space-y-8">
+                        <h3 class="text-2xl font-bold text-brand-dark border-b-2 border-brand-red pb-2 inline-block">Produk Premium & Terbukti Efektif</h3>
+                        <!-- Item 1-->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Jalur Produksi Satu Atap yang Unik</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Shuang Hor adalah satu-satunya di dunia yang memiliki sistem produksi dari budidaya hingga distribusi dalam satu jalur.<br>
+•	Tidak ada campur tangan pihak ketiga, sehingga kualitas dan efektivitas produk terjaga.
+</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Teruji Secara Ilmiah & Mendapatkan Sertifikasi Internasional</h3>
-                            <ul class="list-disc list-inside text-brand-muted mt-1 space-y-1">
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
+                        <!-- Item 2-->
+                         <div class="flex items-start space-x-4">
+                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Bahan Baku Berkualitas Tinggi</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Menggunakan Ganoderma terbaik yang ditanam di Taman Bioteknologi Ganoderma terbesar di dunia.<br>
+•	Metode budidaya khusus memastikan kadar bahan aktif tetap tinggi.
+</p>
+                            </div>
                         </div>
+                        <!-- Item 3-->
+                         <div class="flex items-start space-x-4">
+                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Proses Ekstraksi & Fermentasi Canggih</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Pabrik Yung Kien menggunakan teknologi ekstraksi eksklusif untuk mempertahankan manfaat maksimal.<br>
+•	San Hua Teknologi Biologi meningkatkan konsentrasi bahan aktif dengan teknologi fermentasi mikroba canggih.
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 4-->
+                         <div class="flex items-start space-x-4">
+                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Teruji Secara Ilmiah & Mendapatkan Sertifikasi Internasional</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Diuji oleh laboratorium bersertifikat GLP internasional untuk memastikan keamanan dan efektivitasnya.<br>
+•	Mendapatkan sertifikat makanan kesehatan Taiwan dan paten multi-nasional.
+
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 5-->
+                         <div class="flex items-start space-x-4">
+                            <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Aman untuk Pemakaian Jangka Panjang</h4>
+                                <p class="text-brand-muted ml-3 mt-1">•	Produk mengandung semua bahan fungsional utama dari Ganoderma tanpa tambahan bahan kimia berbahaya.<br>
+•	Bisa dikonsumsi oleh semua umur, dari anak-anak hingga lansia.
+
+</p>
+                            </div>
+                        </div>
+                     
                     </div>
                 </div>
             </div>
