@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisnis 111 - Perusahaan Kita</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration with "Merah Putih" theme
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-red': '#B91C1C',      // Rich Red
+                        'brand-red-dark': '#991B1B', // Darker Red
+                        'brand-dark': '#1F2937',     // Dark Gray for text
+                        'brand-light': '#FFFFFF',    // White background
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text
+                        'brand-accent': '#FEE2E2',  // Light red for accents
+                                 'brand-primary': '#B91C1C',      // Rich Red (was Dusty Blue)
+                        'brand-primary-dark': '#991B1B', // Darker Red (was darker blue)
+                        'brand-dark': '#1F2937',     // Dark Gray for text (was Dark Taupe)
+                        'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
+                        'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for the main button in navbar */
+        .daftar-cuan-btn {
+            background-color: #B91C1C; /* brand-red */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .daftar-cuan-btn:hover {
+            background-color: #991B1B; /* brand-red-dark */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark">
+
+    <!-- Header & Navbar (Kode dari Anda, disesuaikan dengan tema) -->
+    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="/images/logopastijuwara.jpg" alt="Logo" class="h-24 w-24 object-contain">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links (Desktop) -->
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="index.html" class="nav-link text-brand-dark font-semibold hover:text-brand-red">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Profile</a></li>
+                    <li><a href="gallery.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Gallery</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="belanja.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Belanja</a></li>
+                    <li><a href="bisnis111.html" class="nav-link active text-brand-red font-semibold transition-colors">Bisnis 111</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">FAQ</a></li>
+                </ul>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                     <!-- Tombol Daftar & Cuan -->
+                     <a href="daftar.html" 
+                        class="daftar-cuan-btn hidden lg:block text-white px-4 py-2 rounded-lg shadow-lg font-bold text-sm text-center leading-tight whitespace-nowrap">
+                         Daftar<br>&<br>Cuan
+                     </a>
+                    <!-- Mobile Menu Button (Hamburger) -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6 text-brand-dark"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-cover bg-center h-[85vh]" style="background-image: url('https://placehold.co/1920x1080/1F2937/FFFFFF?text=Latar+Belakang+Bisnis');">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+            <!-- Content -->
+            <div class="relative z-10 container mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wider">
+                    Bisnis 111 Kopi SH Juwara Cafe
+                </h1>
+                <p class="mt-4 max-w-3xl text-lg md:text-xl font-light">
+                    Minum, Ajak, Konsisten! Sukses Bareng Kopi SH Juwara Cafe dengan 1 Kotak/Bulan, 1 Teman/Bulan, dan Raih Rp46 Juta/Bulan!
+                </p>
+                <a href="#" class="mt-8 inline-flex items-center bg-brand-red hover:bg-brand-red-dark text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors transform hover:scale-105">
+                    Gabung Sekarang
+                    <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Full Screen Image Section -->
+        <section class="h-screen bg-no-repeat bg-center object-fit" style="background-image: url('/images/fotopuncak.webp');" >
+            <!-- This section is purely for the full screen image background -->
+        </section>
+
+              <!-- Join Kemitraan Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+          
+                <p class="max-w-4xl mx-auto text-base text-brand-muted leading-relaxed mb-16">
+                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan <strong>mengajak 1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami. Dalam waktu <strong>1 tahun,</strong> potensi penghasilan bisa mencapai <strong>Rp46 juta per bulan.</strong> Sebuah peluang bisnis yang mudah dijalankan, tanpa <strong>perlu stok</strong> atau <strong>modal besar.</strong>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="coffee" class="h-14 w-14 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
+                        <p class="text-brand-muted px-4">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col items-center">
+                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="h-14 w-14 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
+                        <p class="text-brand-muted px-4">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col items-center">
+                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="calendar-check" class="h-14 w-14 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">1 Tahun Konsisten</h3>
+                        <p class="text-brand-muted px-4">Konsisten selama <strong>12 bulan,</strong> dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan.</strong></p>
+                    </div>
+                </div>
+                <div class="mt-16">
+                     <a href="#" class="inline-flex items-center bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        Pelajari Selengkapnya
+                        <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Floating Language Switcher -->
+    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-md p-3 px-4 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+        <span class="text-xl">🇮🇩</span>
+        <span>ID</span>
+        <i data-lucide="chevron-down" class="h-5 w-5"></i>
+    </button>
+    
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
