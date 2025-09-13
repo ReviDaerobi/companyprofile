@@ -16,6 +16,8 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css">
+
     <script>
         // Custom Tailwind CSS Configuration
         tailwind.config = {
@@ -28,6 +30,7 @@
                         'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
                         'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
                         'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
+                        'brand-produk-card': '#F8F8F8',
                     },
                     height: {
                     '110': '35rem', // Ini setara dengan 440px
@@ -96,6 +99,121 @@
         #background-video-player iframe {
             pointer-events: none;
         }
+
+          /* Custom Glide.js Styles */
+     .glide__slide {
+         display: flex !important;
+         align-items: center;
+         justify-content: center;
+         padding: 0 10px;
+     }
+
+     .glide__slide--active .product-image {
+         transform: scale(1);
+         opacity: 1;
+     }
+
+     .product-image {
+         transform: scale(0.85);
+         opacity: 0.6;
+         transition: all 0.3s ease;
+         border-radius: 12px;
+         overflow: hidden;
+         background: white;
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+     }
+
+     .product-image img {
+         width: 100%;
+         height: 400px;
+         object-fit: contain;
+         object-position: center;
+         background: white;
+     }
+
+     /* Custom arrows */
+     .glide__arrows {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         pointer-events: none;
+         z-index: 10;
+     }
+
+     .glide__arrow {
+         background: rgba(255, 255, 255, 0.9);
+         border: 2px solid #B91C1C;
+         border-radius: 50%;
+         width: 50px;
+         height: 50px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         pointer-events: all;
+         transition: all 0.3s ease;
+         cursor: pointer;
+         color: #B91C1C;
+     }
+
+     .glide__arrow:hover {
+         background: #B91C1C;
+         color: white;
+         transform: scale(1.1);
+     }
+
+     .glide__arrow--left {
+         margin-left: -25px;
+     }
+
+     .glide__arrow--right {
+         margin-right: -25px;
+     }
+
+     /* Custom bullets */
+     .glide__bullets {
+         display: flex;
+         justify-content: center;
+         margin-top: 2rem;
+         gap: 0.5rem;
+     }
+
+     .glide__bullet {
+         width: 12px;
+         height: 12px;
+         border-radius: 50%;
+         background: #d1d5db;
+         border: none;
+         cursor: pointer;
+         transition: all 0.3s ease;
+     }
+
+     .glide__bullet--active {
+         background: #B91C1C;
+         transform: scale(1.3);
+     }
+
+     /* Responsive adjustments */
+     @media (max-width: 768px) {
+         .product-image {
+             transform: scale(0.95);
+         }
+         
+         .glide__slide--active .product-image {
+             transform: scale(1);
+         }
+         
+         .glide__arrow {
+             width: 40px;
+             height: 40px;
+         }
+         
+         .product-image img {
+             height: 250px;
+         }
+     }
 
 
     </style>
@@ -248,50 +366,7 @@
             </div>
         </section>  
 
-        <!-- Join Kemitraan Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
-                    Jadi Mitra Kami dan Dapatkan <span class="bg-brand-primary text-white px-3 py-1 rounded-md inline-block">46 Juta/Bulan</span>
-                </h2>
-                <p class="max-w-4xl mx-auto text-base text-brand-muted leading-relaxed mb-16">
-                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan <strong>mengajak 1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami. Dalam waktu <strong>1 tahun,</strong> potensi penghasilan bisa mencapai <strong>Rp46 juta per bulan.</strong> Sebuah peluang bisnis yang mudah dijalankan, tanpa <strong>perlu stok</strong> atau <strong>modal besar.</strong>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                    <!-- Feature 1 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
-                            <i data-lucide="coffee" class="h-14 w-14 text-brand-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
-                        <p class="text-brand-muted px-4">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="flex flex-col items-center">
-                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
-                            <i data-lucide="users" class="h-14 w-14 text-brand-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
-                        <p class="text-brand-muted px-4">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="flex flex-col items-center">
-                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
-                            <i data-lucide="calendar-check" class="h-14 w-14 text-brand-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">1 Tahun Konsisten</h3>
-                        <p class="text-brand-muted px-4">Konsisten selama <strong>12 bulan,</strong> dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan.</strong></p>
-                    </div>
-                </div>
-                <div class="mt-16">
-                     <a href="#" class="inline-flex items-center bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
-                        Pelajari Selengkapnya
-                        <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Section -->
+         <!-- Product Section with Glide.js -->
         <section class="py-20 bg-brand-light">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -299,43 +374,64 @@
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Produk Shuang Hor</h2>
                         <p class="text-brand-muted leading-relaxed mb-8">
-                          Shuang Hor menghadirkan produk berkualitas untuk mendukung kesehatan, mencegah penyakit, dan mempercepat pemulihan. Selain Kopi SH Juwara Cafe, tersedia berbagai produk perawatan dari dalam hingga luar, lengkap untuk gaya hidup sehat!
+                            Shuang Hor menghadirkan produk berkualitas untuk mendukung kesehatan, mencegah penyakit, dan mempercepat pemulihan. Selain Kopi SH Juwara Cafe, tersedia berbagai produk perawatan dari dalam hingga luar, lengkap untuk gaya hidup sehat!
                         </p>
                         <a href="#" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
                             Profil Shuang Hor
                         </a>
                     </div>
-                    <!-- Kolom Slider Gambar -->
-                    <div id="product-slider" class="relative w-full h-96">
-                        <!-- Product Images -->
-                        <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-100">
-                             <img src="/images/produk1.jpg" alt="Produk Kesehatan" class="w-full h-full object-contain rounded-lg">
+                    <!-- Kolom Slider Gambar dengan Glide.js -->
+                     <div class="bg-brand-produk-card rounded-2xl py-24 w-full max-w-2xl">
+                    <div class="glide">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">
+                                    <div class="product-image">
+                                        <img src="/images/produk1land.jpg" alt="Produk Kesehatan">
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="product-image">
+                                        <img src="/images/produk2.jpg" alt="Produk Perawatan Kulit">
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="product-image">
+                                        <img src="/images/produk3.jpg" alt="Produk Makanan Sehat">
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="product-image">
+                                        <img src="/images/produk4.jpg" alt="Produk Kesehatan 2">
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="product-image">
+                                        <img src="/images/produk5.jpg" alt="Produk Perawatan Kulit 2">
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="product-image">
+                                        <img src="/images/produk6.jpg" alt="Produk Makanan Sehat 2">
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
-                             <img src="/images/produk2.jpg" alt="Produk Perawatan Kulit" class="w-full h-full object-contain rounded-lg">
+               
+                        <div class="glide__bullets" data-glide-el="controls[nav]">
+                            <button class="glide__bullet" data-glide-dir="=0"></button>
+                            <button class="glide__bullet" data-glide-dir="=1"></button>
+                            <button class="glide__bullet" data-glide-dir="=2"></button>
+                            <button class="glide__bullet" data-glide-dir="=3"></button>
+                            <button class="glide__bullet" data-glide-dir="=4"></button>
+                            <button class="glide__bullet" data-glide-dir="=5"></button>
                         </div>
-                         <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
-                             <img src="/images/produk3.jpg" alt="Produk Makanan Sehat" class="w-full h-full object-contain rounded-lg">
-                        </div>
-                        <!-- Product Images -->
-                        <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-100">
-                             <img src="/images/produk4.jpg" alt="Produk Kesehatan" class="w-full h-full object-contain rounded-lg">
-                        </div>
-                        <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
-                             <img src="/images/produk5.jpg" alt="Produk Perawatan Kulit" class="w-full h-full object-contain rounded-lg">
-                        </div>
-                         <div class="product-slide absolute w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
-                             <img src="/images/produk6.jpg" alt="Produk Makanan Sehat" class="w-full h-full object-contain rounded-lg">
-                        </div>
-                        
-                        <!-- Dots Navigation -->
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10" id="slider-dots">
-                            <!-- Dots akan dibuat oleh JavaScript -->
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+     
         
         <!-- "Mengapa Harus Menjadi Mitra" Section -->
         <section class="py-20 bg-brand-light">
@@ -593,60 +689,48 @@
 
     <!-- YouTube IFrame API Script -->
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+   <script>
         // Inisialisasi Lucide Icons
         lucide.createIcons();
 
         // Logika Carousel Sederhana
         document.addEventListener('DOMContentLoaded', function () {
-            // ... (Kode carousel dan slider produk tetap sama) ...
             const carouselItems = document.querySelectorAll('#hero-carousel .carousel-item');
-            let currentItem = 0;
-
-            function showItem(index) {
-                carouselItems.forEach((item, i) => {
-                    item.style.opacity = i === index ? '1' : '0';
-                });
+            if (carouselItems.length > 0) {
+                let currentItem = 0;
+                function showItem(index) {
+                    carouselItems.forEach((item, i) => {
+                        item.style.opacity = i === index ? '1' : '0';
+                    });
+                }
+                function nextItem() {
+                    currentItem = (currentItem + 1) % carouselItems.length;
+                    showItem(currentItem);
+                }
+                setInterval(nextItem, 5000);
             }
 
-            function nextItem() {
-                currentItem = (currentItem + 1) % carouselItems.length;
-                showItem(currentItem);
-            }
-            setInterval(nextItem, 5000);
-
-            const productSlides = document.querySelectorAll('#product-slider .product-slide');
-            const dotsContainer = document.getElementById('slider-dots');
-            let currentSlide = 0;
-
-            if (productSlides.length > 0) {
-                productSlides.forEach((_, index) => {
-                    const dot = document.createElement('button');
-                    dot.classList.add('h-3', 'w-3', 'rounded-full', 'transition-colors');
-                    dot.classList.add(index === 0 ? 'bg-brand-primary' : 'bg-gray-300', 'hover:bg-brand-primary/70');
-                    dot.addEventListener('click', () => showProductSlide(index));
-                    dotsContainer.appendChild(dot);
-                });
-                
-                const dots = dotsContainer.querySelectorAll('button');
-
-                function showProductSlide(index) {
-                    productSlides.forEach((slide, i) => {
-                        slide.classList.toggle('opacity-100', i === index);
-                        slide.classList.toggle('opacity-0', i !== index);
-                    });
-                    dots.forEach((dot, i) => {
-                        dot.classList.toggle('bg-brand-primary', i === index);
-                        dot.classList.toggle('bg-gray-300', i !== index);
-                    });
-                    currentSlide = index;
-                }
-
-                function nextProductSlide() {
-                    const nextIndex = (currentSlide + 1) % productSlides.length;
-                    showProductSlide(nextIndex);
-                }
-                setInterval(nextProductSlide, 4000);
+            // Glide.js Product Slider
+            const glideEl = document.querySelector('.glide');
+            if (glideEl) {
+                new Glide(glideEl, {
+                    type: 'carousel',
+                    startAt: 0,
+                    perView: 1,
+                    focusAt: 'center',
+                    peek: { before: 30, after: 50 },
+                    gap: 10,
+                    breakpoints: {
+                        1024: {
+                            perView: 1
+                        },
+                        768: {
+                            perView: 1,
+                            peek: { before: 60, after: 60 }
+                        }
+                    }
+                }).mount();
             }
         });
 
@@ -654,63 +738,43 @@
         let bgPlayer, modalPlayer;
         const videoId = 'dQw4w9WgXcQ'; // Ganti dengan ID video YouTube Anda
 
-        // Fungsi ini akan dipanggil oleh YouTube API setelah script-nya termuat
         function onYouTubeIframeAPIReady() {
-            // Player untuk latar belakang
-            bgPlayer = new YT.Player('background-video-player', {
-                videoId: videoId,
-                playerVars: {
-                    'autoplay': 1,
-                    'controls': 0,
-                    'showinfo': 0,
-                    'modestbranding': 1,
-                    'loop': 1,
-                    'fs': 0,
-                    'cc_load_policy': 0,
-                    'iv_load_policy': 3,
-                    'autohide': 0,
-                    'mute': 1,
-                    'playlist': videoId // Diperlukan agar loop bekerja
-                },
-                events: {
-                    'onReady': function(event) {
-                        event.target.playVideo();
-                    }
-                }
-            });
+            if(document.getElementById('background-video-player')) {
+                bgPlayer = new YT.Player('background-video-player', {
+                    videoId: videoId,
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': videoId },
+                    events: { 'onReady': function(event) { event.target.playVideo(); } }
+                });
+            }
 
-            // Player untuk modal
-            modalPlayer = new YT.Player('modal-video-player', {
-                videoId: videoId,
-                playerVars: {
-                    'controls': 1,
-                    'showinfo': 0,
-                    'modestbranding': 1
-                }
-            });
+            if(document.getElementById('modal-video-player')) {
+                modalPlayer = new YT.Player('modal-video-player', {
+                    videoId: videoId,
+                    playerVars: { 'controls': 1, 'showinfo': 0, 'modestbranding': 1 }
+                });
+            }
         }
         
-        // Event Listeners untuk membuka dan menutup modal
         document.addEventListener('DOMContentLoaded', function() {
             const videoSection = document.getElementById('interactive-video-section');
             const videoModal = document.getElementById('video-modal');
             const closeModalBtn = document.getElementById('close-modal-btn');
 
-            // Buka modal
-            videoSection.addEventListener('click', () => {
-                videoModal.classList.remove('hidden');
-                modalPlayer.playVideo();
-            });
-
-            // Tutup modal
-            function closeModal() {
-                videoModal.classList.add('hidden');
-                modalPlayer.stopVideo();
+            if (videoSection) {
+                 videoSection.addEventListener('click', () => {
+                    videoModal.classList.remove('hidden');
+                    if(modalPlayer) modalPlayer.playVideo();
+                });
             }
 
-            closeModalBtn.addEventListener('click', closeModal);
-            // Tutup juga saat mengklik area gelap di luar video
-            videoModal.addEventListener('click', (e) => {
+            function closeModal() {
+                videoModal.classList.add('hidden');
+                if(modalPlayer) modalPlayer.stopVideo();
+            }
+
+            if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            
+            if(videoModal) videoModal.addEventListener('click', (e) => {
                 if (e.target === videoModal) {
                     closeModal();
                 }
