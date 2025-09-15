@@ -22,14 +22,26 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-primary': '#6B7C98', // Dusty Blue
-                        'brand-primary-dark': '#5a6a86',
-                        'brand-dark': '#5E5653',    // Dark Taupe
-                        'brand-light': '#E9E6E7',   // Light Gray
-                        'brand-muted': '#7B7F8A',   // Slate Blue/Gray
-                        'brand-accent': '#AB978C',  // Muted Brown/Beige
-                    }
+                        'brand-primary': '#B91C1C',      // Rich Red (was Dusty Blue)
+                        'brand-primary-dark': '#991B1B', // Darker Red (was darker blue)
+                        'brand-dark': '#1F2937',     // Dark Gray for text (was Dark Taupe)
+                        'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
+                        'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
+                        'brand-produk-card': '#F8F8F8',
+                    },
+                    height: {
+                      '110': '35rem', // Ini setara dengan 440px
+                    },
+                   width: {
+        '110': "30rem", // Ini yang Anda pakai, terlalu kecil
+        // TAMBAHKAN OPSI BARU DI SINI
+        '120': '35rem',    // Opsi 1 (lebar 560px)
+        '128': '40rem',    // Opsi 2 (lebar 640px) -> Coba ini dulu
+        '144': '48rem',    // Opsi 3 (lebar 768px)
+      }
                 }
+                
             }
         }
     </script>
@@ -104,15 +116,24 @@
 
     <main>
         <!-- Interactive Video Section (Sama seperti di Beranda) -->
-        <section id="interactive-video-section" class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden cursor-pointer group">
-            <!-- Div for the background player -->
+         
+        <!-- <section id="interactive-video-section" class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden cursor-pointer group">
+
             <div id="background-video-player" class="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 scale-[1.7]"></div>
-            <!-- Overlay and Play Button -->
+
             <div id="video-overlay" class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
                 <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:bg-white/40 transition-colors duration-300 transform group-hover:scale-110">
                      <i data-lucide="play" class="h-5 w-5 md:h-5 md:w-5 text-white fill-white"></i>
                 </div>
             </div>
+        </section> -->
+        <section class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden cursor-pointer group">
+            <!-- Div for the background player -->
+      
+            <!-- Overlay and Play Button -->
+            <img class="relative w-full h-full object-cover" src="images/fotonoburam.jpg" alt="Profile Image">
+             
+        </img>
         </section>
 
         <!-- New Profile Section -->
@@ -120,11 +141,11 @@
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <!-- Kolom Gambar -->
-                    <div class="relative w-full max-w-sm mx-auto md:mx-0">
+                    <div class="relative w-auto h-auto max-w-xl mx-auto md:mx-0">
                         <!-- Kotak Background -->
-                        <div class="absolute inset-0 bg-brand-primary rounded-lg z-0 transform translate-x-4 translate-y-4"></div>
+                        <div class="absolute inset-0 bg-brand-accent/30 rounded-lg z-0 transform translate-x-4 translate-y-4"></div>
                         <!-- Foto Orang -->
-                        <img src="https://placehold.co/400x500/ab978c/5e5653?text=Janesse+Gan" alt="Foto Profil Janesse Gan" class="relative z-10 rounded-lg shadow-2xl w-full">
+                        <img src="/images/profile2.jpg" alt="Foto Profil Janesse Gan" class="relative z-10 object-cover h-auto rounded-lg shadow-2xl w-full">
                     </div>
                     <!-- Kolom Teks -->
                     <div class="text-center md:text-left">
@@ -145,8 +166,9 @@
             </div>
         </section>
 
-        <!-- Mitra di Tiga Negara Section -->
-        <section class="py-20 bg-brand-light">
+ 
+        
+        <!-- <section class="py-20 bg-brand-light">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
                     Mitra Saya di <span class="text-brand-primary">Tiga Negara</span>
@@ -155,22 +177,22 @@
                     Saya memiliki jaringan mitra yang sangat luas, dengan lebih dari 50.000 orang yang tersebar di tiga negara: Indonesia, Malaysia, dan Singapura.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Image Card 1 -->
+                    
                     <div class="bg-white p-4 rounded-lg shadow-md">
                         <img src="https://placehold.co/800x500/6B7C98/ffffff?text=Mitra+di+Jakarta" alt="Mitra di Jakarta" class="rounded-md w-full object-cover">
                         <p class="mt-4 font-semibold text-brand-dark">Jakarta, Indonesia</p>
                     </div>
-                     <!-- Image Card 2 -->
+                  
                     <div class="bg-white p-4 rounded-lg shadow-md">
                         <img src="https://placehold.co/800x500/7B7F8A/ffffff?text=Mitra+di+Surabaya" alt="Mitra di Surabaya" class="rounded-md w-full object-cover">
                         <p class="mt-4 font-semibold text-brand-dark">Surabaya, Indonesia</p>
                     </div>
-                     <!-- Image Card 3 -->
+                  
                     <div class="bg-white p-4 rounded-lg shadow-md">
                         <img src="https://placehold.co/800x500/AB978C/ffffff?text=Mitra+di+Malaysia" alt="Mitra di Malaysia" class="rounded-md w-full object-cover">
                         <p class="mt-4 font-semibold text-brand-dark">Kuala Lumpur, Malaysia</p>
                     </div>
-                     <!-- Image Card 4 -->
+                    
                     <div class="bg-white p-4 rounded-lg shadow-md">
                         <img src="https://placehold.co/800x500/5E5653/ffffff?text=Mitra+di+Singapura" alt="Mitra di Singapura" class="rounded-md w-full object-cover">
                         <p class="mt-4 font-semibold text-brand-dark">Singapura</p>
@@ -179,7 +201,7 @@
             </div>
         </section>
 
-        <!-- Aktivitas Saya (YT Shorts) Section -->
+  
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
@@ -189,15 +211,15 @@
                     Ikuti berbagai kegiatan dan momen berharga yang saya jalani, baik dalam pekerjaan maupun keseharian.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- YouTube Short 1 -->
+                  
                     <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                     <!-- YouTube Short 2 -->
+                   
                     <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
                          <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/mG0da_3S4C4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                     <!-- YouTube Short 3 -->
+                
                     <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
                          <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/c-Q4N1N4zlA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
@@ -205,7 +227,7 @@
             </div>
         </section>
 
-        <!-- Final CTA Section -->
+   
         <section class="py-24 bg-brand-primary text-white">
             <div class="container mx-auto px-6 text-center">
                 <h3 class="text-2xl font-bold tracking-wider mb-4">GABUNG MITRA SAYA</h3>
@@ -213,7 +235,8 @@
                     SEKARANG!
                 </a>
             </div>
-        </section>
+        </section> -->
+        
 
     </main>
 
@@ -238,12 +261,13 @@
         </div>
     </footer>
 
-    <!-- Floating Language Switcher (Sama seperti di Beranda) -->
-    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-        <span class="text-xl">🇮🇩</span>
-        <span>ID</span>
-        <i data-lucide="chevron-up" class="h-5 w-5"></i>
-    </button>
+     <!-- Tombol Daftar & Cuan -->
+             <a href="daftar.html" 
+               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+                <center>Daftar  <br>&<br> Cuan</center>
+             </a>
+
+  
     
     <!-- Video Modal (Sama seperti di Beranda) -->
     <div id="video-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 transition-opacity duration-300">
