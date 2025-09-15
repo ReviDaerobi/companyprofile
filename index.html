@@ -741,11 +741,12 @@
             if (glideEl) {
                 new Glide(glideEl, {
                     type: 'carousel',
-                    startAt: 1, 
+                    startAt: 0, 
                     perView: 1,
                     focusAt: 'center',
                     peek: { before: 100, after: 100 }, 
                     gap: 20,
+                    autoplay: 4000,
                     breakpoints: {
                         1024: {
                             perView: 1,
