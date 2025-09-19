@@ -11,23 +11,22 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
-        // Custom Tailwind CSS Configuration
+        // Custom Tailwind CSS Configuration with "Merah Putih" theme
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-primary': '#6B7C98',
-                        'brand-dark': '#5E5653',
-                        'brand-light': '#E9E6E7',
-                        'brand-muted': '#7B7F8A',
-                        'brand-accent': '#AB978C',
-                        'brand-orange': '#F97316', // orange-500
+                        'brand-red': '#B91C1C',      // A rich red (Tailwind's red-700)
+                        'brand-red-dark': '#991B1B', // Darker red for hover (red-800)
+                        'brand-dark': '#1F2937',     // Dark gray for text (gray-800)
+                        'brand-muted': '#6B7280',    // Muted gray for secondary text (gray-500)
+                        'brand-light': '#F9FAFB',    // Very light gray for backgrounds (gray-50)
                     }
                 }
             }
@@ -38,47 +37,31 @@
         /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
         }
-        /* Styling untuk tombol Daftar & Cuan */
+        /* Style for the main button in navbar */
         .daftar-cuan-btn {
-            background: linear-gradient(90deg, #F97316, #EA580C);
+            background-color: #B91C1C; /* brand-red */
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        /* Animasi hover untuk tombol "Selengkapnya" */
-        .animated-btn {
-            position: relative;
-            overflow: hidden;
-            transition: color 0.4s ease-in-out;
-            z-index: 1;
-            background: linear-gradient(to right, #8B5CF6, #6366F1); /* Gradient purple-indigo */
+        .daftar-cuan-btn:hover {
+            background-color: #991B1B; /* brand-red-dark */
+            transform: translateY(-2px);
         }
-      .animated-btn::before {
-            content: '';
-            position: absolute;
-            /* Memberi jarak 2px di setiap sisi */
-            top: 2px;
-            left: 2px;
-            width: calc(100% - 4px);
-            height: calc(100% - 4px);
-            background-color: white;
-            /* Menyesuaikan border-radius agar pas di dalam */
-            border-radius: 6px; 
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease-in-out;
-            z-index: -1;
-        }
-        .animated-btn:hover {
-            color: #6366F1; /* Warna teks saat di-hover */
-        }
-        .animated-btn:hover::before {
-            transform: scaleX(1);
+        /* Parallax Background Style */
+        .parallax-section {
+            background-image: url('images/foto3pagereal.webp');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
-<body class="bg-brand-light text-brand-dark">
+<body class="text-brand-dark">
 
-    <!-- Header & Navbar (Sama seperti di halaman lain) -->
-  <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
+     <!-- Header & Navbar -->
+   <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
         <div class="container mx-auto px-6">
     <div class="container mx-auto px-6">
         <nav class="flex items-center justify-between">
@@ -94,7 +77,7 @@
                 <li><a href="index.html" class="nav-link  font-semibold hover:text-red-700">Beranda</a></li>
                 <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
                 <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
-                <li><a href="shuang-hor.html" class="nav-link active text-gray-700 text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                <li><a href="shuang-hor.html" class="nav-link  active text-gray-700 text-red-700 font-medium transition-colors">Shuang Hor</a></li>
                 <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
                 <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
                 <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
@@ -106,11 +89,11 @@
             <div class="flex items-center space-x-4">
 
                 <!-- Floating Language Switcher -->
-    <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-        <span class="text-xl">🇮🇩</span>
-        <span>ID</span>
-        <i data-lucide="chevron-down" class="h-5 w-5"></i>
-    </button>
+            <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+                <span class="text-xl">🇮🇩</span>
+                <span>ID</span>
+                <i data-lucide="chevron-down" class="h-5 w-5"></i>
+            </button>
             
 
                 <!-- Mobile Menu Button (Hamburger) -->
@@ -121,87 +104,90 @@
         </nav>
     </div>
     </header>
+ 
 
-    <main class="pt-24"> <!-- Padding top untuk navbar fixed -->
-        <!-- Hero Section -->
-        <section class="py-40 bg-white">
+    <main class="pt-24">
+        <!-- 1. Hero Section -->
+        <section class="w-full py-12 md:py-20 bg-brand-light">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <!-- Kolom Teks -->
-                    <div class="text-left">
-                        <p class="text-gray-500 mb-2">Cerita tentang</p>
-                        <h1 class="text-3xl md:text-5xl text-brand-dark leading-tight mb-6">Profil dan Sejarah <br> Shuang Hor</h1>
-                        <a href="#" class="animated-btn inline-flex items-center text-white font-semibold py-3 px-8 rounded-lg shadow-lg">
-                            Selengkapnya
-                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
-                        </a>
-                    </div>
-                    <!-- Kolom Video -->
-                    <div class="aspect-video overflow-hidden shadow-lg">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/4vCfwy9tw2o?start=25" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
+                <img src="images/foto1page.jpg" alt="Shuang Hor Teknologi Terdepan" class="w-full max-w-5xl mx-auto rounded-lg shadow-md">
+            </div>
+        </section>
+
+        <!-- 2. Global Excellence Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <img src="images/foto2page.jpg" alt="Peta Internasional Group Shuang Hor" class="w-full rounded-lg shadow-xl">
                 </div>
             </div>
         </section>
 
-        <!-- Sejak Didirikan Section -->
-        <section class="py-20  bg-white">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <!-- Kolom Kiri: Teks -->
-                    <div class=" bg-brand-light p-8 shadow-md">
-                        <p class="text-gray-600 leading-relaxed mb-6">
+        <!-- 3. Profile & History Section with Parallax Background -->
+     
+        <section class="parallax-section relative py-24">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-white">Profil dan Sejarah <span class="text-red-300">Shuang Hor</span></h2>
+                </div>
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <!-- Kolom Kiri: Teks Sejarah -->
+                    <div class="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg text-brand-dark leading-relaxed space-y-4 flex flex-col">
+                        <p>
                             Sejak didirikan pada bulan Juli tahun 1987 di Taiwan, Grup Shuang Hor telah tumbuh menjadi entitas bisnis yang besar dengan beragam bidang usaha dan kantor cabang di beberapa negara.
                         </p>
-                        <p class="text-gray-600 leading-relaxed mb-6">
+                        <p>
                             Dengan fokus pada produk-produk eksklusif berkualitas, Grup Shuang Hor menawarkan peluang emas yang tak terbatas bagi para pengusaha yang ingin mewujudkan impian memiliki kehidupan sehat dan sejahtera.
                         </p>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Grup Shuang Hor terus berkembang dan stabil dalam berbagai bidang seperti bioteknologi, pariwisata, kebudayaan, pendidikan, dan amal. Dari awal berdirinya hingga kini, visi jangka panjang dan potensi pertumbuhannya tetap terjaga.
-                        </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Dalam strategi pengembangan pasar globalnya, Grup Shuang Hor terus memperluas area distribusinya ke Malaysia, Thailand, Singapura, Hong Kong, Indonesia, dan Myanmar, dengan tujuan membawa kehidupan sehat dan membuka peluang bisnis bagi masyarakat setempat.
+                        <p>
+                            Dalam strategi pengembangan pasar globalnya, Grup Shuang Hor terus memperluas area distribusinya ke Malaysia, Thailand, Singapura, Hong Kong, Indonesia, dan Myanmar.
                         </p>
                     </div>
                     <!-- Kolom Kanan: Daftar Grup & Cabang -->
-                    <div>
-                        <div class="mt-10">
-                            <h3 class="text-md font-bold text-brand-dark mb-4">Grup Shuang Hor Di Taiwan:</h3>
-                            <ul class="list-disc list-inside text-gray-700">
+                    <div class="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg space-y-8 flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-4">Grup Shuang Hor Di Taiwan:</h3>
+                            <ul class="list-disc list-inside space-y-2 text-brand-muted">
                                 <li>Double Crane Enterprise (Taiwan) Co., Ltd.</li>
                                 <li>Yung Kien Industrial Corp., Taiwan (Pabrik Yung Kien)</li>
-                                <li>Ling-Zhi Agriculture (Taiwan) Co., Ltd. (Taman Bioteknologi Lingzhi)</li>
-                                <li>Charity Association Taiwan, R.O.C.</li>
-                                <li>Shuang Hor Consult (Taiwan) Co., Ltd.</li>
-                                <li>Microbiological Research Foundation, R.O.C.</li>
-                                <li>Lihon Biotechnology Co., Ltd</li>
-                                <li>Golden Crane Travel Agency</li>
+                                <li>Ling-Zhi Agriculture (Taiwan) Co., Ltd.</li>
+                                <li>Dan beberapa afiliasi lainnya...</li>
                             </ul>
                         </div>
-                        <div class="mt-5">
-                            <h3 class="text-md font-bold text-brand-dark mb-4">Cabang di Luar Negeri:</h3>
-                             <ul class="list-disc list-inside text-gray-700">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-4">Cabang di Luar Negeri:</h3>
+                             <ul class="list-disc list-inside space-y-2 text-brand-muted">
                                 <li>Shuang Hor Enterprise (M) Sdn. Bhd.</li>
                                 <li>Shuang Hor Enterprise (Thailand) Co., Ltd.</li>
                                 <li>Shuang Hor (Singapore) Pte Ltd</li>
-                                <li>Shuang Hor (HK) Company Ltd.</li>
                                 <li>PT Shuang Hor Indonesia</li>
-                                <li>Double Crane (Myanmar) Co., Ltd.</li>
+                                <li>Dan cabang lainnya...</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Peternakan Bioteknologi Section -->
+        
+        <!-- 4. 38 Years Commitment Section -->
         <section class="py-20 bg-white">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12">Selama 38 Tahun <br><span class="text-brand-red">Jalur Produksi Satu Atap, Satu-Satunya di Dunia</span></h2>
+                <div class="max-w-6xl mx-auto">
+                     <img src="images/foto3page.jpg" alt="Jalur produksi 38 tahun Shuang Hor" class="w-full rounded-lg shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 & 6. Biotechnology & Video Section -->
+        <section class="py-20 bg-brand-light">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Peternakan Bioteknologi <br> Terbesar di Dunia</h2>
-                <p class="mt-4 text-xs max-w-2xl mx-auto text-brand-muted mb-12">
-                    Simak Perjalanan Kunjungan Kami Ke Pabrik Budidaya Ganoderma Yung Kien Terbesar Di Dunia
+                <h2 class="text-4xl font-extrabold text-brand-dark">Peternakan Bioteknologi <br><span class="text-brand-red">Terbesar di Dunia</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-brand-muted mb-12">
+                    Simak Perjalanan Kunjungan Kami Ke Pabrik Budidaya Ganoderma Yung Kien Terbesar Di Dunia.
                 </p>
-                <div class="max-w-7xl mx-auto aspect-video  overflow-hidden shadow-2xl">
+                <div class="max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/5bWP780KmU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
@@ -209,37 +195,33 @@
 
     </main>
 
-    <!-- Footer (Sama seperti di halaman lain) -->
-    <footer class="bg-white py-8">
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t">
         <div class="container mx-auto px-6 flex flex-col items-center">
             <div class="flex space-x-4 mb-6">
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors">
                     <i data-lucide="facebook"></i>
                 </a>
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors">
                     <i data-lucide="youtube"></i>
                 </a>
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors">
                     <i data-lucide="instagram"></i>
-                </a>
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
-                    <i data-lucide="music-4"></i> <!-- Placeholder for TikTok -->
                 </a>
             </div>
             <p class="text-brand-muted">&copy; 2025 Company.</p>
         </div>
     </footer>
 
-    <!-- Floating Language Switcher -->
-    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-        <span class="text-xl">🇮🇩</span>
-        <span>ID</span>
-        <i data-lucide="chevron-up" class="h-5 w-5"></i>
-    </button>
+  <!-- Tombol Daftar & Cuan -->
+             <a href="daftar.html" 
+               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+                <center>Daftar  <br>&<br> Cuan</center>
+             </a>
     
     <script>
-        // Inisialisasi Lucide Icons
         lucide.createIcons();
     </script>
 </body>
 </html>
+
