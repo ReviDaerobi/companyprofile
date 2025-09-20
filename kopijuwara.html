@@ -45,6 +45,77 @@
     </script>
 
     <style>
+
+/* Style untuk latar belakang modal yang gelap */
+.modal {
+  display: none; /* Awalnya disembunyikan */
+  position: fixed; /* Tetap di posisi yang sama saat di-scroll */
+  z-index: 50; /* Tampil di atas elemen lain */
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); /* Latar belakang hitam transparan */
+}
+
+/* Style untuk konten gambar di dalam modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Style untuk caption gambar */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Animasi untuk zoom-in */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Tombol Close (X) */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Atur agar lebih responsif di layar kecil */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
         /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
@@ -110,25 +181,39 @@
                     <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark leading-tight">
                         Kopi Sehat Pilihan <span class="text-brand-primary">Dunia</span>
                     </h1>
-                    <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-brand-muted leading-relaxed">
+                    <p class="mt-6 max-w-6xl text-xl mx-auto lg:mx-0 text-brand-muted leading-relaxed">
                         <strong>SH Juwara Cafe</strong>   (sering disebut sebagai <strong>Kopi Juwara</strong> dan selanjutnya disini  disebut Kopi Juwara) adalah merek kopi produksi Shuang Hor  yang dibuat dari biji kopi premium Arabica dari Brazil, yang dikenal  pula sebagai <strong>CEO Cafe</strong> di luar Indonesia. Mengandung bahan-bahan alami,  Kopi Juwara adalah kopi kesehatan yang mengandung Yung Kien Ganoderma untuk menjaga kekebalan tubuh dan melindungi hati.  Tersedia dalam 2 varian yaitu 3 in 1 (tanpa gula) dan <strong>4 in 1</strong> (dengan gula tebu). Konsumsi rutin Kopi Juwara akan memberikan kesehatan, mendapat cuan dan meningkatkan kualitas hidup anda
                     </p>
                 </div>
                 <!-- Kolom Gambar -->
                 <div>
-                    <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 1 (paling atas).jpg" alt="Produk Kopi SH Juwara Cafe" class="w-full max-w-lg mx-auto rounded-lg shadow-2xl">
+                    <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 1 (paling atas).jpg" alt="Produk Kopi SH Juwara Cafe" class="w-full max-w-xl mx-auto rounded-lg shadow-2xl">
                 </div>
             </div>
         </section>
 
         <!-- 2. Keunggulan Section -->
         <section class="h-screen bg-white flex items-center justify-center py-12">
-            <div class="container mx-auto px-6 h-full flex items-center">
-                <div class="max-w-6xl mx-auto">
-                    <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 2_page-0001.jpg" alt="Infografis Keunggulan Kopi Juwara" class="w-full h-auto max-h-[85vh] object-contain">
-                </div>
-            </div>
-        </section>
+    <div class="container mx-auto px-6 h-full flex items-center">
+        <div class="max-w-6xl mx-auto">
+            <img 
+                id="myImg" 
+                src="/images/fotokopijuwara/Hal Kopi Juwara_image no 2_page-0001.jpg" 
+                alt="Infografis Keunggulan Kopi Juwara" 
+                class="w-full h-auto max-h-[85vh] object-contain cursor-pointer hover:opacity-80 transition-opacity"
+            >
+        </div>
+    </div>
+</section>
+
+<div id="myModal" class="modal">
+
+  <span class="close">&times;</span>
+
+  <img class="modal-content" id="img01">
+
+  <div id="caption"></div>
+</div>
 
         <!-- 3. Manfaat Section -->
         <section class="h-screen bg-gray-50 flex items-center justify-center py-12">
@@ -193,6 +278,36 @@
     <script>
         lucide.createIcons();
     </script>
+
+    <script>
+// Ambil elemen-elemen yang dibutuhkan
+var modal = document.getElementById("myModal");
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+// Saat gambar di-klik, tampilkan modal
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Ambil elemen <span> (tombol close)
+var span = document.getElementsByClassName("close")[0];
+
+// Saat tombol (x) di-klik, sembunyikan modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+// Jika user mengklik di luar gambar, tutup juga modalnya
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
 
