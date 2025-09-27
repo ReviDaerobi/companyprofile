@@ -52,43 +52,48 @@
 <body class="text-brand-dark">
 
     <!-- Header & Navbar (Sama seperti di halaman lain, disesuaikan dengan tema merah) -->
-    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm border-b border-gray-200">
+     <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
         <div class="container mx-auto px-6">
-            <nav class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center">
-                        <img src="images/logopastijuwara.jpg" alt="Logo" class="h-24 w-24 object-contain">
-                    </a>
-                </div>
-                
-                <!-- Navigation Links (Desktop) -->
-                <ul class="hidden lg:flex items-center space-x-6">
-                    <li><a href="index.html" class="nav-link text-brand-dark font-semibold hover:text-brand-red">Beranda</a></li>
-                    <li><a href="profile.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Profile</a></li>
-                    <!-- <li><a href="gallery.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Gallery</a></li> -->
-                    <li><a href="shuang-hor.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Shuang Hor</a></li>
-                    <li><a href="belanja.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Belanja</a></li>
-                    <li><a href="bisnis11.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">Bisnis 111</a></li>
-                    <li><a href="testimoni.html" class="nav-link text-brand-red font-semibold transition-colors">Testimoni</a></li>
-                    <li><a href="faq.html" class="nav-link text-brand-dark hover:text-brand-red font-medium transition-colors">FAQ</a></li>
-                </ul>
+    <div class="container mx-auto px-6">
+        <nav class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0 mt-3 mb-3">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="nav-link active font-semibold hover:text-red-700">Beranda</a></li>
+                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
+                <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                <li><a href="testimoni.html" class="nav-link text-gray-700 text-red-700 font-medium transition-colors">Testimoni</a></li>
+                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+            </ul>
 
-                <!-- Right Side Actions -->
-                <div class="flex items-center space-x-4">
-                    <!-- Tombol Daftar & Cuan -->
-                    <a href="daftar.html" 
-                       class="daftar-cuan-btn text-white px-4 py-2 rounded-lg shadow-lg font-bold text-sm text-center leading-tight whitespace-nowrap">
-                        Daftar<br>&<br>Cuan
-                    </a>
+            <!-- Right Side Actions -->
+            <div class="flex items-center space-x-4">
 
-                    <!-- Mobile Menu Button (Hamburger) -->
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-                        <i data-lucide="menu" class="h-6 w-6 text-brand-dark"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
+                <!-- Floating Language Switcher -->
+            <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+                <span class="text-xl">🇮🇩</span>
+                <span>ID</span>
+                <i data-lucide="chevron-down" class="h-5 w-5"></i>
+            </button>
+            
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
     </header>
 
     <main class="pt-24"> <!-- Padding top untuk navbar fixed -->
@@ -97,10 +102,11 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h1 class="text-3xl md:text-4xl font-bold text-brand-dark">
-                        Testimoni Mitra <span class="text-brand-red">Name</span>
+                        Testimoni Mitra Kami
                     </h1>
                     <p class="mt-4 max-w-2xl mx-auto text-brand-muted">
-                        Ikuti perjalanan para mitra Name yang telah meraih kesuksesan bersama Shuang Hor
+                       Para mitra kami berbagi cerita manfaat yang diperoleh baik dari sisi  bisnis Shuang Hor maupun pada kesehatan mereka. 
+
                     </p>
                 </div>
                 
@@ -147,12 +153,12 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-center text-white">
                     <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left mb-6 md:mb-0">
-                        Mau Bergabung dan Menjadi<br>Sukses Seperti Mereka?
+                        Mari bergabung dan memperoleh kesuksesan seperti mereka, baik dalam bisnis maupun mendapat solusi kesehatan untuk diri sendiri dan orang lain.
                     </h2>
-                    <a href="daftar.html" class="inline-flex items-center bg-white text-brand-red font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-200 transition-colors">
-                        <i data-lucide="minus" class="mr-3 h-5 w-5"></i>
-                        Daftar Sekarang
-                    </a>
+                  <a href="daftar.html" 
+               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+                <center>Daftar  <br>&<br> Cuan</center>
+             </a>
                 </div>
             </div>
         </section>
@@ -181,11 +187,11 @@
     </footer>
 
     <!-- Floating Language Switcher -->
-    <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+    <!-- <button class="fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-full p-3 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
         <span class="text-xl">🇮🇩</span>
         <span>ID</span>
         <i data-lucide="chevron-up" class="h-5 w-5"></i>
-    </button>
+    </button> -->
     
     <script>
         // Inisialisasi Lucide Icons
