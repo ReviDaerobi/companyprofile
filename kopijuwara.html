@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kopi Juwara - Perusahaan Kita</title>
+    <title>Kopi Juwara - Pasti Juwara</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display.swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -28,16 +25,6 @@
                         'brand-light': '#FFFFFF',
                         'brand-muted': '#6B7280',
                         'brand-accent': '#FEE2E2',
-                        'brand-produk-card': '#F8F8F8',
-                    },
-                    height: {
-                      '110': '35rem',
-                    },
-                    width: {
-                      '110': "30rem",
-                      '120': '35rem',
-                      '128': '40rem',
-                      '144': '48rem',
                     }
                 }
             }
@@ -45,78 +32,68 @@
     </script>
 
     <style>
+        /* Style untuk modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; /* Pastikan di atas segalanya */
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9);
+        }
 
-/* Style untuk latar belakang modal yang gelap */
-.modal {
-  display: none; /* Awalnya disembunyikan */
-  position: fixed; /* Tetap di posisi yang sama saat di-scroll */
-  z-index: 50; /* Tampil di atas elemen lain */
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%;
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.9); /* Latar belakang hitam transparan */
-}
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
 
-/* Style untuk konten gambar di dalam modal */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
 
-/* Style untuk caption gambar */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
+        @keyframes zoom {
+            from {transform: scale(0.1)} 
+            to {transform: scale(1)}
+        }
 
-/* Animasi untuk zoom-in */
-.modal-content, #caption {  
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-@keyframes zoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-/* Tombol Close (X) */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 95%;
+            }
+        }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Atur agar lebih responsif di layar kecil */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-        /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -132,38 +109,25 @@
 </head>
 <body class="bg-brand-light text-brand-dark">
 
-    <!-- Header & Navbar -->
     <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
         <div class="container mx-auto px-6">
             <nav class="flex items-center justify-between">
-                <!-- Logo -->
                 <div class="flex-shrink-0 mt-3 mb-3">
                     <a href="index.html" class="flex items-center">
                         <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
                     </a>
                 </div>
-                
-                <!-- Navigation Links (Desktop) -->
                 <ul class="hidden lg:flex items-center space-x-6">
                     <li><a href="index.html" class="nav-link text-gray-700 font-semibold hover:text-red-700">Beranda</a></li>
                     <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
                     <li><a href="kopijuwara.html" class="nav-link active text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
                     <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
-                    <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                    <li><a href="bisnis111.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
                     <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
                     <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
                     <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
                 </ul>
-
-                <!-- Right Side Actions -->
                 <div class="flex items-center space-x-4">
-                    <!-- Floating Language Switcher -->
-                    <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-                        <span class="text-xl">🇮🇩</span>
-                        <span>ID</span>
-                        <i data-lucide="chevron-down" class="h-5 w-5"></i>
-                    </button>
-                    <!-- Mobile Menu Button (Hamburger) -->
                     <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
                         <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
                     </button>
@@ -173,141 +137,141 @@
     </header>
 
     <main class="pt-24">
-        <!-- 1. Hero Section -->
-        <section class="relative py-20 md:py-32 bg-gray-100">
+        <section class="relative py-20 md:py-32 bg-gray-50">
             <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Kolom Teks -->
                 <div class="text-center lg:text-left">
                     <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark leading-tight">
-                        Kopi Sehat Pilihan <span class="text-brand-primary">Dunia</span>
+                        Kopi Sehat Dengan Banyak <span class="text-brand-primary">Manfaat</span>
                     </h1>
-                    <p class="mt-6 max-w-6xl text-xl mx-auto lg:mx-0 text-brand-muted leading-relaxed">
-                        <strong>SH Juwara Cafe</strong>   (sering disebut sebagai <strong>Kopi Juwara</strong> dan selanjutnya disini  disebut Kopi Juwara) adalah merek kopi produksi Shuang Hor  yang dibuat dari biji kopi premium Arabica dari Brazil, yang dikenal  pula sebagai <strong>CEO Cafe</strong> di luar Indonesia. Mengandung bahan-bahan alami,  Kopi Juwara adalah kopi kesehatan yang mengandung Yung Kien Ganoderma untuk menjaga kekebalan tubuh dan melindungi hati.  Tersedia dalam 2 varian yaitu 3 in 1 (tanpa gula) dan <strong>4 in 1</strong> (dengan gula tebu). Konsumsi rutin Kopi Juwara akan memberikan kesehatan, mendapat cuan dan meningkatkan kualitas hidup anda
+                    <p class="mt-6 max-w-2xl text-lg mx-auto lg:mx-0 text-brand-muted leading-relaxed">
+                        <strong>SH Juwara Cafe</strong> (Kopi Juwara) adalah merek kopi premium dari biji Arabica Brazil. Mengandung Yung Kien Ganoderma untuk imunitas dan kesehatan hati. Tersedia varian 3-in-1 (tanpa gula) dan 4-in-1 (dengan gula tebu).
                     </p>
                 </div>
-                <!-- Kolom Gambar -->
                 <div>
-                    <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 1 (paling atas).jpg" alt="Produk Kopi SH Juwara Cafe" class="w-full max-w-xl mx-auto rounded-lg shadow-2xl">
+                    <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 1 (paling atas).jpg" alt="Produk Kopi SH Juwara Cafe" class="clickable-img w-full max-w-xl mx-auto rounded-lg shadow-2xl cursor-pointer hover:opacity-80 transition-opacity duration-300">
                 </div>
             </div>
         </section>
 
-        <!-- 2. Keunggulan Section -->
-        <section class="h-screen bg-white flex items-center justify-center py-12">
-    <div class="container mx-auto px-6 h-full flex items-center">
-        <div class="max-w-6xl mx-auto">
-            <img 
-                id="myImg" 
-                src="/images/fotokopijuwara/Hal Kopi Juwara_image no 2_page-0001.jpg" 
-                alt="Infografis Keunggulan Kopi Juwara" 
-                class="w-full h-auto max-h-[85vh] object-contain cursor-pointer hover:opacity-80 transition-opacity"
-            >
-        </div>
-    </div>
-</section>
-
-<div id="myModal" class="modal">
-
-  <span class="close">&times;</span>
-
-  <img class="modal-content" id="img01">
-
-  <div id="caption"></div>
-</div>
-
-        <!-- 3. Manfaat Section -->
-        <section class="h-screen bg-gray-50 flex items-center justify-center py-12">
-             <div class="container mx-auto px-6 h-full flex items-center">
-                <div class="max-w-6xl mx-auto">
-                    <img src="/images/fotokopijuwara/Hal Kopi Juwara-image no 3_ Manfaat Kopi SH Juwara Cafe .jpg" alt="Infografis Manfaat Kopi Juwara" class="w-full h-auto max-h-[85vh] object-contain">
-                </div>
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                
+                <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 2_page-0001.jpg" alt="Infografis Keunggulan Kopi Juwara" class="clickable-img w-full max-w-6xl mx-auto rounded-lg shadow-xl cursor-pointer hover:opacity-80 transition-opacity duration-300">
+            </div>
+        </section>
+        
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+               
+                <img src="/images/fotokopijuwara/Hal Kopi Juwara-image no 3_ Manfaat Kopi SH Juwara Cafe .jpg" alt="Infografis Manfaat Kopi Juwara" class="clickable-img w-full max-w-6xl mx-auto rounded-lg shadow-xl cursor-pointer hover:opacity-80 transition-opacity duration-300">
             </div>
         </section>
 
-        <!-- 4, 5, 6. Edukasi & Perbandingan Section -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-extrabold text-brand-dark">Kenali Kopi Anda Lebih Baik</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-brand-muted">
-                        Pahami perbedaan antara kopi biasa dengan Kopi Juwara yang menyehatkan.
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">   Kopi Juwara Lebih Baik</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-brand-muted">
+                           Perbedaan antara kopi biasa dengan Kopi Juwara yang menyehatkan.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <!-- Kolom 4: Ciri Kopi Tidak Sehat -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                         <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 4 Ciri-ciri kopi tidak sehat_page-0001.jpg" alt="Ciri-ciri Kopi Tidak Sehat" class="w-full rounded-md">
+                        <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 4 Ciri-ciri kopi tidak sehat_page-0001.jpg" alt="Ciri-ciri Kopi Tidak Sehat" class="clickable-img w-full rounded-md cursor-pointer hover:opacity-80 transition-opacity duration-300">
                     </div>
-                     <!-- Kolom 5: Perbandingan -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                        <img src="/images/fotokopijuwara/Hal Kopi Juwara _ image no 5_kopi Juwara vs kopi lain_page-0001.jpg" alt="Perbandingan Kopi Juwara vs Kopi Lain" class="w-full rounded-md">
+                        <img src="/images/fotokopijuwara/Hal Kopi Juwara _ image no 5_kopi Juwara vs kopi lain_page-0001.jpg" alt="Perbandingan Kopi Juwara vs Kopi Lain" class="clickable-img w-full rounded-md cursor-pointer hover:opacity-80 transition-opacity duration-300">
                     </div>
-                     <!-- Kolom 6: Cara Penyajian -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                         <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 6_Penyajian Kopi SH Juwara Cafe_page-0001.jpg" alt="Cara Penyajian Kopi Juwara" class="w-full rounded-md">
+                        <img src="/images/fotokopijuwara/Hal Kopi Juwara_image no 6_Penyajian Kopi SH Juwara Cafe_page-0001.jpg" alt="Cara Penyajian Kopi Juwara" class="clickable-img w-full rounded-md cursor-pointer hover:opacity-80 transition-opacity duration-300">
                     </div>
                 </div>
             </div>
         </section>
+        
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">Testimoni & Review Kopi Juwara</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-brand-muted">
+                        Lihat apa kata mereka yang sudah merasakan nikmat dan manfaat dari Kopi Juwara.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="aspect-video bg-white rounded-lg overflow-hidden shadow-lg">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/L9G0DywOzJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="aspect-video bg-white rounded-lg overflow-hidden shadow-lg">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/oLJ8XMa1bpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="aspect-video bg-white rounded-lg overflow-hidden shadow-lg">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/xb2q4e5ld1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="aspect-video bg-white rounded-lg overflow-hidden shadow-lg">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/KPzlEv-1J5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
     <footer class="bg-white py-8 border-t">
         <div class="container mx-auto px-6 flex flex-col items-center">
             <div class="flex space-x-4 mb-6">
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors">
-                    <i data-lucide="facebook"></i>
-                </a>
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors">
-                    <i data-lucide="youtube"></i>
-                </a>
-                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors">
-                    <i data-lucide="instagram"></i>
-                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors"><i data-lucide="facebook"></i></a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors"><i data-lucide="youtube"></i></a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-gray-100 transition-colors"><i data-lucide="instagram"></i></a>
             </div>
             <p class="text-brand-muted">&copy; 2025 Company.</p>
         </div>
     </footer>
 
-       <!-- Tombol Daftar & Cuan -->
-             <a href="daftar.html" 
-               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
-                <center>Daftar  <br>&<br> Cuan</center>
-             </a>
+    <a href="daftar.html" 
+       class="text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-white font-semibold hover:shadow-xl transition-shadow">
+        <center>Daftar <br>&<br> Cuan</center>
+    </a>
     
     <script>
         lucide.createIcons();
+
+        // --- SCRIPT MODAL YANG SUDAH DIPERBARUI ---
+        
+        // Ambil elemen-elemen modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Ambil SEMUA gambar dengan class "clickable-img"
+        var images = document.querySelectorAll(".clickable-img");
+
+        // Loop melalui setiap gambar dan tambahkan event listener
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // Saat tombol (x) di-klik, sembunyikan modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Jika user mengklik di luar gambar, tutup juga modalnya
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
-
-    <script>
-// Ambil elemen-elemen yang dibutuhkan
-var modal = document.getElementById("myModal");
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-// Saat gambar di-klik, tampilkan modal
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Ambil elemen <span> (tombol close)
-var span = document.getElementsByClassName("close")[0];
-
-// Saat tombol (x) di-klik, sembunyikan modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-
-// Jika user mengklik di luar gambar, tutup juga modalnya
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 </body>
 </html>
-
