@@ -43,61 +43,94 @@
             background-color: #991B1B;
             transform: translateY(-2px);
         }
+
+        /* === CSS UNTUK MODAL ZOOM GAMBAR (BARU) === */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000;
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80vw;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+        @keyframes zoom {
+            from {transform: scale(0.1)} 
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="text-brand-dark">
 
-   <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
-        <div class="container mx-auto px-6">
-    <div class="container mx-auto px-6">
-        <nav class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex-shrink-0 mt-3 mb-3">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
-                </a>
-            </div>
-            
-            <!-- Navigation Links (Desktop) -->
-            <ul class="hidden lg:flex items-center space-x-6">
-                <li><a href="index.html" class="nav-link active font-semibold hover:text-red-700">Beranda</a></li>
-                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
-                <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
-                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
-                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
-                <li><a href="bisnis11.html" class="nav-link text-gray-700 text-red-700 font-medium transition-colors">Bisnis 111</a></li>
-                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
-                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
-                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
-            </ul>
-
-            <!-- Right Side Actions -->
-            <div class="flex items-center space-x-4">
-
-                <!-- Floating Language Switcher -->
-            <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-                <span class="text-xl">🇮🇩</span>
-                <span>ID</span>
-                <i data-lucide="chevron-down" class="h-5 w-5"></i>
-            </button>
-            
-
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
-                </button>
-            </div>
-        </nav>
-    </div>
+    <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
+         <div class="container mx-auto px-6">
+            <nav class="flex items-center justify-between">
+                <div class="flex-shrink-0 mt-3 mb-3">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                    </a>
+                </div>
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="index.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                    <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="bisnis111.html" class="nav-link active text-red-700 font-semibold transition-colors">Bisnis 111</a></li>
+                    <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                     <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main class="pt-24">
         <section class="relative bg-cover bg-center min-h-[100vh] flex items-center justify-center" style="background-image: url('images/bisnis111/Website_Bisnis 111_foto paling atas_image no 1.jpg');">
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-            <div class="relative z-10 container mx-auto px-6 text-center text-white">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
-                    Bisnis 111 Kopi SH Juwara Cafe
-                </h1>
+            <div class="relative z-10 container mx-auto px-6 text-center text-white mt-80">
+               <h1 class="text-2xl md:text-3xl font-bold leading-tight mb-4">Bisnis 111 Kopi SH Juwara Cafe</h1>
                 <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl font-light" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
                     Minum, Ajak, Konsisten! Sukses Bersama Kopi SH Juwara Cafe dengan 1 Kotak/Bulan, 1 Teman/Bulan, dan potensi penghasilan Rp46 Juta/Bulan setelah 1 tahun.
                 </p>
@@ -110,17 +143,11 @@
                 <p class="mt-4 max-w-3xl mx-auto text-lg text-brand-muted">Sebuah revolusi yang dirancang untuk membawa Anda menuju puncak kejayaan finansial dan kebebasan waktu.</p>
                 
                 <div class="mt-12 space-y-8">
-                    <a href="images/bisnis111/Website_Bisnis 111_image no 2.jpg" target="_blank" class="block group max-w-4xl mx-auto">
-                        <img src="images/bisnis111/Website_Bisnis 111_image no 2.jpg" alt="Revolusi Kewirausahaan 2025" class="w-full h-auto object-cover rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
-                    </a>
+                    <img src="images/bisnis111/Website_Bisnis 111_image no 2.jpg" alt="Revolusi Kewirausahaan 2025" class="clickable-img cursor-pointer w-full h-auto object-cover rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105 max-w-4xl mx-auto">
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto pt-8">
-                        <a href="images/bisnis111/Website_Bisnis111_image no 3.jpg" target="_blank" class="block group">
-                            <img src="images/bisnis111/Website_Bisnis111_image no 3.jpg" alt="Awal dari Era Kejayaan Anda" class="w-full h-full object-cover rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
-                        </a>
-                        <a href="images/bisnis111/Website_Bisnis 111_inti dari MLM_image no 4.jpg" target="_blank" class="block group">
-                            <img src="images/bisnis111/Website_Bisnis 111_inti dari MLM_image no 4.jpg" alt="Inti dari MLM" class="w-full h-full object-cover rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
-                        </a>
+                        <img src="images/bisnis111/Website_Bisnis111_image no 3.jpg" alt="Awal dari Era Kejayaan Anda" class="clickable-img cursor-pointer w-full h-full object-cover rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105">
+                        <img src="images/bisnis111/Website_Bisnis 111_inti dari MLM_image no 4.jpg" alt="Inti dari MLM" class="clickable-img cursor-pointer w-full h-full object-cover rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105">
                     </div>
                 </div>
             </div>
@@ -130,15 +157,12 @@
             <div class="container mx-auto px-6 space-y-16">
                  <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">Platform dan Ekosistem Lengkap</h2>
-                    <p class="mt-4 max-w-3xl mx-auto text-lg text-brand-muted">Kami tidak hanya memberikan produk, kami menyediakan seluruh ekosistem bisnis untuk mendukung kesuksesan Anda dari hulu ke hilir.</p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-brand-muted"> Kami tidak hanya memberikan produk, kami menyediakan seluruh ekosistem bisnis untuk mendukung kesuksesan Anda.</p>
                 </div>
                 
-                <a href="images/bisnis111/Website_hal Bisnis 111_image no 5.jpg" target="_blank" class="block group max-w-4xl mx-auto">
-                    <img src="images/bisnis111/Website_hal Bisnis 111_image no 5.jpg" alt="Program Kafe 111" class="w-full h-auto object-cover rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105">
-                </a>
-                
-                <img src="images/bisnis111/Website_hal bisnis 111_ cafe_image no 6 .jpg" alt="Coffee Experience Centre" class="w-full max-w-6xl mx-auto rounded-xl shadow-2xl">
-                <img src="images/bisnis111/Website_hal bisnis 111_ coffee truck_image no 7.jpg" alt="Coffee Truck dan Biskuit Ganoderma" class="w-full max-w-6xl mx-auto rounded-xl shadow-2xl">
+                <img src="images/bisnis111/Revolusi Wira usaha plus logo.png" alt="Program Kafe 111" class="clickable-img cursor-pointer w-full h-auto object-cover rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105 max-w-4xl mx-auto">
+                <img src="images/bisnis111/Website_hal bisnis 111_ cafe_image no 6 .jpg" alt="Coffee Experience Centre" class="clickable-img cursor-pointer w-full max-w-6xl mx-auto rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105">
+                <img src="images/bisnis111/Website_hal bisnis 111_ coffee truck_image no 7.jpg" alt="Coffee Truck dan Biskuit Ganoderma" class="clickable-img cursor-pointer w-full max-w-6xl mx-auto rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105">
             </div>
         </section>
         
@@ -147,8 +171,9 @@
                 <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">Rencana Bisnis yang Transparan</h2>
                 <p class="mt-4 max-w-3xl mx-auto text-lg text-brand-muted">Lihat secara jelas bagaimana langkah sederhana dapat menghasilkan potensi pendapatan yang luar biasa.</p>
                 <div class="mt-12 space-y-8">
-                     <img src="images/bisnis111/Website_hal bisnis 111_Rencana bisnis kopi_image no 8.jpg" alt="Rencana Bisnis Kopi 111" class="w-full max-w-6xl mx-auto rounded-lg bg-white p-2 shadow-lg">
-                     <img src="images/bisnis111/Website_hal bisnis 111_ hitungan bonus_image no 9.png" alt="Hitungan Bonus Bisnis Kopi" class="w-full max-w-6xl mx-auto rounded-lg bg-white p-2 shadow-lg">
+                     <img src="images/bisnis111/Rencana Bisnis plus logo.png" alt="Rencana Bisnis Kopi 111" class="clickable-img cursor-pointer w-full max-w-6xl mx-auto rounded-lg bg-white p-2 shadow-lg transition-transform duration-300 hover:scale-105">
+                     <img src="images/bisnis111/Minum 1 kotak kopi dan 1 teman per bulan plus logo.png" alt="Hitungan Bonus Bisnis Kopi" class="clickable-img cursor-pointer w-full max-w-6xl mx-auto rounded-lg bg-white p-2 shadow-lg transition-transform duration-300 hover:scale-105">
+                     <img src="images/bisnis111/Tabel hitungan.png" alt="Tabel Hitungan Bonus Bisnis Kopi" class="clickable-img cursor-pointer w-full max-w-6xl mx-auto rounded-lg bg-white p-2 shadow-lg transition-transform duration-300 hover:scale-105">
                 </div>
             </div>
         </section>
@@ -156,33 +181,32 @@
         <section class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-center text-brand-dark mb-12">Materi dan Inspirasi Bisnis 111</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
                     <div class="text-center">
-                        <h3 class="text-xl font-bold mb-4 text-brand-dark">Inovasi Wirausaha</h3>
-                        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <h3 class="text-lg font-bold mb-3 text-brand-dark">Inovasi Wirausaha</h3>
+                        <div class="aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/S4339hZNk-4" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-xl font-bold mb-4 text-brand-dark">Transformasi Jaringan</h3>
-                        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <h3 class="text-lg font-bold mb-3 text-brand-dark">Transformasi Jaringan</h3>
+                        <div class="aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/A8g3p9A4p9o" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-xl font-bold mb-4 text-brand-dark">Kehidupan Baru</h3>
-                        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <h3 class="text-lg font-bold mb-3 text-brand-dark">Kehidupan Baru</h3>
+                        <div class="aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/5O6gY21jWzo" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-xl font-bold mb-4 text-brand-dark">Konsep Bisnis 111</h3>
-                        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <h3 class="text-lg font-bold mb-3 text-brand-dark">Konsep Bisnis</h3>
+                        <div class="aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
                              <iframe class="w-full h-full" src="https://www.youtube.com/embed/V6dCjd6fL2o" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
-         
             </div>
         </section>
 
@@ -190,24 +214,55 @@
             <div class="container mx-auto px-6 text-center text-white">
                  <h2 class="text-3xl md:text-4xl font-extrabold">Perjalanan Anda Dimulai Di Sini</h2>
                  <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-300">Jangan tunda lagi kesempatan untuk mengubah hidup. Perjalanan ribuan kilometer dimulai dengan satu langkah.</p>
-                 <img src="images/bisnis111/Website_hal bisnis 11_ image paling akhir (penutup) di hal bisnis 111. Disambung dengan tombol Daftar & Cuan.jpg" alt="Perjalanan kami telah dimulai" class="w-full max-w-4xl mx-auto rounded-xl shadow-xl my-10">
-                
-                <a href="daftar.html" class="inline-block text-xl bg-gradient-to-r from-amber-500 to-red-500 hover:bg-brand-red-dark text-white font-bold py-4 px-12 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                    Daftar & Cuan Sekarang!
-                </a>
+                 <img src="images/bisnis111/Website_hal bisnis 11_ image paling akhir (penutup) di hal bisnis 111. Disambung dengan tombol Daftar & Cuan.jpg" alt="Perjalanan kami telah dimulai" class="clickable-img cursor-pointer w-full max-w-4xl mx-auto rounded-xl shadow-xl my-10 transition-transform duration-300 hover:scale-105">
             </div>
         </section>
 
     </main>
+    
+ 
+    
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption" class="text-base"></div>
+    </div>
 
-    <!-- <a href="daftar.html" 
-       class="text-lg daftar-cuan-btn-float fixed bottom-6 right-6 z-40 bg-white shadow-lg rounded-xl p-4 px-6 flex items-center space-x-2 text-white font-semibold hover:shadow-xl transition-shadow">
-        <span>Daftar & Cuan</span>
-        <i data-lucide="arrow-right-circle" class="h-6 w-6"></i>
-    </a> -->
+          <!-- Tombol Daftar & Cuan -->
+             <a href="daftar.html" 
+               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+                <center>Daftar  <br>&<br> Cuan</center>
+             </a>
+    
     
     <script>
         lucide.createIcons();
+
+        // JAVASCRIPT UNTUK MODAL ZOOM GAMBAR (BARU)
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var span = document.getElementsByClassName("close")[0];
+
+        var images = document.querySelectorAll(".clickable-img");
+
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
