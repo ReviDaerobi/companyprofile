@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Profil Perusahaan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#B91C1C',      
+                        'brand-primary-dark': '#991B1B',
+                        'brand-dark': '#1F2937',   
+                        'brand-light': '#Fff',    
+                        'brand-muted': '#6B7280', 
+                        'brand-accent': '#FEE2E2',
+                        'brand-produk-card': '#F8F8F8',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+       body {
+           font-family: 'Inter', sans-serif;
+       }
+       .daftar-cuan-btn {
+           transition: all 0.3s ease;
+       }
+       .daftar-cuan-btn:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+       }
+       /* Style for accordion transition */
+       .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+       }
+    </style>
+</head>
+<body class="bg-gray-50 text-brand-dark min-h-screen flex flex-col">
+
+      <!-- Header & Navbar (Sama seperti di halaman lain, disesuaikan dengan tema merah) -->
+     <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
+        <div class="container mx-auto px-6">
+    <div class="container mx-auto px-6">
+        <nav class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0 mt-3 mb-3">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="nav-link active font-semibold hover:text-red-700">Beranda</a></li>
+                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
+                <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                <li><a href="testimoni.html" class="nav-link text-gray-700 text-red-700 font-medium transition-colors">Testimoni</a></li>
+                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+            </ul>
+
+            <!-- Right Side Actions -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Floating Language Switcher -->
+            <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+                <span class="text-xl">🇮🇩</span>
+                <span>ID</span>
+                <i data-lucide="chevron-down" class="h-5 w-5"></i>
+            </button>
+            
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    </header>
+
+    <main class="flex-grow pt-28"> 
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <!-- Page Title -->
+                <div class="text-center mb-12 md:mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-3">Frequently Asked Questions (F.A.Q)</h1>
+                    <p class="text-lg text-brand-muted max-w-3xl mx-auto">
+                        Di bawah ini adalah pertanyaan yang sering ditanyakan, baik dalam memulai Bisnis 111 maupun tentang produk kami.
+                    </p>
+                </div>
+
+                <!-- FAQ Container -->
+                <div class="max-w-4xl mx-auto space-y-12">
+                    
+                    <!-- Section: BISNIS 111 -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-primary mb-6 pb-2 border-b-2 border-brand-primary/30">BISNIS 111</h2>
+                        <div id="faq-bisnis" class="space-y-4">
+                            <!-- FAQ Item 1 -->
+                            <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Bagaimana kalau saya tidak mengerti cara menjalankan bisnis?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                       Kami akan membimbing anda sampai paham dan mengerti untuk menjalankan bisnis ini. Tim
+Pasti Juwara berada di bawah komunitas Juwara Bersama dengan mentor utama Triple
+Diamond Janesse Gan, yang akan memberikan arahan dan membimbing anggota timnya.
+Bukan hanya itu, tersedia website untuk E-learning materi yang diperlukan, untuk menjalankan
+bisnis dan belanja, WhatsApp Group, Zoom meeting, seminar yang menampilkan para peraih
+ranking tinggi di Shuang Hor dan dukungan dari komunitas. 
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- FAQ Item 2 -->
+                            <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                     Berapakah biaya untuk menjadi Mitra Usaha Shuang Hor?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Untuk bergabung menjadi Mitra Usaha Shuang Hor adalah GRATIS dengan free voucher dari
+orang yang mensponsori anda atau Rp. 18.000 tanpa free voucher.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add other "BISNIS 111" questions here following the same structure -->
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Berapakah modal yang saya perlukan untuk memulai?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                       Memulai bisnis tidak selalu memerlukan modal besar. Modal utama adalah kemauan untuk
+belajar dan ketekunan dalam menjalankan bisnis. Dalam bisnis 111, modal awal adalah 1 kotak
+kopi Juwara dan mengajak orang minum kopi.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                   Bagaimana cara mendaftar sebagai Agen/Distributor?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Jika berminat menjadi Agen/Distributor, Anda dapat mengklik tanda ”Daftar & Cuan” yang
+tersedia di berbagai halaman pada situs web ini. Kemudian, isilah formulir pendaftaran dengan
+data-data yang diminta. Selain itu, anda juga bisa mengiriim pesan WhatsApp ke +62 812 1444
+510. Seperti sudah disampaikan sebelumnya, join menjadi member Shuang Hor GRATIS dengan
+free voucher dari orang yang mensponsori anda atau Rp. 18.000,- tanpa free voucher. 
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                   Apakah ada kewajiban tutup poin setiap bulan?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Tidak, sebagai mitra usaha Shuang Hor tidak ada kewajiban beli produk dalam jumlah tertentu
+(yang dikenal sebagai tutup point) setiap bulannya
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                   Bagaimana jika saya tidak memiliki pengalaman sebelumnya
+sehingga tidak memiliki pengetahuan dan keterampilan yang
+diperlukan dalam bisnis ini?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Pengetahuan dan keterampilan bisa dipelajari seiring dengan berjalannya bisnis. Seperti sudah
+disampaikan sebelumnya, anda akan bergabung dengan komunitas dan ada para mentor yang
+akan membimbing anda sampai bisa, jadi tidak diperlukan pengalaman. Para Mitra Usaha
+Shuang Hor datang dari berbagai latar belakang yang berbeda. Ada ibu rumah tangga,
+karyawan/karyawati, dokter, pedagang bahkan supir ojol, supir taksi dan taksi online, dll. Di
+Shuang Hor, kesuksesan bukan tergantung dari tingginya pendidikan atau kepintaran seseorang
+melainkan dari konsistensi untuk terus berproses dalam menjalankan bisnis ini tanpa kenal
+menyerah. 
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                 Bagaimana jika saya tidak dapat mengajak 1 orang join bisnis
+ini dalam 1 bulan, apa konsekuensi yang akan saya hadapi?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Tidak ada konsekuensi apa pun dari Perusahaan. Seperti menyetir mobil, anda dapat mengatur
+sendiri seberapa cepat kecepatan yang anda inginkan dalam menjalankan bisnis ini. Namun
+demikian, tentunya ada konsekuensi dalam pendapatan yang dihasilkan. 
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                   Bagaimana jika bisnis saya tidak berhasil nantinya?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                     Pepatah mengatakan, “Kegagalan adalah sukses yang tertunda”. Jadi kegagalan adalah bagian
+dari proses. Bahkan mentor utama Triple Diamond Janesse Gan mengatakan bahwa ia pernah
+ditolak orang berkali-kali. Tapi ia tidak menyerah dan terus berproses. Para mentor yang sudah
+berhasil pun akan membimbing anda dalam hal ini. 
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                  Berapa lama waktu yang diperlukan untuk meraih kesuksesan
+dalam bisnis ini?
+
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                               Waktu yang diperlukan untuk meraih kesuksesan bervariasi pada setiap orang. Yang paling
+penting, diperlukan ketekunan dan konsistensi dalam menjalankan bisnis ini.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section: PRODUK -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-primary mb-6 pb-2 border-b-2 border-brand-primary/30">PRODUK</h2>
+                        <div id="faq-produk" class="space-y-4">
+                            <!-- FAQ Item 1 -->
+                            <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Apakah Kopi Juwara sudah terdaftar di BPOM?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                        <p>Ya, Kopi Juwara sudah terdaftar di BPOM dengan Nomor Registrasi</p>
+                                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                                            <li><strong>3-in-1:</strong> ML 867009003417</li>
+                                            <li><strong>4-in-1:</strong> ML 867009001417</li>
+                                        </ul>
+                                        <p class="mt-2">ML adalah singkatan dari Makanan Luar. Dengan kata lain, Kopi Juwara adalah produk impor
+yang telah mendapatkan Izin resmi dari pemerintah RI.</p>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- FAQ Item 2 -->
+                            <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Apa perbedaan Kopi Juwara 3-in-1 dan 4-in-1?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                        KOPI 3-in-1 (dalam sachet berwarna perak) tanpa tambahan gula, sementara KOPI 4-in-1 (dalam
+sachet berwarna emas) mengandung gula alami yang berasal dari tebu (rendah kalori)
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add other "PRODUK" questions here following the same structure -->
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Apakah Kopi Juwara mengandung lemak trans?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                       Krimer pada kopi merek lain berpotensi menyebabkan penyempitan pembuluh darah karena
+mengandung lemak trans. Namun demikian, krimer pada Kopi Juwara terbuat dari minyak
+kelapa murni (VCO) yang tidak megandung lemak trans.
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Apa perbedaan CEO Cafe dan SH Juwara Cafe ?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                       Sebenarnya tidak ada perbedaan antara keduanya. Kedua produk tersebut berasal dari Shuang
+Hor Ltd (Taiwan). Merek CEO Cafe digunakan untuk negara-negara seperti Malaysia, Taiwan,
+Singapura, Thailand dan Myanmar. Di sisi lain, merek SH Juwara Cafe (sering disebut Kopi
+Juwara) dirancang secara khusus untuk pasar Indonesia. Meskipun ada perbedaan dalam
+penamaan merek, esensinya tetap sama antara kedua produk tersebut.
+Silakan cek nomor BPOM SH JUWARA Cafe dengan Kode Registrasinya ML (Makanan Luar atau
+Impor)
+
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Apakah Kopi Juwara aman dikonsumsi penderita diabetes?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                     Ya, aman. Bahkan kandungan Ganoderma (Lingzhi) dalam kopi Juwara dapat membantu
+mengontrol kadar gula darah anda. Namun demikian, saran kami konsumsi Kopi Juwara 3-in-1
+yang tanpa gula. 
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                  Apa benar minum kopi dapat merusak ginjal?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Minum kopi tidak langsung merusak ginjal, apalagi jika ginjal anda sehat dan minum dalam
+batas wajar. Konsumsi kopi berlebihan dapat memperburuk kondisi ginjal pada penderita
+penyakit ginjal kronis, terutama batu ginjal karena kopi kaya akan oksalat. Namun demikian,
+kandungan Ganoderma/Lingzhi (yang ada dalam Kopi Juwara) terbukti memiliki manfaat
+dalam memperbaiki masalah ginjal, seperti membantu mengeluarkan batu ginjal dan
+meningkatkan kelancaran proses buang air kecil. (Lihat halaman Testimoni). 
+
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                   Apakah yang disebut healing crisis itu?
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                      Karena Kopi Juwara (dan berbagai produk Shuang Hor lainnya) mengandung
+Ganoderma/Lingzhi, ada kemungkinan terjadinya reaksi pemulihan atau krisis penyembuhan.
+Gejala-gejala seperti pusing, mual, ketidaknyamanan pada tubuh, dan sejenisnya juga mungkin
+terjadi. Selain itu, seseorang mungkin mengalami diare, sakit perut, demam, tinnitus,
+peningkatan eksresi, dll. Pada umumnya, seseorang yang mengalami tubuh hipersensitif atau
+yang menggunakan obat-obatan kimia dalam jumlah besar dapat mengalami reaksi seperti ini.
+Namun perlu dicatat, hal ini bukanlah efek samping. Mohon untuk tetap mengonsumsi produk
+yang mengandung Ganoderma/LIngzhi tersebut karena ini adalah sebuah hasil dari khasiat
+Ganoderma/Lingzhi. Akan tetapi, tidak semua orang mengalami reaksi ini, tergantung jumlah
+racun dalam tubuh kita. 
+
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="border border-gray-200 rounded-lg">
+                                <button class="faq-toggle flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-brand-dark hover:bg-brand-accent/30 transition-colors">
+                                    Mengapa Ganoderma/Lingzhi tidak berkhasiat bagi beberapa
+orang? 
+                                    <i data-lucide="chevron-down" class="h-6 w-6 transition-transform"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="p-5 pt-0 text-brand-muted">
+                                     Jika anda menggunakannya secara terus menerus, Ganoderma/Lingzhi akan menjaga kesehatan
+anda. Namun, beberapa orang tidak merasakan efek apapun. Hal ini disebabkan oleh beberapa
+alasan sbb:
+
+<ul class="list-disc pl-5 mt-2 space-y-1">
+    <li>Tidak konsumsi secara rutin atau tidak mengikuti dosis yang disarankan. </li>
+    <li>Menghentikan penggunaan saat healing crisis terjadi. </li>
+    <li>Diet, olah raga dan gaya hidup tidak diatur dengan baik. </li>
+    <li>Penyakit terjadi sudah lama atau banyaknya obat-obatan kimia yang digunakan. Padahal
+racun yang telah ada dalam tubuh harus dikeluarkan secara menyeluruh.</li>
+    <li>Kondisi penyakit yang bervariasi dan orang tersebut menghentikan penggunaannya
+pada saat penyakitnya belum terobati secara tuntas. Seharusnya tetap lanjutkan
+penggunaannya. </li>
+    <li>Faktor-faktor psikologis, misalnya menghentikan penggunaan karena mengikuti
+pendapat negatif orang lain. </li>
+</ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 mt-auto border-t">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <div class="flex space-x-4 mb-6">
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="youtube"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="message-circle"></i> <!-- Placeholder for WhatsApp -->
+                </a>
+            </div>
+            <p class="text-brand-muted">&copy; 2025 Company. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Tombol Daftar & Cuan -->
+    <a href="daftar.html" 
+       class="text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+        <center>Daftar <br>&<br> Cuan</center>
+    </a>
+    
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Logika Accordion
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+
+                    // Toggle content visibility
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
