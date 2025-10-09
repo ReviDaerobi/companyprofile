@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Mitra - Profil Perusahaan</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#B91C1C', 'brand-primary-dark': '#991B1B',
+                        'brand-dark': '#1F2937', 'brand-light': '#Fff',
+                        'brand-muted': '#6B7280', 'brand-accent': '#FEE2E2',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .form-input:focus { border-color: #B91C1C; box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.2); }
+    </style>
+</head>
+<body class="bg-gray-50 text-brand-dark min-h-screen flex flex-col">
+
+     <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
+        <div class="container mx-auto px-6">
+    <div class="container mx-auto px-6">
+        <nav class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0 mt-3 mb-3">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="nav-link active font-semibold text-red-700">Beranda</a></li>
+                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
+                <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+            </ul>
+
+            <!-- Right Side Actions -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Floating Language Switcher -->
+            <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+                <span class="text-xl">🇮🇩</span>
+                <span>ID</span>
+                <i data-lucide="chevron-down" class="h-5 w-5"></i>
+            </button>
+            
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+                <div class="text-center mb-10">
+                    <h1 class="text-3xl md:text-4xl font-bold text-brand-dark">Daftar Menjadi Mitra</h1>
+                    <p class="text-brand-muted mt-3">Satu langkah lagi untuk memulai perjalanan sukses Anda bersama kami.</p>
+                </div>
+
+                <form id="registration-form" class="space-y-6">
+                    <div>
+                        <label for="nama-lengkap" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" id="nama-lengkap" name="entry.2005620554" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="nomor-ktp" class="block text-sm font-medium text-gray-700 mb-1">Nomor Induk KTP</label>
+                        <input type="tel" id="nomor-ktp" name="entry.673404006" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+                      <div>
+                        <label for="tanggal-lahir" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                        <input type="date" id="tanggal-lahir" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="alamat-email" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
+                        <input type="email" id="alamat-email" name="entry.1045781291" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="alamat-domisili" class="block text-sm font-medium text-gray-700 mb-1">Alamat Domisili ( Jika Berbeda Dengan KTP )</label>
+                        <input type="text" id="alamat-domisili" name="entry.1065046570" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="nomor-whatsapp" class="block text-sm font-medium text-gray-700 mb-1">Nomor HP</label>
+                        <input type="tel" id="nomor-whatsapp" name="entry.1166974658" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+
+                
+                    <div>
+                        <button type="submit" id="submit-button" class="w-full bg-brand-primary hover:bg-brand-primary-dark text-white font-bold py-4 px-4 rounded-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300">
+                            Lanjut ke Upload KTP
+                        </button>
+                    </div>
+                </form>
+
+                <div id="success-message" class="hidden mt-8 text-center">
+                    <div class="bg-green-100 border-l-4 border-green-500 text-green-800 p-6 rounded-r-lg" role="alert">
+                        <i data-lucide="check-circle" class="h-12 w-12 mx-auto text-green-500"></i>
+                        <h3 class="text-xl font-bold mt-4">Pendaftaran Berhasil!</h3>
+                        <p class="mt-2">Data Anda telah kami terima. Silakan klik tombol di bawah untuk menyelesaikan pendaftaran dengan mengunggah KTP Anda.</p>
+                        <p class="mt-1 text-sm">Form upload sudah kami isi otomatis dengan data Anda.</p>
+                        <a id="prefilled-link" href="#" target="_blank" class="inline-flex items-center mt-6 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                            <i data-lucide="upload-cloud" class="h-5 w-5 mr-2"></i>
+                            Buka Form Upload KTP Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-8 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-brand-muted">&copy; 2025 Company.</p>
+        </div>
+    </footer>
+
+    <script>
+       lucide.createIcons();
+
+        const form = document.getElementById('registration-form');
+        const successMessage = document.getElementById('success-message');
+        const prefilledLink = document.getElementById('prefilled-link');
+        const submitButton = document.getElementById('submit-button');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            const tanggalLahirValue = document.getElementById('tanggal-lahir').value; // Ambil nilai tanggal, cth: "2025-10-09"
+
+            // ========== LOGIKA BARU UNTUK TANGGAL ==========
+            // Pisahkan tanggal menjadi tahun, bulan, hari
+            const [year, month, day] = tanggalLahirValue.split('-');
+
+            // PENTING: Ganti 'entry.xxxxxx' dengan nomor entry yang Anda temukan untuk tanggal
+            const dateEntry = {
+                year: 'entry.469324839_year',
+                month: 'entry.469324839_month',
+                day: 'entry.469324839_day'
+            };
+            // ===============================================
+
+            // Buat data baru untuk dikirim, karena kita perlu menambahkan data tanggal secara manual
+            const finalFormData = new FormData();
+            for (const key in data) {
+                finalFormData.append(key, data[key]);
+            }
+            finalFormData.append(dateEntry.year, year);
+            finalFormData.append(dateEntry.month, month);
+            finalFormData.append(dateEntry.day, day);
+
+            // Membuat URLSearchParams untuk pre-filled link, termasuk tanggal
+            const params = new URLSearchParams();
+            for (const key in data) {
+                params.append(key, data[key]);
+            }
+            params.append(dateEntry.year, year);
+            params.append(dateEntry.month, month);
+            params.append(dateEntry.day, day);
+
+            // URL Aksi dan ViewForm
+            const actionURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScgu6j_rrdAQ1UcXet65mgqHXsYUPKzwSFg3HTDz6AXt2ek-w/formResponse';
+            const viewformURL = 'https://docs.google.com/forms/d/e/1FAIpQLScgu6j_rrdAQ1UcXet65mgqHXsYUPKzwSFg3HTDz6AXt2ek-w/viewform';
+            
+            const prefilledURL = `${viewformURL}?${params.toString()}`;
+            prefilledLink.href = prefilledURL;
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Memproses...';
+
+            fetch(actionURL, {
+                method: 'POST',
+                body: finalFormData, // Gunakan finalFormData yang sudah berisi tanggal
+                mode: 'no-cors'
+            })
+            .then(() => {
+                form.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitButton.disabled = false;
+                submitButton.textContent = 'Lanjut ke Upload KTP';
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            });
+        });
+    </script>
+</body>
+</html>
