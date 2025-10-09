@@ -92,7 +92,7 @@
                         <label for="nomor-ktp" class="block text-sm font-medium text-gray-700 mb-1">Nomor Induk KTP</label>
                         <input type="tel" id="nomor-ktp" name="entry.673404006" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
                     </div>
-                      <div>
+                    <div>
                         <label for="tanggal-lahir" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
                         <input type="date" id="tanggal-lahir" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
                     </div>
@@ -109,7 +109,26 @@
                         <input type="tel" id="nomor-whatsapp" name="entry.1166974658" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
                     </div>
 
-                
+                    <div class="text-center mb-10">
+                        <h1 class="text-3xl md:text-4xl font-bold text-brand-dark">PASANGAN</h1>
+                        <p class="text-brand-muted mt-3">( Jika ingin melakukan bisnis ini bersama pasangan )</p>
+                    </div>  
+
+                     <div>
+                        <label for="nama_lengkap_pasangan" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap Pasangan</label>
+                        <input type="text" id="nama_lengkap_pasangan" name="entry.2187164" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+
+                     <div>
+                        <label for="nomor-ktp_pasangan" class="block text-sm font-medium text-gray-700 mb-1">Nomor HP Pasangan</label>
+                        <input type="tel" id="nomor-ktp_pasangan" name="entry.1299428202" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+
+                    <div>
+                        <label for="tanggal-lahir_pasangan" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir Pasangan</label>
+                        <input type="date" id="tanggal-lahir_pasangan" required class="form-input block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none transition">
+                    </div>
+
                     <div>
                         <button type="submit" id="submit-button" class="w-full bg-brand-primary hover:bg-brand-primary-dark text-white font-bold py-4 px-4 rounded-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300">
                             Lanjut ke Upload KTP
@@ -153,16 +172,23 @@
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             const tanggalLahirValue = document.getElementById('tanggal-lahir').value; // Ambil nilai tanggal, cth: "2025-10-09"
+            const tanggalLahirValuePasangan = document.getElementById('tanggal-lahir_pasangan').value; // Ambil nilai tanggal, cth: "2025-10-09"
 
             // ========== LOGIKA BARU UNTUK TANGGAL ==========
             // Pisahkan tanggal menjadi tahun, bulan, hari
             const [year, month, day] = tanggalLahirValue.split('-');
+            const [yearPasangan, monthPasangan, dayPasangan] = tanggalLahirValuePasangan.split('-');
 
             // PENTING: Ganti 'entry.xxxxxx' dengan nomor entry yang Anda temukan untuk tanggal
             const dateEntry = {
                 year: 'entry.469324839_year',
                 month: 'entry.469324839_month',
                 day: 'entry.469324839_day'
+            };
+            const dateEntryPasangan = {
+                year: 'entry.1924122768_year',
+                month: 'entry.1924122768_month',
+                day: 'entry.1924122768_day'
             };
             // ===============================================
 
@@ -174,6 +200,9 @@
             finalFormData.append(dateEntry.year, year);
             finalFormData.append(dateEntry.month, month);
             finalFormData.append(dateEntry.day, day);
+            finalFormData.append(dateEntryPasangan.year, yearPasangan);
+            finalFormData.append(dateEntryPasangan.month, monthPasangan);
+            finalFormData.append(dateEntryPasangan.day, dayPasangan);
 
             // Membuat URLSearchParams untuk pre-filled link, termasuk tanggal
             const params = new URLSearchParams();
@@ -183,6 +212,9 @@
             params.append(dateEntry.year, year);
             params.append(dateEntry.month, month);
             params.append(dateEntry.day, day);
+            params.append(dateEntryPasangan.year, yearPasangan);
+            params.append(dateEntryPasangan.month, monthPasangan);
+            params.append(dateEntryPasangan.day, dayPasangan);
 
             // URL Aksi dan ViewForm
             const actionURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScgu6j_rrdAQ1UcXet65mgqHXsYUPKzwSFg3HTDz6AXt2ek-w/formResponse';
