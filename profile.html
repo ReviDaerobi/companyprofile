@@ -286,7 +286,9 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         // Inisialisasi Lucide Icons
-        lucide.createIcons();
+                lucide.createIcons({
+        icons: lucide.icons
+    });
 
         // Logika YouTube Player
         let bgPlayer, modalPlayer;

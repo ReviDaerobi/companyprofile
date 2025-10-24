@@ -701,10 +701,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
     <script>
         // Inisialisasi Lucide Icons
-        lucide.createIcons();
+        
 
         // Logika Carousel Sederhana dengan Teks Dinamis
         document.addEventListener('DOMContentLoaded', function () {
+
+                    lucide.createIcons({
+        icons: lucide.icons
+    });
             const carouselItems = document.querySelectorAll('#hero-carousel .carousel-item');
             const carouselTexts = document.querySelectorAll('#hero-carousel .carousel-text-item');
             

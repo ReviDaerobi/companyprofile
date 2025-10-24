@@ -159,7 +159,9 @@
     </footer>
 
     <script>
-       lucide.createIcons();
+               lucide.createIcons({
+        icons: lucide.icons
+    });
 
         const form = document.getElementById('registration-form');
         const successMessage = document.getElementById('success-message');

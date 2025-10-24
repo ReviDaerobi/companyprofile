@@ -454,10 +454,13 @@ pendapat negatif orang lain. </li>
     
     <script>
         // Inisialisasi Lucide Icons
-        lucide.createIcons();
+        
 
         // Logika Accordion
         document.addEventListener('DOMContentLoaded', function () {
+                    lucide.createIcons({
+        icons: lucide.icons
+    });
             const faqToggles = document.querySelectorAll('.faq-toggle');
 
             faqToggles.forEach(toggle => {

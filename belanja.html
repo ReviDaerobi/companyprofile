@@ -1126,10 +1126,14 @@ kesehatan dengan optimal.
     
     <script>
         // Inisialisasi Lucide Icons
-        lucide.createIcons();
+        
 
         // Logika untuk Mobile Menu
         document.addEventListener('DOMContentLoaded', function () {
+
+                    lucide.createIcons({
+        icons: lucide.icons
+    });
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             

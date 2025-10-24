@@ -223,9 +223,12 @@
     
     <script>
         // Inisialisasi Lucide Icons
-        lucide.createIcons();
+  
 
         document.addEventListener('DOMContentLoaded', function() {
+                    lucide.createIcons({
+        icons: lucide.icons
+    });
             // Reusable filter function
             function setupGalleryFilter(filterButtonsSelector, galleryItemsSelector) {
                 const filterButtons = document.querySelectorAll(filterButtonsSelector);
