@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belanja - Profil Perusahaan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Custom Tailwind CSS Configuration (Sama seperti di index.html)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#B91C1C',    
+                        'brand-primary-dark': '#991B1B',
+                        'brand-dark': '#1F2937',  
+                        'brand-light': '#Fff',    
+                        'brand-muted': '#6B7280', 
+                        'brand-accent': '#FEE2E2',
+                        'brand-produk-card': '#F8F8F8',
+                    },
+                    height: {
+                        '110': '35rem', 
+                    },
+                    width: {
+                        '110': "30rem", 
+                        '120': '35rem',    
+                        '128': '40rem',  
+                        '144': '48rem',    
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles dari index.html */
+        .custom-border-box {
+         position: relative;
+         border-top: 2px solid #d62626;
+         border-bottom: 2px solid #d62626;
+         border-left: 2px dashed #d62626;
+         border-right: 2px dashed #d62626;
+         margin: 15px 5px;
+         padding: 20px;
+       }
+
+       @media (min-width: 1660px) {
+           .custom-border-box {
+               margin: 15px 400px;
+           }
+       }
+
+       .daftar-cuan-btn {
+         transition: all 0.3s ease;
+       }
+       .daftar-cuan-btn:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+       }
+       body {
+           font-family: 'Inter', sans-serif;
+       }
+       .group:hover .arrow-icon {
+           transform: translateX(4px);
+       }
+    </style>
+</head>
+<body class="bg-white text-brand-dark min-h-screen flex flex-col">
+
+    <!-- Header & Navbar (Diambil dari index.html dan diperbaiki) -->
+    <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex-shrink-0 mt-3 mb-3">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links (Desktop) -->
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="index.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                    <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                    <!-- Link 'Belanja' sekarang aktif -->
+                    <li><a href="belanja.html" class="nav-link active font-semibold text-red-700">Belanja</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+                </ul>
+
+                <!-- Right Side Actions -->
+            <div class="flex items-center space-x-4">
+
+                <!-- Floating Language Switcher -->
+            <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+                <span class="text-xl">🇮🇩</span>
+                <span>ID</span>
+                <i data-lucide="chevron-down" class="h-5 w-5"></i>
+            </button>
+            
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                </button>
+            </div>
+
+                
+                
+            </nav>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-full left-0 w-full">
+                <ul class="flex flex-col space-y-2 p-6">
+                    <li><a href="index.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">Beranda</a></li>
+                    <li><a href="profile.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                    <li><a href="kopijuwara.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                    <li><a href="shuang-hor.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="bisnis11.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                    <li><a href="belanja.html" class="block py-2 font-semibold text-red-700">Belanja</a></li>
+                    <li><a href="testimoni.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="block py-2 text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Page Header Section -->
+        <section class="pt-40 pb-16 bg-brand-accent/30"> <!-- Padding top untuk offset header -->
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">Produk Kami</h1>
+                <p class="text-lg text-brand-muted max-w-3xl mx-auto">
+                    Temukan produk pilihan anda sekarang juga.
+                    Selain SH Juwara Cafe (Kopi Juwara) anda bisa berbelanja produk-produk Shuang Hor lainnya
+                    disini. Selamat berbelanja.
+                </p>
+                <p class="text-sm text-brand-muted mt-4 italic">(Sumber data dan foto produk: situs web resmi Shuang Hor)</p>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-brand-primary text-white transition-all duration-300 shadow-md" data-category="all">Semua</button>
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300" data-category="minuman">Minuman</button>
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300" data-category="kesehatan">Kesehatan</button>
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300" data-category="bio-teknologi">Bio Teknologi</button>
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300" data-category="perawatan-diri">Perawatan Diri</button>
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300" data-category="perawatan-kulit">Perawatan Kulit</button>
+                    <button class="filter-btn py-2 px-6 rounded-full font-semibold bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300" data-category="kebersihan">Kebersihan</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                    
+                    <!-- Kategori Banner: Minuman -->
+                    <div class="category-banner lg:col-span-3 md:col-span-2 col-span-1 h-48 md:h-64 rounded-lg overflow-hidden relative shadow-lg" data-category="minuman">
+                        <!-- Ganti 'src' dengan gambar banner Anda -->
+                        <img src="/images/produk/1) Minuman/Image no 1  kategori minuman.jpg" alt="Banner Kategori Minuman" class="w-full h-full object-cover">
+                       
+                    </div>
+
+                    <!-- Product Card 1: Kopi 3-in-1 (Sesuai permintaan Anda) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="minuman">
+                        <div class="relative">
+                            <!-- Ganti 'src' dengan path gambar Anda, misal: 'images/kopi-3in1.jpg' -->
+                            <img src="/images/produk/1) Minuman/Image no 2 SH juwara cafe 3 in 1.jpg" alt="SH Juwara Café 3-in-1" class="w-full h-56 object-fit-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Minuman</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">SH Juwara Café (Kopi Juwara) 3-in-1</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Biji kopi kualitas premium, krimer nabati dan Yung Kien Ganoderma.</p>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Terbuat dari biji kopi kualitas premium yang baru dipanggang untuk cita rasa kopi terbaik, serta diperkaya dengan Yung Kien Ganoderma untuk mendapatkan gabungan rasa pahit dari ganoderma dan kopi yang unik.</li>
+                                <li>Menggunakan krimer nabati dengan bahan dasar minyak kelapa, sehingga bebas dari lemak trans yang berbahaya.</li>
+                                <li>Tidak menggunakan bahan pengawet dan perisa tambahan, memberikan Anda rasa yang istimewa dan aroma yang harum.</li>
+                                <li>Tidak mengandung gula.</li>
+                            </ul>
+
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Menjaga daya tahan tubuh.</li>
+                                <li>Menjaga kesehatan hati.</li>
+                                <li>Membantu mengontrol tekanan darah.</li>
+                                <li>Membantu mengontrol gula darah.</li>
+                                <li>Ramah di lambung, tidak membuat asam lambung naik.</li>
+                            </ul>
+
+                            <!-- Tombol CTA WhatsApp -->
+                            <div class="mt-auto pt-4"> <!-- Mendorong tombol ke bawah -->
+                                <!-- Ganti 628123XXXXXX dengan nomor WhatsApp Anda -->
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20SH%20Juwara%20Caf%C3%A9%203-in-1" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 minuman -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="minuman">
+                        <div class="relative">
+                            <!-- Ganti 'src' dengan path gambar Anda, misal: 'images/kopi-3in1.jpg' -->
+                            <img src="/images/produk/1) Minuman/Image no 3 SH juwara cafe 4 in 1.jpg" alt="SH Juwara Café 3-in-1" class="w-full h-56 object-fit-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Minuman</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">SH Juwara Cafe (Kopi Juwara) 4-in-1</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Biji kopi kualitas premium, krimer nabati dan Yung Kien Ganoderma.</p>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Terbuat dari biji kopi kualitas premium yang baru dipanggang untuk cita rasa kopi terbaik, serta diperkaya dengan Yung Kien Ganoderma untuk mendapatkan gabungan rasa pahit dari ganoderma dan kopi yang unik.</li>
+                                <li>Menggunakan krimer nabati dengan bahan dasar minyak kelapa, sehingga bebas dari lemak trans yang berbahaya.</li>
+                                <li>Tidak menggunakan bahan pengawet dan perisa tambahan, memberikan Anda rasa yang istimewa dan aroma yang harum.</li>
+                                <li> Mengandung gula tebu. </li>
+                            </ul>
+
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Menjaga daya tahan tubuh.</li>
+                                <li>Menjaga kesehatan hati.</li>
+                                <li>Membantu mengontrol tekanan darah.</li>
+                                <li>Membantu mengontrol gula darah.</li>
+                                <li>Ramah di lambung, tidak membuat asam lambung naik.</li>
+                            </ul>
+
+                            <!-- Tombol CTA WhatsApp -->
+                            <div class="mt-auto pt-4"> <!-- Mendorong tombol ke bawah -->
+                                <!-- Ganti 628123XXXXXX dengan nomor WhatsApp Anda -->
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20SH%20Juwara%20Caf%C3%A9%203-in-1" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kategori Banner: Kesehatan -->
+                    <div class="category-banner lg:col-span-3 md:col-span-2 col-span-1 h-48 md:h-64 rounded-lg overflow-hidden relative shadow-lg" data-category="kesehatan">
+                        <!-- Ganti 'src' dengan gambar banner Anda -->
+                        <img src="/images/produk/2) Makanan sehat/Image no 4 kategori Makanan Sehat.png" alt="Banner Kategori Kesehatan" class="w-full h-full object-cover">
+                    
+                    </div>
+
+                    <!-- Product Card 3: Yung Kien I Ganoderma Powder (Item 5) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 5 yung kien I ganoderma powder.jpg" alt="Greenzhi ToothGel" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Yung Kien I Ganoderma Powder</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Tiap sachet (1g) mengandung serbuk Miselium Ganoderma lucidum dan serbuk
+ekstrak Ganoderma lucidum. <br>Ganoderma dapat menunjang dan memperkuat kondisi fisik, sehingga dapat membantu menjaga
+kesehatan dengan optimal.
+</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Pengontrolan sistem imun.</li>
+                                <li>Melindungi hati.</li>
+                                <li>Meredakan alergi.</li>
+                                <li>Anti virus dan bakteri. </li>
+                                <li>Memperbaiki kadar gula darah.  </li>
+                              
+                               
+                            </ul>
+                         
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Greenzhi%20ToothGel" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <!-- Product Card 4: Yung Kien B (Item 6) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 6 yung kien B ganoderma powder.jpg" alt="Yung Kien B Ganoderma Powder" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Yung Kien B Ganoderma Powder</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Serbuk ekstrak Ganoderma, serbuk miselium Ganoderma. Memiliki kadar dan kemurnian bahan aktif yang lebih tinggi.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Regenerasi sel punca.</li>
+                                <li>Menggantikan dan memperbaiki sel organ.</li>
+                                <li>Meningkatkan sistem imun dengan cepat.</li>
+                                <li>Membantu pembentukan darah.</li>
+                                <li>Perawatan saat organ terluka.</li>
+                                <li>Perawatan dan mengganti sel yang sudah tua.</li>
+                                <li>Mendukung kesehatan tulang.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Yung%20Kien%20B%20Ganoderma%20Powder" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2: Yung Kien Ganoderma (Menggantikan Placeholder) - Item 7 -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 7 yung kien ganoderma.jpg" alt="Yung Kien Ganoderma" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Yung Kien Ganoderma</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komponen utama:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Ekstrak Isi Buah Ganoderma. Diformulasikan dengan memakai Yung Kien Nomor 1 (YK-01), benih Lingzhi berkualitas super yang dikembangkan oleh Grup Shuang Hor. Yung Kien Ganoderma kaya akan triterpenoid, molekul makro polisakarida peptida, adenosin, dan protein-protein molekul mikro.</p>
+
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Dengan perpaduan yang unik dari bahan-bahan yang mujarab, Yung Kien Ganoderma membantu memperkuat kekebalan tubuh, meningkatkan metabolisme, memperkuat fisik, mengatasi alergi, dan meningkatkan fungsi hati sehingga konsumsi dalam jangka waktu panjang bermanfaat untuk kesehatan.</li>
+                                <li>Proses produksi Yung Kien Ganoderma telah lulus dalam inspeksi yang paling ketat dari Departemen Kesehatan Taiwan dan merupakan produk pertama yang memperoleh predikat sebagai makanan sehat yang mampu meningkatkan kekebalan tubuh dan menjaga kesehatan hati.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Yung%20Kien%20Ganoderma" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5: Jia Hor Lingzhi (Item 8) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 8 jia hor lingzhi.jpg" alt="Jia Hor Lingzhi" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Jia Hor Lingzhi</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komponen utama:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Lingzhi. Murni terbuat dari Lingzhi mentah kualitas terbaik dengan 'metode ekstraksi dua tahap'.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Manfaat pengaturan dua arah yang unik.</li>
+                                <li>Meningkatkan metabolisme, memperkuat sistem kekebalan tubuh, memperbaharui sel-sel tubuh, mencegah reaksi alergi, menjaga fungsi hati, mencegah proses penggumpalan darah, dsb.</li>
+                                <li>Produk alamiah tanpa zat tambahan buatan.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Jia%20Hor%20Lingzhi" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6: Yung Kien Pollen (Item 9) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 9 A yung kien pollen.jpg" alt="Yung Kien Pollen" class="w-full h-32 object-cover">
+                            <img src="/images/produk/2) Makanan sehat/Image no 9 B yung kien polllen  granular.jpg" alt="Yung Kien Pollen" class="w-full h-32 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Yung Kien Pollen & Yung Kien Pollen Granular</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komponen Utama:</h4>
+                            <p class="text-brand-muted text-sm mb-2">100% Bee Pollen. Tersedia dalam 2 varian (kapsul dan sachet). Dikenal sebagai ‘Makanan Lengkap’.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Mendukung tumbuh kembang anak.</li>
+                                <li>Meningkatkan perkembangan otak.</li>
+                                <li>Mendukung hormon seimbang pria dan wanita.</li>
+                                <li>Meningkatkan kesuburan.</li>
+                                <li>Melindungi tubuh dari radiasi.</li>
+                                <li>Meningkatkan stamina dan mengurangi kelelahan.</li>
+                                <li>Sumber antioksidan dan mencegah penuaan dini.</li>
+                                <li>Meredakan stress dan meningkatkan konsentrasi dan memori.</li>
+                                <li>Memastikan keseimbangan dan penyerapan gizi optimal.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Yung%20Kien%20Pollen" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 7: Jia Hor Nutri-Health Tablets (Item 10) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 10 jia hor nutri health tablet.jpg" alt="Jia Hor Nutri-Health Tablets" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Jia Hor Nutri-Health Tablets</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">50% Lingzhi + 50% Bee Pollen. Kombinasi Lingzhi untuk kesehatan dan pollen untuk nutrisi lengkap.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Meningkatkan metabolisme tubuh dan menyehatkan tubuh.</li>
+                                <li>Menambah nutrisi yang diperlukan tubuh agar tubuh berfungsi dengan baik.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Jia%20Hor%20Nutri-Health%20Tablets" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 8: Jia Hor Instant Soya Protein Powder (Item 11) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 11 Jia Hor Instant Soya Protein Powder.jpg" alt="Jia Hor Instant Soya Protein Powder" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Jia Hor Instant Soya Protein Powder</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Isolat protein kedelai, Lesitin, Kalsium Kaseinat, Enzim buah pepaya, dan Enzim buah nanas.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Lesitin membantu mendukung perkembangan otak, cocok untuk ibu hamil dan mencegah kepikunan.</li>
+                                <li>Enzim pepaya dan nanas meningkatkan pencernaan dan penyerapan.</li>
+                                <li>Menyerap semua asam amino penting dan menjaga semangat.</li>
+                                <li>Mengurangi kerontokan rambut dan menjaga elastisitas kulit.</li>
+                                <li>Menjaga imunitas tubuh untuk melawan infeksi.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Jia%20Hor%20Soya%20Protein" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 9: Jia Hor Hi-Fibre (Item 12) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/jImage no 12 Image jia hor hi fibre.jpg" alt="Jia Hor Hi-Fibre" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Jia Hor Hi-Fibre</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Kombinasi dari berbagai serat makanan alami (larut dan tidak larut air). Rasa lemon.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Membuang sisa-sisa racun dalam tubuh, meningkatkan peristalsis and mencegah konstipasi.</li>
+                                <li>Meningkatkan jumlah bakteri baik untuk kesehatan saluran pencernaan.</li>
+                                <li>Menyebabkan rasa kenyang untuk menjaga berat badan ideal.</li>
+                                <li>Dilengkapi Lingzhi untuk meningkatkan metabolisme.</li>
+                                <li>Menormalkan kadar gula darah.</li>
+                                <li>Menjaga daya tahan tubuh.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Jia%20Hor%20Hi-Fibre" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 10: Jia Hor Seasoning (Item 13) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kesehatan">
+                        <div class="relative">
+                            <img src="/images/produk/2) Makanan sehat/Image no 13 jia hor seasoning.jpg" alt="Jia Hor Seasoning" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kesehatan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Jia Hor Seasoning</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Ekstrak Ganoderma Japonicum, Ekstrak Gynostemma Pentaphyllum, Ekstrak Serbuk Shitake dan Rumput Laut, Serbuk Ragi dan Garam.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Terbuat dari 100% bahan alami berkualitas.</li>
+                                <li>Membuat masakan enak namun mampu menjaga kesehatan.</li>
+                                <li>Rendah Natrium (194 mg per sachet).</li>
+                                <li>Tidak mengandung bahan hewani, cocok untuk vegetarian.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Jia%20Hor%20Seasoning" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kategori Banner: Bio Teknologi (Item 14) -->
+                    <div class="category-banner lg:col-span-3 md:col-span-2 col-span-1 h-48 md:h-64 rounded-lg overflow-hidden relative shadow-lg" data-category="bio-teknologi">
+                        <!-- Ganti 'src' dengan gambar banner Anda -->
+                        <img src="/images/produk/3) Produk Bio Teknologi/Image no 14 produk bio teknologi.jpg" alt="Banner Kategori Bio Teknologi" class="w-full h-full object-cover">
+                       
+                    </div>
+
+                    <!-- Product Card 11: V-King (Item 15) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="bio-teknologi">
+                        <div class="relative">
+                            <img src="/images/produk/3) Produk Bio Teknologi/Image no 15 v king.jpg" alt="V-King" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Bio Teknologi</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">V-King</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Hidrolisat kolagen (kulit hewan sapi), Lemon Verbena, Inulin dan Bahan-bahan lain.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Mempercepat penggantian dan memproduksi tulang rawan di persendian, memperkuat tulang.</li>
+                                <li>Mengurangi radang/bengkak dan rasa sakit untuk menjaga sendi tetap sehat.</li>
+                                <li>Memperbaiki lapisan kulit dan menjaga kulit tetap sehat, bercahaya dan elastis.</li>
+                                <li>Lemon Verbena meredakan peradangan, membersihkan racun, dan menguatkan hati.</li>
+                                <li>Memperkuat fungsi jantung, mengurangi resiko penyakit jantung.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20V-King" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kategori Banner: Perawatan Diri (Item 16) -->
+                    <div class="category-banner lg:col-span-3 md:col-span-2 col-span-1 h-48 md:h-64 rounded-lg overflow-hidden relative shadow-lg" data-category="perawatan-diri">
+                        <!-- Ganti 'src' dengan gambar banner Anda -->
+                        <img src="/images/produk/4) Perawatan Diri/Image no 16 perawatan diri.jpg" alt="Banner Kategori Perawatan Diri" class="w-full h-full object-cover">
+                     
+                    </div>
+
+                    <!-- Product Card 12: VK Daily Care Shampoo (Item 18) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 17 greenzhi toothgel.jpg" alt="VK Daily Care Shampoo" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Greenzhi ToothGel</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Nano-Ganoderma lucidum, Ekstrak Miswak, Ekstrak Neem, Aloe barbadensis, Silitol, dan Klorofilin.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li><b>Ekstrak Miswak:</b> Mencegah pertumbuhan bakteri pada plak gigi, mencegah kerusakan gigi dan penyakit gusi.</li>
+                                <li><b>Nano-Ganoderma lucidum:</b> Mencegah timbulnya plak dan kerusakan gigi, melancarkan sirkulasi darah gusi.</li>
+                                <li><b>Ekstrak Neem:</b> Mencegah dan merawat gigi kuning, mencegah gusi berdarah dan bau mulut.</li>
+                                <li><b>Aloe barbadensis:</b> Memperbaiki kulit luar gusi, membasmi bakteri, dan mencegah karang gigi.</li>
+                                <li><b>Silitol:</b> Pencegah kerusakan gigi yang efektif.</li>
+                                <li><b>Klorofilin:</b> Mencegah gusi berdarah dan bau mulut.</li>
+                                <li><b>Gel Alami:</b> Mengurangi gesekan dan menghindari kerusakan enamel gigi.</li>
+                                <li><b>Agen Pembusa:</b> Alami dari kelapa dan jagung, mengurangi bakteri.</li>
+                                <li><b>Mentol Alami:</b> Menjaga kesegaran rongga mulut.</li>
+                            </ul>
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Fungsi Tambahan:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Perawatan kulit (luka bakar, gigitan serangga).</li>
+                                <li>Obat tenggorokan atau batuk.</li>
+                                <li>Membersihkan buah dan sayur.</li>
+                                <li>Obat kumur.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Greenzhi%20ToothGel" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 18 VK daily care shampoo.jpg" alt="VK Daily Care Shampoo" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">VK Daily Care Shampoo</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Surfaktan Nabati, Ekstrak Lidah Buaya, Ekstrak Mentimun, Ekstrak Rumput Laut Merah, Bahan Perbaikan Khusus, dan Pantenol (Pro-Vitamin B5).</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Membershikan, melembabkan, menyehatkan, membuat rambut lembut dan berkilau.</li>
+                                <li>Surfaktan nabati: membersihkan tanpa endapan.</li>
+                                <li>Lidah Buaya & Mentimun: melembabkan rambut, mencegah rambut kering dan bercabang.</li>
+                                <li>Rumput Laut Merah: menutrisi rambut, menambah volume, memperbaiki tekstur.</li>
+                                <li>Pantenol (Pro-Vitamin B5): membuat rambut tebal, halus, dan berkilau.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20VK%20Daily%20Care%20Shampoo" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 13: VK Scalp Care Shampoo (Item 19) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 19 VK scalp care shampoo.jpg" alt="VK Scalp Care Shampoo" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">VK Scalp Care Shampoo</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Surfaktan Nabati, Climbazole, Niasinamida (Vitamin B3), Bahan Perbaikan Khusus, Pantenol (Pro-Vitamin B5), dan Mentol.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Mengontrol sebum, memperkuat rambut dan menyehatkan kulit kepala.</li>
+                                <li>Climbazole: menekan jamur, mencegah ketombe, memperbaiki alergi kulit kepala.</li>
+                                <li>Niasinamida (Vitamin B3): mencegah peradangan kulit kepala, memperkuat akar rambut.</li>
+                                <li>Pantenol (Pro-Vitamin B5): membuat rambut tebal, halus, dan berkilau.</li>
+                                <li>Mentol: menjadikan kulit kepala segar dan nyaman.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20VK%20Scalp%20Care%20Shampoo" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 14: VK Hair Repairing Serum (Item 20) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 20 VK hair repairing serum.jpg" alt="VK Hair Repairing Serum" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">VK Hair Repairing Serum</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Kitosan, Ekstrak Rumput Laut merah, dan Minyak Zaitun.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Menutrisi dan memperbaiki rambut rusak, melembutkan rambut.</li>
+                                <li>Kitosan: anti-jamur dan penghilang bau.</li>
+                                <li>Ekstrak Rumput Laut Merah: mempertahankan kelembaban rambut.</li>
+                                <li>Minyak Zaitun: menutrisi akar rambut, mencegah kerontokan, mengurangi rambut kering dan bercabang.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20VK%20Hair%20Repairing%20Serum" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 15: VK Foaming Dew (Item 21) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 21 VK foaming dew.jpg" alt="VK Foaming Dew" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">VK Foaming Dew</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Surfaktan Nabati, 8 Jenis Asam Amino, Ekstrak Lidah Buaya, Ekstrak Licorice, dan Ekstrak Kamomil.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Melembutkan, membersihkan dan melembabkan kulit. Cocok untuk semua jenis kulit.</li>
+                                <li>8 Jenis Asam Amino: melembutkan sel kulit tua, meningkatkan kelembaban.</li>
+                                <li>Ekstrak Lidah Buaya: meredakan kulit alergi, mengurangi peradangan, mempercepat penyembuhan jerawat.</li>
+                                <li>Ekstrak Licorice: mengurangi peradangan dan mencerahkan kulit.</li>
+                                <li>Ekstrak Kamomil: meredakan kulit alergi dan menekan timbulnya jerawat.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20VK%20Foaming%20Dew" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 16: VK Shower Gel (Item 22) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 22 VK shower gel.jpg" alt="VK Shower Gel" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">VK Shower Gel</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Surfaktan Nabati, Ekstrak Kamomil dan Licorice, Faktor Penyimpan Kelembaban Alami.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Mudah dibilas dan tidak meninggalkan kesan bersabun.</li>
+                                <li>Ekstrak Kamomil dan Licorice: meredakan alergi, kulit kering, iritasi.</li>
+                                <li>Faktor Penyimpanan Kelembaban Alami: menjaga keseimbangan kelembaban kulit, mencegah kekeringan.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20VK%20Shower%20Gel" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 17: VK Body Lotion (Item 23) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-diri">
+                        <div class="relative">
+                            <img src="/images/produk/4) Perawatan Diri/Image no 23 VK body lotion.jpg" alt="VK Body Lotion" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Diri</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">VK Body Lotion</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Minyak Perawatan Kulit (macadamia, zaitun, biji anggur, bunga matahari, alpukat), Vitamin E Asetat, Natrium Hialuronat, dan Pantenol (Pro-Vitamin B5).</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Menutrisi kulit, mencegah kulit kusam, dan meredakan alergi serta gatal-gatal.</li>
+                                <li>Minyak Perawatan Kulit: mencegah dehidrasi, meredakan alergi, antioksidan, regenerasi jaringan.</li>
+                                <li>Vitamin E Asetat: melindungi kulit dari sinar UV dan polutan.</li>
+                                <li>Natrium Hialuronat: perbaikan dan penyimpanan kelembaban, membuat kulit halus.</li>
+                                <li>Pantenol (Pro-Vitamin B5): memperbaiki jaringan kulit dan mencerahkan kulit.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20VK%20Body%20Lotion" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kategori Banner: Perawatan Kulit (Item 24) -->
+                    <div class="category-banner lg:col-span-3 md:col-span-2 col-span-1 h-48 md:h-64 rounded-lg overflow-hidden relative shadow-lg" data-category="perawatan-kulit">
+                        <!-- Ganti 'src' dengan gambar banner Anda -->
+                        <img src="/images/produk/5) Perawatan Kulit/Image no 24 Kategori  perawatan kulit.jpg" alt="Banner Kategori Perawatan Kulit" class="w-full h-full object-cover">
+                      
+                    </div>
+
+                    <!-- Product Card 18: AquaSense Amino Acid Cleanser (Item 25) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-kulit">
+                        <div class="relative">
+                            <img src="/images/produk/5) Perawatan Kulit/Image no 25 aquasense amino acid cleanser.jpg" alt="AquaSense Amino Acid Cleanser" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Kulit</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AquaSense Amino Acid Cleanser</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Natrium Lauroil Glutamat, Gliseril Kokoat, 8 Jenis Asam Amino dan Unsur Pelembab Alami.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Cocok untuk semua jenis kulit, kelembaban alami, bebas iritasi.</li>
+                                <li>Natrium Lauroil Gultamate: pembersih kelas tertinggi, membersihkan tanpa rasa tegang atau kering.</li>
+                                <li>8 jenis Asam Amino: menjaga keseimbangan kelembaban jaringan kulit.</li>
+                                <li>Unsur Pelembab Alami: melembutkan dan melindungi lapisan minyak alami kulit.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20AquaSense%20Amino%20Acid%20Cleanser" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 19: AquaSense Makeup Remover (Item 26) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-kulit">
+                        <div class="relative">
+                            <img src="/images/produk/5) Perawatan Kulit/Image no 26 AquaSense make up remover.jpg" alt="AquaSense Makeup Remover" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Kulit</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AquaSense Makeup Remover</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Minyak Zaitun PEG-7 Ester, Minyak Biji Bunga Matahari, dan Canadian Willowherb.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Mudah dibilas, tidak lengket, cocok untuk kulit sensitif.</li>
+                                <li>Bahan pengemulsi dari tumbuhan, tekstur ringan, membersihkan tanpa iritasi.</li>
+                                <li>Canadian Willowherb: meredakan alergi pada kulit.</li>
+                                <li>Membersihkan kulit dengan sempurna dan menyegarkan.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20AquaSense%20Makeup%20Remover" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 20: AquaSense Hydrating Toner (Item 27) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-kulit">
+                        <div class="relative">
+                            <img src="/images/produk/5) Perawatan Kulit/image no 27 aquasense hydrating toner.jpg" alt="AquaSense Hydrating Toner" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Kulit</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AquaSense Hydrating Toner</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Pseudoalteromonas Antartica, Ekstrak Meadowsweet, Ekstrak Mentimun, Ekstrak Burdock, Canadian Willowherb, Natrium Hialuronat, ϒ-Asam Poliglutamat (ϒ-PGA), dll.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Menyeimbangkan minyak kulit, mencegah jerawat dan meningkatkan elastisitas kulit.</li>
+                                <li>Pseudoalteromonas Antartica: mempertahankan kelembaban dan anti-keriput.</li>
+                                <li>Ekstrak Burdock: mengatur kelenjar minyak, mencegah jerawat.</li>
+                                <li>Canadian Willowherb: meringankan alergi kulit.</li>
+                                <li>ϒ-Asam Poliglutamat: menyerap kelembaban 3.500 kali berat molekulnya.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20AquaSense%20Hydrating%20Toner" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 21: AquaSense Hydrating & Lifting Cream (Item 28) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-kulit">
+                        <div class="relative">
+                            <img src="/images/produk/5) Perawatan Kulit/Image no 28 aquasense hydrating & lifting cream.jpg" alt="AquaSense Hydrating & Lifting Cream" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Kulit</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AquaSense Hydrating & Lifting Cream</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Hidrolisat Protein Susu dan Gabungan Peptida, Minyak Biji Gandum, Minyak Jojoba, Minyak Makadamia, ϒ-Asam Poliglutamat, Shea Butter, dll.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Tekstur kaya, membentuk lapisan pelindung transparan dan memperbaiki kulit.</li>
+                                <li>Hidrolisat Protein Susu: mendorong produksi kolagen, mengencangkan kontur wajah, menghaluskan keriput.</li>
+                                <li>Minyak Biji Gandum, dll: memelihara kulit, melindungi DNA, mempertahankan kekenyalan.</li>
+                                <li>Canadian Willowherb dan Shea Butter: anti-alergi, meredakan alergi, memperbaiki jaringan.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20AquaSense%20Hydrating%20%26%20Lifting%20Cream" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 22: AquaSense Sunscreen (Item 29) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-kulit">
+                        <div class="relative">
+                            <img src="/images/produk/5) Perawatan Kulit/Image no 29 aquasense sunscreen.jpg" alt="AquaSense Sunscreen" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Kulit</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AquaSense Sunscreen</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Titanium Dioksida, Zink Oksida, Canadian Willowherb, dan Ekstrak Laminaria ochroleuca.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Tidak membahayakan kulit, aman untuk semua jenis kulit dan memperbaiki DNA yang rusak.</li>
+                                <li>Titanium Dioksida & Zink Oksida: kandungan ultramikron fisikal, menyaring sinar UVA dan UVB.</li>
+                                <li>Canadian Willowherb & Ekstrak Laminaria ochroleuca: anti-alergi dan memperbaiki DNA yang rusak.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20AquaSense%20Sunscreen" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 23: AquaSense Cleansing Cream (Item 30) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="perawatan-kulit">
+                        <div class="relative">
+                            <img src="/images/produk/5) Perawatan Kulit/Image no 30 aquasense cleansing cream.jpg" alt="AquaSense Cleansing Cream" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Perawatan Kulit</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AquaSense Cleansing Cream</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Fermentasi Buah Labu dan Protease, Canadian Willowherb, Laminaria ochroleuca, Minyak Jojoba, dan Minyak Makadamia.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Tidak mengandung AHA atau scrub kasar, aman untuk kulit sensitif.</li>
+                                <li>Fermentasi Buah Labu: mencerna kulit yang mati saja tanpa peradangan.</li>
+                                <li>Laminaria ochroleuca: anti-alergi, mempertahankan kelembaban.</li>
+                                <li>Minyak Jojoba: menghaluskan permukaan kulit, mengurangi keriput.</li>
+                                <li>Minyak Makadamia: memperbaiki lapisan tanduk dan melindungi sel kulit.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20AquaSense%20Cleansing%20Cream" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kategori Header: Kebersihan (Item 31) -->
+                    <div class="lg:col-span-3 md:col-span-2 col-span-1 my-8 p-6 bg-brand-accent/30 rounded-lg text-center">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-4">Kenapa GoEco Series?</h2>
+                        <ul class="text-brand-muted list-disc list-inside inline-block text-left space-y-1">
+                            <li>Efektif membersihkan dengan Formulasi Bio Enzim.</li>
+                            <li>Ramah lingkungan.</li>
+                            <li>Mudah dibilas.</li>
+                            <li>Aman untuk keluarga</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Kategori Banner: Kebersihan (GoEco Series) (Item 31) -->
+                    <div class="category-banner lg:col-span-3 md:col-span-2 col-span-1 h-48 md:h-64 rounded-lg overflow-hidden relative shadow-lg" data-category="kebersihan">
+                        <!-- Ganti 'src' dengan gambar banner Anda -->
+                        <img src="/images/produk/6)Produk Kebersihan Rumah Tangga/Image no 31 kategor produk kebersihan rumah tangga.jpg" alt="Banner Kategori Kebersihan" class="w-full h-full object-fit">
+                     
+                    </div>
+                    
+                    <!-- Product Card 24: GoEco Liquid Detergent (Item 32) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kebersihan">
+                        <div class="relative">
+                            <img src="/images/produk/6)Produk Kebersihan Rumah Tangga/Image no 32 GoEco Liquid Detergent.jpg" alt="GoEco Liquid Detergent" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kebersihan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">GoEco Liquid Detergent</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Enzim Protease, Selulosa, dan Kompleks Deterjen Super.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Cocok untuk semua jenis pakaian, termasuk pakaian bayi.</li>
+                                <li>Enzim Protease: menghilangkan noda membandel dengan efektif.</li>
+                                <li>Selulosa: membungkus kotoran dan mencegah kontaminasi kembali.</li>
+                                <li>Kompleks Deterjen Super: sedikit busa, mudah dibilas.</li>
+                                <li>Bebas sisa unsur kimia, tidak membahayakan tangan atau sebabkan alergi.</li>
+                                <li>Ramah lingkungan.</li>
+                            </ul>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20GoEco%20Liquid%20Detergent" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 25: GoEco Bio Enzyme All-Purpose Cleaner (Item 33) -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden flex flex-col h-full transform hover:shadow-2xl transition-shadow duration-300" data-category="kebersihan">
+                        <div class="relative">
+                            <img src="/images/produk/6)Produk Kebersihan Rumah Tangga/Image no 33 GoEco Al Purpose Cleaner .jpg" alt="GoEco Bio Enzyme All-Purpose Cleaner" class="w-full h-56 object-cover">
+                            <span class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Kebersihan</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">GoEco Bio Enzyme All-Purpose Cleaner</h3>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Komposisi:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Enzim Lipase, Enzim Protease, Zat Pembersih Berbahan Glukosida dan Non-ionik, dan Minyak Lemon.</p>
+                            
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Manfaat:</h4>
+                            <ul class="list-disc list-outside text-brand-muted text-sm pl-5 space-y-1 mb-4">
+                                <li>Bebas zat berbahaya, aman untuk tangan dan peralatan.</li>
+                                <li>Enzim Lipase & Protease: mengangkat lapisan lemak dan kotoran.</li>
+                                <li>Membantu menguraikan noda minyak di pipa pembuangan.</li>
+                                <li>Zat Pembersih: sedikit busa, mudah dibilas, tidak berminyak.</li>
+                            </ul>
+                            <h4 class="text-md font-semibold text-brand-dark mt-4 mb-2">Penggunaan Serbaguna:</h4>
+                            <p class="text-brand-muted text-sm mb-2">Dapur, Kaca, Sofa, Kamar mandi, dll.</p>
+
+                            <div class="mt-auto pt-4"> 
+                                <a href="https://wa.me/628121444510?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20GoEco%20All-Purpose%20Cleaner" target="_blank" 
+                                   class="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                    <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                    Pesan Sekarang (WA)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End Product Grid -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Diambil dari index.html) -->
+    <footer class="bg-white py-8 border-t border-gray-100">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <div class="flex space-x-4 mb-6">
+                <!-- Ganti '#' dengan link sosial media Anda -->
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="youtube"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="#" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-light hover:border-brand-muted transition-colors">
+                    <i data-lucide="music-4"></i> <!-- Placeholder for TikTok -->
+                </a>
+            </div>
+            <p class="text-brand-muted">&copy; 2025 Company. (Nama Perusahaan Anda)</p>
+        </div>
+    </footer>
+
+    <!-- Tombol Daftar & Cuan (Diambil dari index.html) -->
+     <a href="daftar.html" 
+        class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+         <center>Daftar  <br>&<br> Cuan</center>
+     </a>
+    
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+
+        // Logika untuk Mobile Menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Mencegah event klik menyebar
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Menutup menu jika klik di luar area menu
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            <!-- --- Fungsionalitas Filter Produk --- -->
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            const categoryBanners = document.querySelectorAll('.category-banner'); // Memilih banner kategori
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.category; // Menggunakan data-category
+
+                    // 1. Update Tampilan Tombol
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-brand-primary', 'text-white', 'shadow-md');
+                        btn.classList.add('bg-white', 'text-brand-primary', 'border-2', 'border-brand-primary');
+                    });
+                    button.classList.add('bg-brand-primary', 'text-white', 'shadow-md');
+                    button.classList.remove('bg-white', 'text-brand-primary', 'border-2', 'border-brand-primary');
+
+                    // 2. Filter Kartu Produk
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'flex'; // Gunakan 'flex' karena kartu produk menggunakan flex-col
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // 3. Filter Banner Kategori
+                    categoryBanners.forEach(banner => {
+                        if (filter === 'all' || banner.dataset.category === filter) {
+                            banner.style.display = 'block'; // Banner adalah 'block'
+                        } else {
+                            banner.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            // --- Akhir Fungsionalitas Filter ---
+        });
+    </script>
+</body>
+</html>
+
