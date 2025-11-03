@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - Perusahaan Kita</title>
+    <title>Profil - Rieta Fuad</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,24 +22,23 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-primary': '#B91C1C',      // Rich Red (was Dusty Blue)
-                        'brand-primary-dark': '#991B1B', // Darker Red (was darker blue)
-                        'brand-dark': '#1F2937',     // Dark Gray for text (was Dark Taupe)
-                        'brand-light': '#Fff',    // Very light gray for sections (was Light Gray)
-                        'brand-muted': '#6B7280',    // Muted gray for secondary text (was Slate Blue/Gray)
-                        'brand-accent': '#FEE2E2',  // Light red for accents (was Muted Brown/Beige)
+                        'brand-primary': '#B91C1C',       // Rich Red
+                        'brand-primary-dark': '#991B1B', // Darker Red
+                        'brand-dark': '#1F2937',      // Dark Gray for text
+                        'brand-light': '#Fff',       // Very light gray for sections
+                        'brand-muted': '#6B7280',     // Muted gray for secondary text
+                        'brand-accent': '#FEE2E2',     // Light red for accents
                         'brand-produk-card': '#F8F8F8',
                     },
                     height: {
-                      '110': '35rem', // Ini setara dengan 440px
+                        '110': '35rem', 
                     },
                    width: {
-        '110': "30rem", // Ini yang Anda pakai, terlalu kecil
-        // TAMBAHKAN OPSI BARU DI SINI
-        '120': '35rem',    // Opsi 1 (lebar 560px)
-        '128': '40rem',    // Opsi 2 (lebar 640px) -> Coba ini dulu
-        '144': '48rem',    // Opsi 3 (lebar 768px)
-      }
+                        '110': "30rem", 
+                        '120': '35rem', 
+                        '128': '40rem', 
+                        '144': '48rem', 
+                  }
                 }
                 
             }
@@ -47,15 +46,14 @@
     </script>
 
     <style>
-
          .daftar-cuan-btn {
             background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
             transition: all 0.3s ease;
-        }
-        .daftar-cuan-btn:hover {
+         }
+         .daftar-cuan-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
-        }
+         }
         /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
@@ -64,14 +62,18 @@
         #background-video-player iframe {
             pointer-events: none;
         }
+        
+        /* CSS untuk transisi carousel */
+        .carousel-slider {
+            transition: transform 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-brand-light text-brand-dark">
 
-    <!-- Header & Navbar (Sama seperti di Beranda) -->
     <!-- Header & Navbar -->
    <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
-        <div class="container mx-auto px-6">
+       <div class="container mx-auto px-6">
     <div class="container mx-auto px-6">
         <nav class="flex items-center justify-between">
             <!-- Logo -->
@@ -87,7 +89,6 @@
                 <li><a href="profile.html" class="nav-link active text-gray-700 text-red-700 font-medium transition-colors">Profile</a></li>
                 <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
                 <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
-                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
                 <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
                 <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
                 <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
@@ -97,14 +98,15 @@
             <!-- Right Side Actions -->
             <div class="flex items-center space-x-4">
 
-                <!-- Floating Language Switcher -->
-    <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
-        <span class="text-xl">🇮🇩</span>
-        <span>ID</span>
-        <i data-lucide="chevron-down" class="h-5 w-5"></i>
-    </button>
+                <!-- Floating Language Switcher (SUDAH DIPINDAH KE TOMBOL CUAN) -->
+                <!-- 
+                <button class="fixed bottom-6 right-6 z-50 bg-white rounded-xs p-3 px-10 flex items-center space-x-2 text-brand-dark font-semibold hover:shadow-xl transition-shadow">
+                    <span class="text-xl">🇮🇩</span>
+                    <span>ID</span>
+                    <i data-lucide="chevron-down" class="h-5 w-5"></i>
+                </button> 
+                -->
             
-
                 <!-- Mobile Menu Button (Hamburger) -->
                 <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
                     <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
@@ -115,50 +117,68 @@
     </header>
 
     <main>
-        <!-- Interactive Video Section (Sama seperti di Beranda) -->
-         
-        <!-- <section id="interactive-video-section" class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden cursor-pointer group">
-
-            <div id="background-video-player" class="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 scale-[1.7]"></div>
-
-            <div id="video-overlay" class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
-                <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:bg-white/40 transition-colors duration-300 transform group-hover:scale-110">
-                     <i data-lucide="play" class="h-5 w-5 md:h-5 md:w-5 text-white fill-white"></i>
-                </div>
-            </div>
-        </section> -->
-        <section class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden cursor-pointer group">
-            <!-- Div for the background player -->
-      
-            <!-- Overlay and Play Button -->
+        
+        <!-- Hero Section -->
+        <section class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden group pt-24"> <!-- Tambah pt-24 (tinggi header) -->
+            <!-- Gambar Latar -->
             <img class="relative w-full h-full object-cover" src="images/fotonoburam.jpg" alt="Profile Image">
-             
-        </img>
+            <!-- Overlay Judul -->
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white tracking-wider">TENTANG SAYA</h1>
+            </div>
         </section>
 
-        <!-- New Profile Section -->
+        <!-- New Profile Section (UPDATED) -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <!-- Kolom Gambar -->
-                    <div class="relative w-auto h-auto max-w-xl mx-auto md:mx-0">
-                        <!-- Kotak Background -->
-                        <div class="absolute inset-0 bg-brand-accent/30 rounded-lg z-0 transform translate-x-4 translate-y-4"></div>
-                        <!-- Foto Orang -->
-                        <img src="/images/profile2.jpg" alt="Foto Profil Janesse Gan" class="relative z-10 object-cover h-auto rounded-lg shadow-2xl w-full">
+                    
+                    <!-- Kolom Gambar (UPDATED MENJADI CAROUSEL) -->
+                    <div class="relative w-auto h-auto max-w-xl mx-auto md:mx-0 rounded-lg shadow-2xl overflow-hidden">
+                        <!-- Slider Container -->
+                        <div id="profile-carousel-slider" class="flex carousel-slider">
+                            <!-- Slide 1 -->
+                            <img src="images/profile/Foto no 14 a.jpg" alt="Foto Profil Rieta Fuad 1" class="w-full h-full object-cover aspect-[4/5] flex-shrink-0 gallery-item cursor-pointer">
+                            <!-- Slide 2 -->
+                            <img src="images/profile/Foto no 4.jpg" alt="Foto Profil Rieta Fuad 2" class="w-full h-full object-cover aspect-[4/5] flex-shrink-0 gallery-item cursor-pointer">
+                           
+                        </div>
+            
+                        <!-- Navigation Buttons -->
+                        <button id="carousel-prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 rounded-full p-2 hover:bg-white transition-colors z-10">
+                            <i data-lucide="chevron-left" class="h-6 w-6 text-brand-dark"></i>
+                        </button>
+                        <button id="carousel-next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 rounded-full p-2 hover:bg-white transition-colors z-10">
+                            <i data-lucide="chevron-right" class="h-6 w-6 text-brand-dark"></i>
+                        </button>
+            
+                        <!-- Dots -->
+                        <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                            <!-- Dots akan digenerate oleh JS -->
+                        </div>
                     </div>
-                    <!-- Kolom Teks -->
+                    
+                    <!-- Kolom Teks (UPDATED) -->
                     <div class="text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Halo, saya <span class="text-brand-primary">NAME</span></h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Halo, saya <span class="text-brand-primary">Rieta Fuad</span></h2>
+                        
+                        <!-- Sub-judul Peran -->
+                        <p class="text-xl font-semibold text-brand-muted mb-6">
+                            Business Head & Praktisi Media | Triple Diamond Mentor
+                        </p>
+                        
                         <div class="space-y-4 text-brand-muted leading-relaxed">
                             <p>
-                                Perjalanan saya dimulai dari sebuah keyakinan sederhana: bahwa siapa pun bisa mencapai <strong>kebebasan finansial</strong> asalkan punya tekad dan mau berusaha. Dengan semangat itu, saya melangkah—belajar, bekerja keras, dan terus bertumbuh.
+                                Perjalanan saya dimulai dari sebuah keyakinan sederhana: bahwa siapa pun bisa mencapai <strong>kebebasan finansial</strong> asalkan punya tekad dan mau berusaha. 
+                            </p>
+                            <p>
+                                Sebagai seorang <strong>Business Head, Praktisi Broadcast Media,</strong> dan <strong>Dosen Marketing,</strong> saya menggabungkan pengalaman profesional saya dengan semangat kewirausahaan.
                             </p>
                             <p>
                                 Puji syukur, hari ini saya telah mencapai level <strong>Triple Diamond</strong> dan membina lebih dari <strong>50.000 member</strong> di Malaysia, Singapura, dan Indonesia.
                             </p>
                             <p>
-                                Namun, yang paling membahagiakan bukan hanya pencapaian pribadi, tapi kesempatan untuk membantu lebih dari <strong>200 pasangan</strong> meraih kehidupan yang lebih baik lewat Company.
+                                Namun, yang paling membahagiakan bukan hanya pencapaian pribadi, tapi kesempatan untuk membantu lebih dari <strong>200 pasangan</strong> meraih kehidupan yang lebih baik.
                             </p>
                         </div>
                     </div>
@@ -166,76 +186,182 @@
             </div>
         </section>
 
- 
         
-        <!-- <section class="py-20 bg-brand-light">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
-                    Mitra Saya di <span class="text-brand-primary">Tiga Negara</span>
-                </h2>
-                <p class="max-w-2xl mx-auto text-brand-muted leading-relaxed mb-12">
-                    Saya memiliki jaringan mitra yang sangat luas, dengan lebih dari 50.000 orang yang tersebar di tiga negara: Indonesia, Malaysia, dan Singapura.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <img src="https://placehold.co/800x500/6B7C98/ffffff?text=Mitra+di+Jakarta" alt="Mitra di Jakarta" class="rounded-md w-full object-cover">
-                        <p class="mt-4 font-semibold text-brand-dark">Jakarta, Indonesia</p>
-                    </div>
-                  
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <img src="https://placehold.co/800x500/7B7F8A/ffffff?text=Mitra+di+Surabaya" alt="Mitra di Surabaya" class="rounded-md w-full object-cover">
-                        <p class="mt-4 font-semibold text-brand-dark">Surabaya, Indonesia</p>
-                    </div>
-                  
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <img src="https://placehold.co/800x500/AB978C/ffffff?text=Mitra+di+Malaysia" alt="Mitra di Malaysia" class="rounded-md w-full object-cover">
-                        <p class="mt-4 font-semibold text-brand-dark">Kuala Lumpur, Malaysia</p>
-                    </div>
-                    
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <img src="https://placehold.co/800x500/5E5653/ffffff?text=Mitra+di+Singapura" alt="Mitra di Singapura" class="rounded-md w-full object-cover">
-                        <p class="mt-4 font-semibold text-brand-dark">Singapura</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Galeri Momen & Aktivitas (UPDATED - Menambah foto 8, 10, 12) -->
+       <section class="py-20 bg-brand-light">
+         <div class="container mx-auto px-6">
+           
+           <div class="text-center mb-12">
+             <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+               Galeri Momen & <span class="text-brand-primary">Aktivitas</span>
+             </h2>
+             <p class="max-w-2xl mx-auto text-brand-muted leading-relaxed mt-4">
+               Lihat kebersamaan dan pencapaian tim kami dalam berbagai acara, seminar, dan kegiatan.
+             </p>
+           </div>
+           
+           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+             
+             <!-- Foto 1 (Acara Besar) -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 13.jpg" alt="Acara Shuang Hor" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Acara Penghargaan</p>
+               </div>
+             </div>
+             
+             <!-- Foto 2 (Meeting Tim) -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 9.jpg" alt="Meeting Tim" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Meeting Tim</p>
+               </div>
+             </div>
+             
+             <!-- Foto 3 (Bisnis) -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 6.jpg" alt="Penandatanganan Mitra" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Partner Bisnis</p>
+               </div>
+             </div>
 
-  
+             <!-- Foto 4 (Grup Lain) -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 7.jpg" alt="Foto Bersama Tim" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Tim Juwara</p>
+               </div>
+             </div>
+
+             <!-- Foto 5 (Produk/Personal) -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 11.jpg" alt="Promosi Produk" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Presentasi Produk</p>
+               </div>
+             </div>
+
+             <!-- Foto 6 (Lifestyle) -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 5.jpg" alt="Lifestyle" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Momen Santai</p>
+               </div>
+             </div>
+             
+             <!-- FOTO BARU 7 -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 8.jpg" alt="Audiens Seminar" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Semangat Tim</D>
+               </div>
+             </div>
+
+             <!-- FOTO BARU 8 -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 10.jpg" alt="Diskusi Tim" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Diskusi Bersama</p>
+               </div>
+             </div>
+
+             <!-- FOTO BARU 9 -->
+             <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group">
+               <img src="images/profile/Foto no 12.jpg" alt="Tim Award" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                 <p class="text-white font-semibold">Perayaan Tim</p>
+               </div>
+             </div>
+
+             </div> </div>
+       </section>
+       
+       <!-- ====== NEW SECTION: Pembicara (Foto 14b & 15) ====== -->
         <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
-                    Saksikan <span class="text-brand-primary">Aktivitas Saya</span>
-                </h2>
-                <p class="max-w-2xl mx-auto text-brand-muted leading-relaxed mb-12">
-                    Ikuti berbagai kegiatan dan momen berharga yang saya jalani, baik dalam pekerjaan maupun keseharian.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                   
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
-                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/mG0da_3S4C4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
+            <div class="container mx-auto px-6">
+                <!-- Judul Section -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+                        Dipercaya sebagai <span class="text-brand-primary">Pembicara</span>
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-brand-muted leading-relaxed mt-4">
+                        Berbagi pengalaman dan pengetahuan dalam berbagai seminar dan acara profesional.
+                    </p>
+                </div>
                 
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
-                         <iframe class="w-full h-full" src="https://www.youtube.com/embed/shorts/c-Q4N1N4zlA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <!-- Grid Poster -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Poster 1 -->
+                    <div class="rounded-lg overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/profile/Foto no 14 b.jpg" alt="Poster Meta-Talks 2024" class="w-full h-full object-contain gallery-item cursor-pointer">
+                    </div>
+                    
+                    <!-- Poster 2 -->
+                    <div class="rounded-lg overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/profile/Foto no 15.jpg" alt="Poster Personal Branding Workplace" class="w-full h-full object-contain gallery-item cursor-pointer">
                     </div>
                 </div>
             </div>
         </section>
+        <!-- ====== Akhir Section Pembicara ====== -->
+
+        <!-- ====== NEW SECTION: Video Mentor (Vid no 16) ====== -->
+        <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <!-- Konten Teks & Video -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Kolom Teks -->
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+                            Bimbingan dari <span class="text-brand-primary">Mentor Utama</span>
+                        </h2>
+                        <div class="space-y-4 text-brand-muted leading-relaxed">
+                            <p>
+                                Saya dan Upline, Ibu Sisi Fuad, sangat beruntung mendapat dukungan penuh dari mentor utama kami, <strong>Triple Diamond Miss Janesse Gan.</strong>
+                            </p>
+                            <p>
+                                Walau berdomisili di Malaysia, Miss Gan rutin datang ke Indonesia dan menyediakan waktunya di tengah kesibukan yang padat bagi para tim member yang dianggap potensial.
+                            </p>
+                            <p>
+                                Join tim saya untuk mendapatkan pengalaman yang sama!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Kolom Video (UPDATED) -->
+                    <div class="w-full"> <!-- Hapus max-w-md agar lebih lebar -->
+                        <div class="aspect-[16/9] rounded-xl overflow-hidden shadow-lg border-4 border-white"> <!-- Ganti aspect-[9/16] menjadi aspect-[16/9] -->
+                            <!-- Ganti <video> dengan <iframe> YouTube -->
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/r63aUzjPEMo" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== Akhir Section Video Mentor ====== -->
+
+ 
+        <!-- Section YouTube Shorts (DIHAPUS SESUAI PERMINTAAN) -->
+        <!-- Bagian <section> YouTube shorts yang sebelumnya ada di sini telah dihapus -->
 
    
+        <!-- Call to Action -->
         <section class="py-24 bg-brand-primary text-white">
             <div class="container mx-auto px-6 text-center">
-                <h3 class="text-2xl font-bold tracking-wider mb-4">GABUNG MITRA SAYA</h3>
+                <h3 class="text-2xl font-bold tracking-wider mb-4">GABUNG MEMBER</h3>
                 <a href="#" class="inline-block border-2 border-white text-white font-bold tracking-widest py-3 px-8 rounded-md transition-colors hover:bg-white hover:text-brand-primary">
                     SEKARANG!
                 </a>
             </div>
-        </section> -->
+        </section>
         
 
     </main>
@@ -262,12 +388,25 @@
     </footer>
 
      <!-- Tombol Daftar & Cuan -->
-             <a href="daftar.html" 
-               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
-                <center>Daftar  <br>&<br> Cuan</center>
-             </a>
+         <a href="daftar.html" 
+           class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+            <center>Daftar  <br>&<br> Cuan</center>
+         </a>
 
-  
+ 
+    <!-- NEW: Image Modal (Lightbox) - DIKEMBALIKAN -->
+    <div id="image-modal" class="hidden fixed inset-0 bg-black/80 z-[110] flex items-center justify-center p-4 transition-opacity duration-300">
+        <!-- Modal Content -->
+        <div class="relative bg-white p-2 rounded-lg shadow-xl">
+             <!-- Close Button -->
+            <button id="close-image-modal-btn" class="absolute -top-10 right-0 text-white hover:text-gray-300 z-[120]">
+                <i data-lucide="x" class="h-8 w-8"></i>
+            </button>
+            
+            <!-- Image -->
+            <img id="modal-image" src="" alt="Tampilan Penuh" class="max-w-full md:max-w-3xl lg:max-w-5xl max-h-[90vh] object-contain">
+        </div>
+    </div>
     
     <!-- Video Modal (Sama seperti di Beranda) -->
     <div id="video-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 transition-opacity duration-300">
@@ -285,53 +424,176 @@
     <!-- YouTube IFrame API Script -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        // Inisialisasi Lucide Icons
-                lucide.createIcons({
-        icons: lucide.icons
-    });
+        // Inisialisasi Lucide Icons (DIHAPUS DARI SINI)
+        /* lucide.createIcons({
+     icons: lucide.icons
+   });
+        */
 
         // Logika YouTube Player
         let bgPlayer, modalPlayer;
         const videoId = 'dQw4w9WgXcQ'; // Ganti dengan ID video YouTube Anda
 
         function onYouTubeIframeAPIReady() {
-            bgPlayer = new YT.Player('background-video-player', {
-                videoId: videoId,
-                playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': videoId },
-                events: { 'onReady': function(event) { event.target.playVideo(); } }
-            });
-
-            modalPlayer = new YT.Player('modal-video-player', {
-                videoId: videoId,
-                playerVars: { 'controls': 1, 'showinfo': 0, 'modestbranding': 1 }
-            });
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoSection = document.getElementById('interactive-video-section');
-            const videoModal = document.getElementById('video-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-
-            if (videoSection) {
-                 videoSection.addEventListener('click', () => {
-                    videoModal.classList.remove('hidden');
-                    modalPlayer.playVideo();
+            // Cek apakah elemen ada sebelum membuat player
+            if (document.getElementById('background-video-player')) {
+                bgPlayer = new YT.Player('background-video-player', {
+                    videoId: videoId,
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': videoId },
+                    events: { 'onReady': function(event) { event.target.playVideo(); } }
                 });
             }
 
+            if (document.getElementById('modal-video-player')) {
+                modalPlayer = new YT.Player('modal-video-player', {
+                    videoId: videoId,
+                    playerVars: { 'controls': 1, 'showinfo': 0, 'modestbranding': 1 }
+                });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- PINDAHKAN INISIALISASI LUCIDE KE SINI ---
+            // Inisialisasi Lucide Icons
+            lucide.createIcons({
+                icons: lucide.icons
+            });
+            // --- AKHIR PERPINDAHAN ---
+
+            const videoSection = document.getElementById('interactive-video-section');
+            const videoModal = document.getElementById('video-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            
+            // --- NEW: Image Modal Logic (DIKEMBALIKAN) ---
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeImageModalBtn = document.getElementById('close-image-modal-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            function openImageModal(src) {
+                if(modalImage && imageModal) {
+                    modalImage.src = src;
+                    imageModal.classList.remove('hidden');
+                    imageModal.classList.add('flex'); // Menggunakan flex untuk centering
+                }
+            }
+
+            function closeImageModal() {
+                if(imageModal) {
+                    imageModal.classList.add('hidden');
+                    imageModal.classList.remove('flex');
+                    modalImage.src = ''; // Kosongkan src
+                }
+            }
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Mencegah event aneh jika gambar ada di dalam link
+                    openImageModal(item.src);
+                });
+            });
+
+            if(closeImageModalBtn) closeImageModalBtn.addEventListener('click', closeImageModal);
+            
+            if(imageModal) imageModal.addEventListener('click', (e) => {
+                // Hanya tutup jika klik di background (e.target adalah modal-nya, bukan isinya)
+                if (e.target === imageModal) {
+                    closeImageModal();
+                }
+            });
+            // --- END: Image Modal Logic ---
+
+            // --- NEW: Profile Carousel Logic ---
+            const slider = document.getElementById('profile-carousel-slider');
+            const prevButton = document.getElementById('carousel-prev');
+            const nextButton = document.getElementById('carousel-next');
+            const dotsContainer = document.getElementById('carousel-dots');
+            
+            if (slider && prevButton && nextButton && dotsContainer) {
+                const slides = slider.children;
+                const slideCount = slides.length;
+                let currentIndex = 0;
+                let autoSlideInterval;
+
+                // Create dots
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'transition-colors', 'duration-300');
+                    if (i === 0) dot.classList.add('!bg-white');
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                        resetAutoSlide();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+                const dots = dotsContainer.children;
+
+                function goToSlide(index) {
+                    if (index < 0) index = slideCount - 1;
+                    if (index >= slideCount) index = 0;
+                    
+                    slider.style.transform = `translateX(-${index * 100}%)`;
+                    currentIndex = index;
+                    
+                    // Update active dot
+                    Array.from(dots).forEach((dot, i) => {
+                        dot.classList.toggle('!bg-white', i === currentIndex);
+                        dot.classList.toggle('bg-white/50', i !== currentIndex);
+                    });
+                }
+
+                function resetAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(() => {
+                        goToSlide(currentIndex + 1);
+                    }, 5000); // 5 detik
+                }
+
+                prevButton.addEventListener('click', () => {
+                    goToSlide(currentIndex - 1);
+                    resetAutoSlide();
+                });
+                nextButton.addEventListener('click', () => {
+                    goToSlide(currentIndex + 1);
+                    resetAutoSlide();
+                });
+                
+                // Mulai auto-slide
+                resetAutoSlide();
+            }
+            // --- END: Profile Carousel Logic ---
+
+
+            if (videoSection) {
+                 videoSection.addEventListener('click', () => {
+                     videoModal.classList.remove('hidden');
+                     if (modalPlayer && typeof modalPlayer.playVideo === 'function') {
+                        modalPlayer.playVideo();
+                     }
+                 });
+            }
+
             function closeModal() {
-                videoModal.classList.add('hidden');
-                modalPlayer.stopVideo();
+                 videoModal.classList.add('hidden');
+                 if (modalPlayer && typeof modalPlayer.stopVideo === 'function') {
+                    modalPlayer.stopVideo();
+                 }
             }
 
             if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
             
             if(videoModal) videoModal.addEventListener('click', (e) => {
-                if (e.target === videoModal) {
-                    closeModal();
-                }
+                 if (e.target === videoModal) {
+                     closeModal();
+                 }
             });
         });
     </script>
 </body>
 </html>
+
+
+
+
+
