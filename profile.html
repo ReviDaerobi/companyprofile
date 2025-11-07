@@ -73,14 +73,14 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 mt-3 mb-3">
                     <a href="index.html" class="flex items-center">
-                        <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                        <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/80x80/ef4444/white?text=Logo';">
                     </a>
                 </div>
                 
                 <!-- Navigation Links (Desktop) -->
                 <ul class="hidden lg:flex items-center space-x-6">
-                    <li><a href="index.html" class="nav-link font-semibold hover:text-red-700">Beranda</a></li>
-                    <li><a href="profile.html" class="nav-link active text-gray-700 text-red-700 font-medium transition-colors">Profile</a></li>
+                    <li><a href="index.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link active text-red-700 font-semibold transition-colors">Profile</a></li>
                     <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
                     <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
                     <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
@@ -105,63 +105,59 @@
         <!-- Hero Section -->
         <section class="relative w-full h-[70vh] md:h-[70vh] overflow-hidden group pt-24">
             <!-- Gambar Latar -->
-            <img class="relative w-full h-full object-cover" src="images/fotonoburam.jpg" alt="Profile Image">
+            <img class="relative w-full h-full object-cover" src="images/fotonoburam.jpg" alt="Profile Image" onerror="this.onerror=null;this.src='https://placehold.co/1920x800/6b7280/white?text=Hero+Image';">
             <!-- Overlay Judul -->
-            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-4">
                 <h1 class="text-4xl md:text-6xl font-bold text-white tracking-wider">TENTANG SAYA</h1>
+                <!-- REVISI: Wording tambahan dari PDF -->
+                <p class="text-xl md:text-2xl text-white mt-4 italic max-w-3xl">
+                    "Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia (lainnya)." (HR Ahmad)
+                </p>
             </div>
         </section>
 
-        <!-- New Profile Section -->
+        <!-- REVISI: Section Baru (Foto 2, 3 + Wording) - Menggantikan Carousel Lama -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
                     
-                    <!-- Kolom Gambar (CAROUSEL) -->
-                    <div class="relative w-auto h-auto max-w-xl mx-auto md:mx-0 rounded-lg shadow-2xl overflow-hidden">
-                        <!-- Slider Container -->
-                        <div id="profile-carousel-slider" class="flex carousel-slider">
-                            <!-- Slide 1 -->
-                            <img src="images/profile/Foto no 14 a.jpg" alt="Foto Profil Rieta Fuad 1" class="w-full h-full object-cover aspect-[4/5] flex-shrink-0 gallery-item cursor-pointer">
-                            <!-- Slide 2 -->
-                            <img src="images/profile/Foto no 4.jpg" alt="Foto Profil Rieta Fuad 2" class="w-full h-full object-cover aspect-[4/5] flex-shrink-0 gallery-item cursor-pointer">
+                    <!-- Kolom Gambar (Kiri) -->
+                    <div class="md:col-span-5 space-y-6">
+                        <!-- Foto 2 -->
+                        <div class="rounded-lg shadow-xl overflow-hidden">
+                            <img src="images/profile/Foto no 12.jpg" alt="Foto Rieta dan Daisy Fuad saat kecil" class="w-full h-full object-cover gallery-item cursor-pointer">
                         </div>
-            
-                        <!-- Navigation Buttons -->
-                        <button id="carousel-prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/50 rounded-full p-2 hover:bg-white transition-colors z-10">
-                            <i data-lucide="chevron-left" class="h-6 w-6 text-brand-dark"></i>
-                        </button>
-                        <button id="carousel-next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/50 rounded-full p-2 hover:bg-white transition-colors z-10">
-                            <i data-lucide="chevron-right" class="h-6 w-6 text-brand-dark"></i>
-                        </button>
-            
-                        <!-- Dots -->
-                        <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-                            <!-- Dots akan digenerate oleh JS -->
-                        </div>
-                    </div>
-                    
-                    <!-- Kolom Teks -->
-                    <div class="text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Halo, saya <span class="text-brand-primary">Rieta Fuad</span></h2>
-                        
-                        <!-- Sub-judul Peran -->
-                        <p class="text-xl font-semibold text-brand-muted mb-6">
-                            Business Head & Praktisi Media | Triple Diamond Mentor
+                        <p class="text-center text-sm text-brand-muted italic">
+                            Rieta Fuad (kiri) dan Daisy Fuad (kanan) kompak sejak kecil.
                         </p>
                         
-                        <div class="space-y-4 text-brand-muted leading-relaxed">
+                        <!-- Foto 3 -->
+                        <div class="rounded-lg shadow-xl overflow-hidden">
+                            <!-- Ganti src ini dengan path ke 'foto no 3' (depan coffee truck) -->
+                            <img src="images/fotonoburam.jpg" alt="Foto Rieta dan Daisy Fuad di depan Coffee Truck" class="w-full h-full object-cover gallery-item cursor-pointer">
+                        </div>
+                        <p class="text-center text-sm text-brand-muted italic">
+                            Rieta Fuad (kiri) dan Daisy Fuad (kanan) di depan Coffee Truck saat menghadiri Shuang Hor Distributor Rally cum Diamond Award Presentation pada tanggal 17 Agustus 2025 lalu di Johor Bahru, Malaysia.
+                        </p>
+                    </div>
+                    
+                    <!-- Kolom Teks (Kanan) -->
+                    <div class="md:col-span-7">
+                        <div class="space-y-4 text-brand-muted leading-relaxed text-justify">
                             <p>
-                                Perjalanan saya dimulai dari sebuah keyakinan sederhana: bahwa siapa pun bisa mencapai <strong>kebebasan finansial</strong> asalkan punya tekad dan mau berusaha. 
+                                Sejak kecil saya - Rieta Fuad sangat kompak dengan kakak saya - Daisy Fuad yang juga mengenalkan saya pada Bisnis Kopi 111 dan sekaligus menjadi upline saya di Shuang Hor. Saat menjadi bocil tersebut, kami pernah bercita-cita untuk keliling dunia berdua. Ternyata langkah pertama dari cita-cita tersebut baru tercapai beberapa dekade setelahnya, yaitu saat kami berdua menghadiri Shuang Hor Distributor Rally cum Diamond Award Presentation pada tanggal 17 Agustus 2025 lalu di Johor Bahru, Malaysia.
                             </p>
                             <p>
-                                Sebagai seorang <strong>Business Head, Praktisi Broadcast Media,</strong> dan <strong>Dosen Marketing,</strong> saya menggabungkan pengalaman profesional saya dengan semangat kewirausahaan.
+                                Setelah beranjak dewasa, kekompakan kami tidak berkurang. Keinginan kami sejak lama adalah memulai bisnis bersama namun saya cukup pesimis karena merasa background saya sebagai karyawati yang bekerja di suatu Perusahaan tidak cukup untuk memulai bisnis. Pada saat upline Daisy Fuad memperkenalkan saya dengan Bisnis Kopi 111 dari Shuang Hor, awalnya saya tidak tertarik untuk join bisnisnya. Namun demikian, saya membaca buku tentang Ganoderma/Lingzhi dan saya kagum dengan khasiatnya yang begitu banyak. Saya langsung mencoba beberapa produk dan mendapatkan manfaat. Tapi keraguan untuk menjalankan bisnis masih ada. Saat itulah upline Daisy Fuad mempertemukan saya dengan mentor utama kami Triple Diamond Ms Janesse Gan.
                             </p>
                             <p>
-                                Puji syukur, hari ini saya telah mencapai level <strong>Triple Diamond</strong> dan membina lebih dari <strong>50.000 member</strong> di Malaysia, Singapura, dan Indonesia.
+                                Pertemuan pertama dengan Ms Gan (begitu kami anggota tim memanggilnya) di suatu acara yang singkat dan diikuti besoknya dengan pertemuan kedua yang lebih santai dan durasi lebih lama, benar-benari "membuka" mata saya bahwa ms Gan adalah mentor utama yang luar biasa dan sangat rendah hati. Saat itu saya berkata dalam hati kepada diri saya sendiri, bahwa saya ingin bergabung menjadi anggota timnya. Belum lagi mentor-mentor lain yang sudah lebih dulu menjalani Bisnis Kopi 111. Seperti ms Gan, para upline dari upline - upline saya yang telah lebih dulu bergabung dengan Shuang Hor, semua sangat suportif dan memberikan dukungan penuh.
+                            </p>
+                             <p>
+                                Kalimat yang tidak pernah saya lupakan dari mereka adalah, "Disini setiap orang akan dibimbing sampai bisa, apa pun latar belakangnya." Maka akhirnya saya mengubah niat dari tadinya hanya ingin menjadi user yang menggunakan produk, lantas memantapkan hati untuk menjalani Bisnis Kopi 111 dari Shuang Hor.
                             </p>
                             <p>
-                                Namun, yang paling membahagiakan bukan hanya pencapaian pribadi, tapi kesempatan untuk membantu lebih dari <strong>200 pasangan</strong> meraih kehidupan yang lebih baik.
+                                Sebagai ranking Triple Diamond, ms. Janesse Gan memilik tim yang luar biasa besar yang tergabung dalam Komunitas Juwara Bersama. Di bawahnya ada berbagai kelompok dimana saya tergabung dalam tim Indonesia Triple One. Untuk lebih fokus mencapai tujuan saya dan tim kami dalam bisnis ini, saya dan upline Daisy Fuad pun membuat tim sendiri yang kami namakan Pasti Juwara. "We Go Great by Dreams" (terjemahan bebas: kita menjadi hebat melalui impian-impian) adalah semboyan dari Shuang Hor. Mari gabung tim Pasti Juwara. Kami akan bantu anda mewujudkan Impian anda melalui Shuang Hor. Satu hal yang pasti, mentor utama kami Triple Diamond Ms. Janesse Gan tentunya akan menjadi mentor utama anda juga.
                             </p>
                         </div>
                     </div>
@@ -169,9 +165,83 @@
             </div>
         </section>
 
-        
-        <!-- Galeri Momen & Aktivitas -->
+        <!-- REVISI: Section Baru (Foto 4 + Wording) -->
         <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Kolom Gambar (Foto 4) -->
+                    <div class="relative w-auto h-auto max-w-xl mx-auto md:mx-0 rounded-lg shadow-2xl overflow-hidden">
+                         <img src="images/profile/Foto no 4.jpg" alt="Foto Profil Rieta Fuad" class="w-full h-full object-cover aspect-[4/5] gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x750/ccc/333?text=Foto+no+4';">
+                    </div>
+                    
+                    <!-- Kolom Teks -->
+                    <div class="text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Halo, saya <span class="text-brand-primary">Rieta Fuad</span></h2>
+                        
+                        <!-- Sub-judul Peran -->
+                        <p class="text-xl font-semibold text-brand-muted mb-6">
+                            Business Head & Praktisi Media | Triple Diamond Mentor
+                        </p>
+                        
+                        <div class="space-y-4 text-brand-muted leading-relaxed text-justify">
+                            <p>
+                                Saya - Rieta Fuad adalah seorang praktisi broadcast media dan dosen paruh waktu prodi Markom di salah satu universitas swasta di Jakarta. Saya bekerja di suatu perusahaan ternama di bidang hiburan mengepalai divisi televisi berbayar pada perusahaan tersebut. Saya juga adalah seorang ibu tunggal dimana suami saya yang tercinta sudah berpulang pada bulan Februari 2023 lalu. Anak saya yang pertama sudah bekerja dan yang bungsu tahun 2025 ini baru saja menyelesaikan kuliah D3-nya. Walaupun mereka bukan anak kecil lagi, saya ingin punya lebih banyak waktu bersama anak-anak saya.
+                            </p>
+                            <p>
+                                Memiliki Financial Freedom yang bisa memberikan Time Freedom, itu adalah salah satu Impian saya sejak lama. Sebetulnya saya menyukai pekerjaan saya saat ini karena merupakan passion saya, sehingga bekerja tidak pernah terasa melelahkan. Sebagai kepala divisi, gaji yang saya peroleh pun cukup untuk membiayai kehidupan saya dan anak-anak walaupun sebagai ibu tunggal. Namun demikian, ada "harga mahal" yang harus saya bayar untuk bekerja seperti saat ini, yaitu waktu luang yang tidak banyak saya miliki. Selain itu, juga tidak ada kepastian sampai kapan saya bisa memiliki pekerjaan tersebut.
+                            </p>
+                             <p>
+                                Ada salah satu Hadis dalam agama Islam yang mengatakan bahwa, "Sebaik-baik manusia adalah yang bermanfaat bagi manusia (lainnya) (HR Ahmad). Itu adalah salah satu prinsip yang saya miliki. Saya selalu ingin bermanfaat bagi manusia lainnya, dalam apa pun yang saya lakukan. Menjadi dosen (walau paruh waktu) adalah salah satu hal yang saya sukai karena menurut saya itu menjadikan saya saluran manfaat bagi orang lain.
+                            </p>
+                            <p>
+                                Saya mengajar subjek pemasaran dan komunikasi dan saya pun sering menjadi pembicara di luar kampus dengan Personal Branding yang menjadi topik favorit saya. Menjadi pemimpin, sebetulnya bukan hanya untuk memimpin orang lain. Akan tetapi, kita juga perlu menjadi pemimpin bagi diri sendiri. Saya memiliki prinsip "lead by example". Memimpin dengan contoh. Jadi bukan tipikal orang yang hanya bisa mengajarkan sesuatu dan memerintah pada anggota tim (dan keluarga) tanpa melakukannya.
+                            </p>
+                            <p>
+                                Shuang Hor menggabungkan budaya "kekeluargaaan" dengan "lima prinsip utama" yang merupakan pondasi penting bagi kehidupan manusia. Dengan berpegang teguh pada "lima prinsip utama" dari Shuang Hor, kita dapat membantu diri sendiri dan orang lain untuk "mendapatkan kesehatan", "memulihkan keyakinan", "menemukan harapan", "memperoleh kesuksesan", dan "penuh kebahagiaan". Belum lagi filosofi bisnis yang dipegang teguh oleh Shuang Hor adalah kejujuran dan integritas. Inilah nilai mulia yang diciptakan bisnis Shuang Hor, yang membedakannya dengan bisnis lain. Dengan demikian, jelaslah bahwa Shuang Hor merupakan lingkungan terbaik untuk mengeluarkan sisi kebajikan dalam diri manusia. Bisnis Shuang Hor adalah bisnis terbaik yang sangat mulia.
+                            </p>
+                            <p>
+                                Dengan semua hal tersebut di atas, saya meyakini Shuang Hor adalah tempat terbaik bagi saya jika ingin bermanfaat bagi orang lain.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- REVISI: Section Baru (Foto 5 + Wording) -->
+        <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                      <!-- Kolom Gambar (Foto 5) -->
+                    <div class="relative w-auto h-auto max-w-xl mx-auto md:mx-0 rounded-lg shadow-2xl overflow-hidden">
+                         <img src="images/profile/Foto no 5.jpg" alt="Foto Profil Daisy Fuad" class="w-full h-full object-cover aspect-[4/5] gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x750/ccc/333?text=Foto+no+5';">
+                    </div>
+                    
+                    <!-- Kolom Teks -->
+                    <div class="text-left order-2 md:order-1">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Halo, Saya <span class="text-brand-primary">Daisy Fuad</span></h2>
+                        <div class="space-y-4 text-brand-muted leading-relaxed text-justify">
+                            <p>
+                                Saya senang sekali bisa bekerja sama dengan kakak saya sendiri - Daisy Fuad yang menjadi upline saya di Shuang Hor. Karena sejak kecil kami selalu kompak dan memiliki misi yang sama dalam kehidupan, yaitu bermanfaat bagi orang banyak. Daisy Fuad adalah seorang psikolog dari Fakultas Psikologi Universitas Indonesia. Daisy Fuad pernah menjadi seorang Manajer SDM (Sumber Daya Manusia) di anak perusahaan dari salah satu BUMN Indonesia. Namun Daisy Fuad kemudian memutuskan untuk mengundurkan diri dari pekerjaaannya dan fokus menjadi ibu rumah tangga serta mengurus sendiri anak semata wayangnya yang kini telah menjadi seorang news presenter dan reporter di salah satu TV berita di Indonesia.
+                            </p>
+                            <p>
+                                Walaupun tidak bekerja di suatu perusahaan, upline Daisy Fuad adalah psikolog dalam keluarga besar dan sahabat. la memiliki minat khusus terhadap pentingnya kesehatan mental seseorang dan selalu terbuka dalam memberikan saran kepada keluarga dan sahabat yang memiiki masalah pribadi.
+                            </p>
+                        </div>
+                    </div>
+                    
+                  
+                </div>
+            </div>
+        </section>
+
+
+        <!-- REVISI: Galeri Momen & Aktivitas (Caption diperbarui) -->
+        <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 
                 <div class="text-center mb-12">
@@ -185,74 +255,94 @@
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
+                    <!-- Foto 6 -->
                     <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 13.jpg" alt="Acara Shuang Hor" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Acara Penghargaan</p>
+                        <img src="images/profile/Foto no 6.jpg" alt="Foto bersama pembicara Revolusi Kewirausahaan" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+6';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                6) Foto bersama pembicara Revolusi Kewirausahaan 26 Oktober 2025. Belakang (kiri ke kanan): Daisy Fuad, Rieta Fuad. Depan (kiri ke kanan): Mr. Yit Chee, Mr. Ifian, Mr. Larry Chen dan Mr. Jeff Yee.
+                            </p>
                         </div>
                     </div>
                     
+                    <!-- Foto 7 -->
                     <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 9.jpg" alt="Meeting Tim" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Meeting Tim</p>
+                        <img src="images/profile/Foto no 7.jpg" alt="Foto bersama seluruh peserta Revolusi Kewirausahaan" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+7';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                7) Foto bersama seluruh peserta Revolusi Kewirausahaan pada tanggal 26 Oktober 2025. Rieta Fuad di paling depan sebelah kanan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 8 -->
+                    <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
+                        <img src="images/profile/Foto no 8.jpg" alt="Pose di Revolusi Kewirausahaan" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+8';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                8) Di saat yang lain serius menyimak pembicara Revolusi Kewirausahaan 26 Oktober 2025, kami sempat berpose sejenak.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 9 -->
+                    <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
+                        <img src="images/profile/Foto no 9.jpg" alt="Foto bersama dinner talk show" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+9';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                9) Foto bersama dinner talk show dan sharing session komunitas Juwara Bersama dengan pimpinan Triple Diamond Ms. Janesse Gan dan bintang tamu Gold Diamond Ms.Mariani Deocampo, 26 Oktober 2025.
+                            </p>
                         </div>
                     </div>
                     
+                    <!-- Foto 10 -->
                     <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 6.jpg" alt="Penandatanganan Mitra" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Partner Bisnis</p>
+                        <img src="images/profile/Foto no 10.jpg" alt="Dinner talk show dan sharing session" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+10';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                10) Kesempatan emas untuk dapat menghadiri dinner talk show dan sharing session dimana para team leader saling berbagi rahasia kesuksesan, 26 Oktober 2025.
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Foto 11 -->
                     <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 7.jpg" alt="Foto Bersama Tim" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Tim Juwara</p>
+                        <img src="images/profile/Foto no 11.jpg" alt="Pertemuan dengan Ms. Janesse Gan" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+11';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                11) Dalam setiap kunjungan ke Jakarta, Triple Diamond Ms. Janesse Gan selalu menyempatkan diri untuk menemui para anggota tim yang dianggap potensial, 24 Oktober 2025.
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Foto 12 -->
                     <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 11.jpg" alt="Promosi Produk" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Presentasi Produk</p>
+                        <img src="images/profile/Foto no 12.jpg" alt="Rieta dan Daisy Fuad di Johor Bahru" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+12';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                12) Rieta Fuad dan upline Daisy Fuad saat menghadiri Shuang Hor Distributor Rally cum Diamond Award Presentation di Johor Bahru Malaysia, 17 Agustus 2025.
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Foto 13 -->
                     <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 5.jpg" alt="Lifestyle" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Momen Santai</p>
-                        </div>
-                    </div>
-                    
-                    <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 8.jpg" alt="Audiens Seminar" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Semangat Tim</p>
-                        </div>
-                    </div>
-
-                    <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 10.jpg" alt="Diskusi Tim" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Diskusi Bersama</p>
-                        </div>
-                    </div>
-
-                    <div class="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg group bg-gray-800">
-                        <img src="images/profile/Foto no 12.jpg" alt="Tim Award" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                            <p class="text-white font-semibold">Perayaan Tim</p>
+                        <img src="images/profile/Foto no 13.jpg" alt="Foto bersama Shuang Hor Distributor Rally" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/ccc/333?text=Foto+no+13';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end pointer-events-none">
+                            <p class="text-white text-sm opacity-90">
+                                13) Foto bersama Shuang Hor Distributor Rally cum Diamond Award Presentation di Johor Bahru. Malaysia, 17 Agustus 2025. Rieta Fuad dan upline Daisy Fuad berdiri di bagian ujung kiri depan.
+                            </p>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+        
        
-        <!-- Section Pembicara -->
+
+
+        <!-- REVISI: Section Pembicara (Grid 3 kolom + Wording) -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <!-- Judul Section -->
@@ -265,22 +355,34 @@
                     </p>
                 </div>
                 
-                <!-- Grid Poster -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Poster 1 -->
+                <!-- Grid Poster (3 kolom) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Poster 14a -->
                     <div class="rounded-lg overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
-                        <img src="images/profile/Foto no 14 b.jpg" alt="Poster Meta-Talks 2024" class="w-full h-full object-contain gallery-item cursor-pointer">
+                        <img src="images/profile/Foto no 14 a.jpg" alt="Poster Personal Branding Offline" class="w-full h-full object-contain gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x800/ccc/333?text=Foto+no+14a';">
                     </div>
                     
-                    <!-- Poster 2 -->
+                    <!-- Poster 14b -->
                     <div class="rounded-lg overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
-                        <img src="images/profile/Foto no 15.jpg" alt="Poster Personal Branding Workplace" class="w-full h-full object-contain gallery-item cursor-pointer">
+                        <img src="images/profile/Foto no 14 b.jpg" alt="Poster Meta-Talks 2024" class="w-full h-full object-contain gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x800/ccc/333?text=Foto+no+14b';">
                     </div>
+                    
+                    <!-- Poster 15 -->
+                    <div class="rounded-lg overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/profile/Foto no 15.jpg" alt="Poster Personal Branding Workplace" class="w-full h-full object-contain gallery-item cursor-pointer" onerror="this.onerror=null;this.src='https://placehold.co/600x800/ccc/333?text=Foto+no+15';">
+                    </div>
+                </div>
+
+                <!-- Wording Tambahan untuk 14a, 14b, 15 -->
+                <div class="max-w-3xl mx-auto text-center mt-12">
+                    <p class="text-brand-muted leading-relaxed">
+                        Topik Personal Branding adalah salah satu favorit saya saat menjadi pembicara di luar kampus, karena menurut saya Personal Branding sangat penting untuk membedakan diri dengan orang lain dan untuk membangun reputasi dan kredibilitas seseorang.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Section Video Mentor -->
+        <!-- Section Video Mentor (Wording sudah sesuai PDF) -->
         <section class="py-20 bg-brand-light">
             <div class="container mx-auto px-6">
                 <!-- Konten Teks & Video -->
@@ -288,14 +390,14 @@
                     <!-- Kolom Teks -->
                     <div class="text-center lg:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
-                            Tentang Mentor Utama Triple Diamond   <span class="text-brand-primary">Janesse Gan</span>
+                            Tentang Mentor Utama Triple Diamond   <span class="text-brand-primary">Janesse Gan</span>
                         </h2>
                         <div class="space-y-4 text-brand-muted leading-relaxed">
                             <p>
                                 <strong>Yuk bergabung dengan tim Pasti Juwara.</strong> Mari kita berproses dan tumbuh bersama untuk
 mencapai Impian-impian kita. Bersama, kita bisa 
                             </p>
-                          
+                        
                         </div>
                     </div>
                     
@@ -386,22 +488,23 @@ mencapai Impian-impian kita. Bersama, kita bisa
     <script>
         // Logika YouTube Player
         let bgPlayer, modalPlayer;
-        const videoId = 'dQw4w9WgXcQ';
+        // Video ID untuk modal (dari iframe di HTML)
+        const modalVideoId = 'r63aUzjPEMo';
+        // Video ID untuk background (jika ada, di-hardcode dari script lama)
+        const backgroundVideoId = 'dQw4w9WgXcQ'; 
 
         function onYouTubeIframeAPIReady() {
             if (document.getElementById('background-video-player')) {
                 bgPlayer = new YT.Player('background-video-player', {
-                    videoId: videoId,
-                    playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': videoId },
+                    videoId: backgroundVideoId, // Gunakan var ini
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': backgroundVideoId },
                     events: { 'onReady': function(event) { event.target.playVideo(); } }
                 });
             }
 
             if (document.getElementById('modal-video-player')) {
-                modalPlayer = new YT.Player('modal-video-player', {
-                    videoId: videoId,
-                    playerVars: { 'controls': 1, 'showinfo': 0, 'modestbranding': 1 }
-                });
+                // Buat modal player tapi JANGAN load video-nya dulu
+                // Video akan di-load dari iframe yang sudah ada di HTML
             }
         }
         
@@ -415,6 +518,10 @@ mencapai Impian-impian kita. Bersama, kita bisa
             const videoSection = document.getElementById('interactive-video-section');
             const videoModal = document.getElementById('video-modal');
             const closeModalBtn = document.getElementById('close-modal-btn');
+            
+            // Logika Modal Iframe (yang sudah ada di HTML)
+            // Kita tidak perlu API player untuk modal ini, hanya show/hide
+            const mentorVideoSection = document.querySelector('iframe[src*="r63aUzjPEMo"]');
             
             // Image Modal Logic
             const imageModal = document.getElementById('image-modal');
@@ -453,68 +560,16 @@ mencapai Impian-impian kita. Bersama, kita bisa
                 }
             });
 
-            // Profile Carousel Logic
-            const slider = document.getElementById('profile-carousel-slider');
-            const prevButton = document.getElementById('carousel-prev');
-            const nextButton = document.getElementById('carousel-next');
-            const dotsContainer = document.getElementById('carousel-dots');
-            
-            if (slider && prevButton && nextButton && dotsContainer) {
-                const slides = slider.children;
-                const slideCount = slides.length;
-                let currentIndex = 0;
-                let autoSlideInterval;
 
-                // Create dots
-                for (let i = 0; i < slideCount; i++) {
-                    const dot = document.createElement('button');
-                    dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'transition-colors', 'duration-300');
-                    if (i === 0) dot.classList.add('!bg-white');
-                    dot.addEventListener('click', () => {
-                        goToSlide(i);
-                        resetAutoSlide();
-                    });
-                    dotsContainer.appendChild(dot);
-                }
-                const dots = dotsContainer.children;
+            // Hapus Carousel Logic karena carousel sudah diganti
+            // ... (Kode carousel lama dihapus) ...
 
-                function goToSlide(index) {
-                    if (index < 0) index = slideCount - 1;
-                    if (index >= slideCount) index = 0;
-                    
-                    slider.style.transform = `translateX(-${index * 100}%)`;
-                    currentIndex = index;
-                    
-                    // Update active dot
-                    Array.from(dots).forEach((dot, i) => {
-                        dot.classList.toggle('!bg-white', i === currentIndex);
-                        dot.classList.toggle('bg-white/50', i !== currentIndex);
-                    });
-                }
 
-                function resetAutoSlide() {
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = setInterval(() => {
-                        goToSlide(currentIndex + 1);
-                    }, 5000);
-                }
-
-                prevButton.addEventListener('click', () => {
-                    goToSlide(currentIndex - 1);
-                    resetAutoSlide();
-                });
-                nextButton.addEventListener('click', () => {
-                    goToSlide(currentIndex + 1);
-                    resetAutoSlide();
-                });
-                
-                // Mulai auto-slide
-                resetAutoSlide();
-            }
-
+            // Logika Video Modal (jika masih diperlukan, dari script lama)
             if (videoSection) {
                 videoSection.addEventListener('click', () => {
                     videoModal.classList.remove('hidden');
+                    // Cek apakah modalPlayer dari API sudah siap
                     if (modalPlayer && typeof modalPlayer.playVideo === 'function') {
                         modalPlayer.playVideo();
                     }
@@ -523,6 +578,7 @@ mencapai Impian-impian kita. Bersama, kita bisa
 
             function closeModal() {
                 videoModal.classList.add('hidden');
+                 // Cek apakah modalPlayer dari API sudah siap
                 if (modalPlayer && typeof modalPlayer.stopVideo === 'function') {
                     modalPlayer.stopVideo();
                 }
