@@ -125,20 +125,28 @@
                     <div class="md:col-span-5 space-y-6">
                         <!-- Foto 2 -->
                         <div class="rounded-lg shadow-xl overflow-hidden">
-                            <img src="images/profile/Foto no 12.jpg" alt="Foto Rieta dan Daisy Fuad saat kecil" class="w-full h-full object-cover gallery-item cursor-pointer">
+                            <img src="images/profile/fotokecil.jpg" alt="Foto Rieta dan Daisy Fuad saat kecil" class="w-full h-full object-cover gallery-item cursor-pointer">
                         </div>
                         <p class="text-center text-sm text-brand-muted italic">
                             Rieta Fuad (kiri) dan Daisy Fuad (kanan) kompak sejak kecil.
                         </p>
-                        
-                        <!-- Foto 3 -->
-                        <div class="rounded-lg shadow-xl overflow-hidden">
-                            <!-- Ganti src ini dengan path ke 'foto no 3' (depan coffee truck) -->
-                            <img src="images/fotonoburam.jpg" alt="Foto Rieta dan Daisy Fuad di depan Coffee Truck" class="w-full h-full object-cover gallery-item cursor-pointer">
-                        </div>
-                        <p class="text-center text-sm text-brand-muted italic">
-                            Rieta Fuad (kiri) dan Daisy Fuad (kanan) di depan Coffee Truck saat menghadiri Shuang Hor Distributor Rally cum Diamond Award Presentation pada tanggal 17 Agustus 2025 lalu di Johor Bahru, Malaysia.
-                        </p>
+                   <div class="rounded-lg shadow-xl overflow-hidden aspect-[2/3]">
+            <!-- 
+                Perubahan pada img:
+                - `src` diubah ke gambar yang Anda berikan.
+                - `object-position` ditambahkan untuk menggeser fokus.
+                  Saya akan coba `object-position-[center_65%]` (vertikal tengah, horizontal 65% dari kiri)
+                  atau `object-position-[right_center]` (horizontal kanan, vertikal tengah)
+                  Tergantung mana yang terlihat lebih baik untuk gambar ini.
+                  Saya akan mulai dengan `object-position-[center_65%]` untuk fokus lebih ke kanan dari tengah.
+            --><img src="images/fotonoburam.jpg" 
+                 alt="Foto Rieta dan Daisy Fuad di depan Coffee Truck" 
+                 class="w-full h-full object-cover object-[65%_75%] gallery-item cursor-pointer">
+        </div>
+
+        <p class="text-center text-sm text-gray-600 italic mt-2">
+            Rieta Fuad (kiri) dan Daisy Fuad (kanan) di depan Coffee Truck saat menghadiri Shuang Hor Distributor Rally cum Diamond Award Presentation pada tanggal 17 Agustus 2025 lalu di Johor Bahru, Malaysia.
+        </p>
                     </div>
                     
                     <!-- Kolom Teks (Kanan) -->
