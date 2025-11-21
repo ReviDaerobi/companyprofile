@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Profil Perusahaan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Glide.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css">
+
+    <script>
+        // Custom Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#B91C1C',     
+                        'brand-primary-dark': '#991B1B',
+                        'brand-dark': '#1F2937',  
+                        'brand-light': '#Fff',    
+                        'brand-muted': '#6B7280', 
+                        'brand-accent': '#FEE2E2',
+                        'brand-produk-card': '#F8F8F8',
+                        'brand-red': '#B91C1C', 
+                    },
+                    height: {
+                      '110': '35rem', 
+                    },
+                   width: {
+        '110': "30rem", 
+      
+        '120': '35rem',    
+        '128': '40rem',  
+        '144': '48rem',    
+      }
+                }
+                
+            }
+        }
+    </script>
+
+    <style>
+
+        .custom-border-box {
+         position: relative;
+         border-top: 2px solid #d62626;
+         border-bottom: 2px solid #d62626;
+         border-left: 2px dashed #d62626;
+         border-right: 2px dashed #d62626;
+         margin: 15px 5px;
+         padding: 20px;
+     }
+
+     @media (min-width: 1660px) {
+         .custom-border-box {
+
+             margin: 15px 400px;
+         }
+     }
+
+     .daftar-cuan-btn {
+ 
+         transition: all 0.3s ease;
+     }
+     .daftar-cuan-btn:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+     }
+     /* Custom styles */
+     body {
+         font-family: 'Inter', sans-serif;
+     }
+     /* Style untuk transisi carousel */
+     .carousel-item {
+         transition: opacity 1s ease-in-out;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+     }
+     .carousel-text-item {
+        transition: opacity 1s ease-in-out;
+     }
+
+     /* Transisi untuk panah di Event */
+     .group:hover .arrow-icon {
+         transform: translateX(4px);
+     }
+     /* Mencegah klik pada iframe video latar belakang */
+     #background-video-player iframe {
+         pointer-events: none;
+     }
+
+      /* REVISED Custom Glide.js Styles */
+     .glide__slide {
+  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+     }
+
+     .glide__slide img {
+  
+        width: 100%;
+        max-height: 400px; 
+        object-fit: contain;
+     }
+     
+     .glide__arrows {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         pointer-events: none;
+         z-index: 10;
+     }
+
+     .glide__arrow {
+         background: rgba(255, 255, 255, 0.9);
+         border: 2px solid #B91C1C;
+         border-radius: 50%;
+         width: 50px;
+         height: 50px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         pointer-events: all;
+         transition: all 0.3s ease;
+         cursor: pointer;
+         color: #B91C1C;
+     }
+
+     .glide__arrow:hover {
+         background: #B91C1C;
+         color: white;
+         transform: scale(1.1);
+     }
+     
+     .glide__arrow--left {
+         margin-left: -25px; 
+     }
+
+     .glide__arrow--right {
+         margin-right: -25px; 
+     }
+
+     .glide__bullets {
+         display: flex;
+         justify-content: center;
+         margin-top: 2rem;
+         gap: 0.5rem;
+     }
+
+     .glide__bullet {
+         width: 12px;
+         height: 12px;
+         border-radius: 50%;
+         background: #d1d5db;
+         border: none;
+         cursor: pointer;
+         transition: all 0.3s ease;
+     }
+
+     .glide__bullet--active {
+         background: #B91C1C;
+         transform: scale(1.3);
+     }
+
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark min-h-screen flex flex-col">
+
+    <!-- Header & Navbar -->
+   <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
+        <div class="container mx-auto px-6">
+    <div class="container mx-auto px-6">
+        <nav class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0 mt-3 mb-3">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="nav-link active font-semibold text-red-700">Beranda</a></li>
+                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profil</a></li>
+                <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
+                <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+            </ul>
+
+         
+           <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Mobile Menu Button (Hamburger) -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                    </button>
+                </div>
+        </nav>
+    </div>
+    </header>
+   <header class="bg-white backdrop-blur-md shadow-sm border-b border-gray-100 flex-shrink-0">
+        <div class="container mx-auto px-6">
+    <div class="container mx-auto px-6">
+        <nav class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0 mt-3 mb-3">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/Logo.png" alt="Logo" class="h-20 w-20 object-contain">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="nav-link active font-semibold text-red-700">Beranda</a></li>
+                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
+                <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li>
+                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+            </ul>
+
+            <!-- Right Side Actions -->
+            <div class="flex items-center space-x-4">
+
+       
+            
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    </header>
+
+    <main class="flex-grow"> <!-- padding-top dihapus dari sini -->
+        <!-- Hero Section -->
+        <section id="hero-carousel" class="relative w-full h-screen overflow-hidden">
+            <!-- Carousel Image Items -->
+            <div class="carousel-item opacity-100">
+                <img src="images/fotober3baru.jpg" alt="Gambar Latar Belakang 1" class="w-full h-full object-cover xl:object-cover">
+            </div>
+            <div class="carousel-item opacity-0">
+                <img src="images/gambarbanyak.jpg" alt="Gambar Latar Belakang 2" class="w-full h-full object-cover object-top xl:object-cover">
+            </div>
+            <!-- <div class="carousel-item opacity-0">
+                <img src="images/fotodualand.jpg" alt="Gambar Latar Belakang 3" class="w-full h-full object-cover object-top xl:object-cover">
+            </div> -->
+
+            <!-- Overlay Gelap -->
+            <div class="absolute inset-0 bg-brand-dark/50"></div>
+
+            <!-- Teks di Tengah -->
+            <div class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center mb-24 text-center text-white p-4 z-10">
+                <!-- Container Teks dengan Tinggi Tetap -->
+                <div class="relative w-full max-w-8xl h-48 flex items-center justify-center">
+                    <!-- Text for Slide 1 -->
+                    <div class="carousel-text-item opacity-100 absolute inset-0 flex flex-col items-center justify-center max-w-8xl">
+                        <h1 class="text-2xl md:text-3xl font-bold leading-tight mb-4">Berbagi Manfaat, Membangun Peluang dan Tumbuh Bersama</h1>
+                        <div class="flex items-center justify-center">
+                            <p class="text-lg md:text-xl">
+                                Janesse Gan – Triple Diamond Shuang Hor, mentor tim <strong>Pasti Juwara</strong> yang merupakan bagian dari komunitas <strong>Juwara Bersama. </strong>
+                            </p> 
+                            <img src="images/logojuwara.jpg" class="size-20 object-contain ml-2" alt="">
+                        </div>
+                    </div>
+                    <!-- Text for Slide 2 -->
+                    <div class="carousel-text-item opacity-0 absolute inset-0 flex flex-col items-center justify-center">
+                        <p class="text-lg md:text-xl max-w-prose mx-auto">Saya percaya bahwa kesehatan dan kesejahteraan finansial adalah hak setiap orang. Melalui Shuang Hor, saya ingin membuka peluang bagi lebih banyak individu di Indonesia untuk meraih hidup yang lebih sehat, sukses dan sejahtera.</p>
+                        <div class="flex items-center justify-center mt-4">
+                            <p class="text-lg md:text-xl">
+                                Janesse Gan – Triple Diamond Shuang Hor
+                            </p> 
+                            <img src="images/logojuwara.jpg" class="size-20 object-contain ml-2" alt="">
+                        </div>
+                    </div>
+                    <!-- Text for Slide 3
+                    <div class="carousel-text-item opacity-0 absolute inset-0 flex flex-col items-center justify-center">
+                        <p class="text-lg md:text-xl max-w-prose mx-auto">Saya percaya bahwa kesehatan dan kesejahteraan finansial adalah hak setiap orang. Melalui Shuang Hor, saya ingin membuka peluang bagi lebih banyak individu di Indonesia untuk meraih hidup yang lebih sehat, sukses dan sejahtera.</p>
+                        <div class="flex items-center justify-center mt-4">
+                            <p class="text-lg md:text-xl">
+                                Janesse Gan – Triple Diamond Shuang Hor
+                            </p> 
+                            <img src="images/logojuwara.jpg" class="size-20 object-contain ml-2" alt="">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 -gap12 items-center">
+                    <!-- Kolom Gambar -->
+                    <div class="relative w-auto h-auto max-w-auto mx-auto my-12 md:mx-0">
+                        <!-- Kotak Background -->
+                        <div class="absolute bottom-0 left-0 w-[90%] h-[90%] bg-brand-accent/30 rounded-lg z-0 transform -translate-x-4 translate-y-4"></div>
+                        <!-- Foto Orang -->
+                        <img src="/images/fotodualand.jpg" alt="Foto Profil Pendiri" class="relative w-auto h-110 object-[45%_90%] z-10 object-cover rounded-lg shadow-2xl">
+                        
+                        
+                    </div>
+                    
+                    <!-- Kolom Teks -->
+                    <div class="text-center md:text-left ml-14">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Sudahkah anda ikut serta menjadi bagian bisnis termudah di dunia?</h2>
+                       <p class="text-brand-muted leading-relaxed mb-6">
+   Bersama kami: saya Rieta Fuad dan upline Daisy Fuad dengan arahan dari mentor utama Triple
+Diamond Ms. Janesse Gan, ayo gabung tim <strong>Pasti Juwara.</strong> Anda <strong>bisa bekerja dari HP dimana
+saja, kapan saja</strong> dan <strong>tidak diperlukan pengalaman. Sambil menikmati kopi sehat SH Juwara
+Cafe (Kopi Juwara), mari menjadi lebih sehat dan mendapat cuan serta meningkatkan
+kualitas hidup anda.</strong>
+</p>
+
+                        <a href="/profile.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                            Lihat Profil
+                        </a>
+                    </div>
+                        <p class="text-center text-sm text-brand-muted italic">
+                            Upline Daisy Fuad (kiri) dan Rieta Fuad (kanan) saat menghadiri Shuang Hor Distributor Rally
+cum Diamond Award Presentation di Johor Bahru Malaysia, 17 Agustus 2025
+                        </p>
+                </div>
+                
+            </div>
+        </section>  
+
+        <!-- Join Kemitraan Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+                    Jadi Mitra Kami dan Dapatkan <span class="bg-brand-primary text-white px-3 py-1 rounded-md inline-block">46 Juta/Bulan</span>
+                </h2>
+                <p class="max-w-4xl mx-auto text-base text-brand-muted leading-relaxed mb-16">
+                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan <strong>mengajak 1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami. Dalam waktu <strong>1 tahun,</strong> potensi penghasilan bisa mencapai <strong>Rp46 juta per bulan.</strong> Sebuah peluang bisnis yang mudah dijalankan, tanpa <strong>perlu stok</strong> atau <strong>modal besar.</strong>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="coffee" class="h-14 w-14 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
+                        <p class="text-brand-muted px-4">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col items-center">
+                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="h-14 w-14 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
+                        <p class="text-brand-muted px-4">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col items-center">
+                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="calendar-check" class="h-14 w-14 text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">1 Tahun Konsisten</h3>
+                        <p class="text-brand-muted px-4">Konsisten selama <strong>12 bulan,</strong> dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan.</strong></p>
+                    </div>
+                </div>
+                <div class="mt-16">
+                     <a href="/bisnis11.html" class="inline-flex items-center bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        Pelajari Selengkapnya
+                        <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section with Glide.js REVISED -->
+        <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Kolom Teks -->
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Produk Shuang Hor</h2>
+                        <p class="text-brand-muted leading-relaxed mb-8">
+                            Shuang Hor menghadirkan produk berkualitas untuk mendukung kesehatan, mencegah penyakit, dan mempercepat pemulihan. Selain Kopi SH Juwara Cafe, tersedia berbagai produk perawatan dari dalam hingga luar, lengkap untuk gaya hidup sehat!
+                        </p>
+                        <a href="/shuang-hor.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                            Lihat Profil Shuang Hor
+                        </a>
+                    </div>
+                    <!-- Kolom Slider Gambar dalam satu Card -->
+                    <div class="bg-brand-produk-card rounded-2xl p-6 relative">
+                        <div class="glide">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                    <li class="glide__slide"><img src="/images/produk1pasti.jpg" alt="Produk Kesehatan"></li>
+                                    <li class="glide__slide"><img src="/images/produk2pasti.jpg" alt="Produk Perawatan Kulit"></li>
+                                    <li class="glide__slide"><img src="/images/produk3pasti.jpg" alt="Produk Makanan Sehat"></li>
+                                    <li class="glide__slide"><img src="/images/produk4pasti.jpg" alt="Produk Kesehatan 2"></li>
+                                    <li class="glide__slide"><img src="/images/produk5pasti.jpg" alt="Produk Perawatan Kulit 2"></li>
+                                    <li class="glide__slide"><img src="/images/produk6pasti.jpg" alt="Produk Makanan Sehat 2"></li>
+                                </ul>
+                            </div>
+                   
+                            <div class="glide__bullets" data-glide-el="controls[nav]">
+                                <button class="glide__bullet" data-glide-dir="=0"></button>
+                                <button class="glide__bullet" data-glide-dir="=1"></button>
+                                <button class="glide__bullet" data-glide-dir="=2"></button>
+                                <button class="glide__bullet" data-glide-dir="=3"></button>
+                                <button class="glide__bullet" data-glide-dir="=4"></button>
+                                <button class="glide__bullet" data-glide-dir="=5"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- "Mengapa Harus Menjadi Mitra" Section -->
+        <section class="py-20 bg-brand-light">
+             <div class="custom-border-box">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+                        Mengapa Harus Menjadi <span class="text-brand-primary">Mitra Shuang Hor?</span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-7 gap-y-10 max-w-6xl mx-auto">
+                    <!-- Kolom Kiri -->
+                    <div class="space-y-8">
+                        <h3 class="text-2xl font-bold text-brand-dark border-b-2 border-brand-red pb-2 inline-block">Menguntungkan & Berpotensi Besar</h3>
+                        <!-- Item 1-->
+                        <div class="flex items-start space-x-4">
+                       <i data-lucide="arrow-right" 
+   class="h-14 w-14 text-bold text-brand-red flex-shrink-0 mt-1 text-red-500"
+   style="stroke-width: 2;"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Model Bisnis Berbasis Duplikasi & Residual Income</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Menggunakan konsep Bisnis 111 (1 bulan beli 1 box kopi, 1 bulan ajak 1 teman, 1 tahun konsisten).<br>
+•   Jika diterapkan dengan disiplin, bisnis ini menciptakan passive income yang stabil dan berkembang.
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 2-->
+                        <div class="flex items-start space-x-4">
+                                              <i data-lucide="arrow-right" 
+   class="h-14 w-14 text-bold text-brand-red flex-shrink-0 mt-1 text-red-500"
+   style="stroke-width: 2;"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Dukungan Sistem & Pelatihan Berkelanjutan</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Member mendapatkan panduan lengkap untuk memulai bisnis, termasuk strategi pemasaran dan edukasi produk.<br>
+•   Pelatihan rutin dari para mentor yang sudah sukses di bisnis ini
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 3-->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="arrow-right" class="h-14 w-14 text-bold text-brand-red flex-shrink-0 mt-1 text-red-500" style="stroke-width: 2;"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Permintaan Pasar yang Besar & Berkelanjutan</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Tren kesehatan meningkat, terutama setelah pandemi, sehingga produk kesehatan seperti Ganoderma semakin diminati.<br>•   Produk dapat digunakan oleh berbagai segmen pasar (keluarga, pekerja, lansia, atlet, dll.)
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Item 4-->
+                        <div class="flex items-start space-x-4">
+                        <i data-lucide="arrow-right"  class="h-14 w-14 text-bold text-brand-red flex-shrink-0 mt-1 text-red-500" style="stroke-width: 2;"></i>
+                                                    <div>
+                                                        <h4 class="font-semibold text-lg">Modal Awal Terjangkau, Potensi Keuntungan Besar</h4>
+                                                        <p class="text-brand-muted ml-3 mt-1">• Tidak perlu stok barang dalam jumlah besar.<br>
+                        •   Bisa dijalankan secara online maupun offline.<br>
+                        •   Skema bonus dan komisi yang menarik, terutama dengan membangun tim penjualan.
+                        </p>
+                                                    </div>
+                                                </div>
+                                                <!-- Item 5-->
+                                                <div class="flex items-start space-x-4">
+                                                                    <i data-lucide="arrow-right" 
+                        class="h-14 w-14 text-bold text-brand-red flex-shrink-0 mt-1 text-red-500"
+                        style="stroke-width: 2;"></i>
+                                                    <div>
+                                                        <h4 class="font-semibold text-lg">Brand yang Kuat & Legalitas Terjamin</h4>
+                                                        <p class="text-brand-muted ml-3 mt-1">• Sudah berdiri hampir 40 tahun dengan jaringan internasional di berbagai negara<br>
+                        •   Punya sertifikasi dan izin resmi, sehingga aman untuk dipasarkan.
+
+                        </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Kolom Kanan -->
+                    <div class="space-y-8">
+                        <h3 class="text-2xl font-bold text-brand-dark border-b-2 border-brand-red pb-2 inline-block">Produk Premium & Terbukti Efektif</h3>
+                        <!-- Item 1-->
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="square-check-big" class="h-10 w-10 text-red-500 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Jalur Produksi Satu Atap yang Unik</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Shuang Hor adalah satu-satunya di dunia yang memiliki sistem produksi dari budidaya hingga distribusi dalam satu jalur.<br>
+•   Tidak ada campur tangan pihak ketiga, sehingga kualitas dan efektivitas produk terjaga.
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 2-->
+                         <div class="flex items-start space-x-4">
+                                 <i data-lucide="square-check-big" class="h-10 w-10 text-red-500 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Bahan Baku Berkualitas Tinggi</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Menggunakan Ganoderma terbaik yang ditanam di Taman Bioteknologi Ganoderma terbesar di dunia.<br>
+•   Metode budidaya khusus memastikan kadar bahan aktif tetap tinggi.
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 3-->
+                         <div class="flex items-start space-x-4">
+                                 <i data-lucide="square-check-big" class="h-10 w-10 text-red-500 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Proses Ekstraksi & Fermentasi Canggih</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Pabrik Yung Kien menggunakan teknologi ekstraksi eksklusif untuk mempertahankan manfaat maksimal.<br>
+•   San Hua Teknologi Biologi meningkatkan konsentrasi bahan aktif dengan teknologi fermentasi mikroba canggih.
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 4-->
+                         <div class="flex items-start space-x-4">
+                                 <i data-lucide="square-check-big" class="h-10 w-10 text-red-500 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Teruji Secara Ilmiah & Mendapatkan Sertifikasi Internasional</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Diuji oleh laboratorium bersertifikat GLP internasional untuk memastikan keamanan dan efektivitasnya.<br>
+•   Mendapatkan sertifikat makanan kesehatan Taiwan dan paten multi-nasional.
+
+</p>
+                            </div>
+                        </div>
+                        <!-- Item 5-->
+                         <div class="flex items-start space-x-4">
+                                 <i data-lucide="square-check-big" class="h-10 w-10 text-red-500 text-brand-red flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Aman untuk Pemakaian Jangka Panjang</h4>
+                                <p class="text-brand-muted ml-3 mt-1">• Produk mengandung semua bahan fungsional utama dari Ganoderma tanpa tambahan bahan kimia berbahaya.<br>
+•   Bisa dikonsumsi oleh semua umur, dari anak-anak hingga lansia.
+
+</p>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Video Section -->
+        <section id="interactive-video-section" class="relative w-full h-[60vh] overflow-hidden cursor-pointer group">
+            <!-- Div for the background player -->
+            <div id="background-video-player" class="absolute top-0 left-0 w-full h-full scale-125"></div>
+            <!-- Overlay and Play Button -->
+            <div id="video-overlay" class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
+                <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:bg-white/40 transition-colors duration-300 transform group-hover:scale-110">
+                     <i data-lucide="play" class="h-5 w-5 md:h-5 md:w-5 text-white fill-white"></i>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Jadilah Bagian Dari Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-16">
+                    Jadilah bagian dari <span class="bg-brand-primary text-white px-3 py-1 rounded-md">Pasti Juwara</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto">
+                    <!-- Kolom Kiri -->
+                    <div class="space-y-6 text-left">
+                        <!-- Item 1 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
+                            <i data-lucide="gem" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Memiliki mentor Triple Diamond Janesse Gan.</span>
+                        </a>
+                        <div class="border-b border-gray-200"></div>
+                        <!-- Item 2 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
+                            <i data-lucide="users-2" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Komunitas yang Suportif & Eksklusif</span>
+                        </a>
+                    </div>
+                    <!-- Kolom Kanan -->
+                    <div class="space-y-6 text-left">
+                         <!-- Item 3 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
+                            <i data-lucide="banknote" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Potensi Penghasilan yang Tak Terbatas</span>
+                        </a>
+                        <div class="border-b border-gray-200"></div>
+                        <!-- Item 4 -->
+                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
+                            <i data-lucide="monitor-play" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
+                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Akses ke Webinar dan Event Eksklusif</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Another Profile Section -->
+        <section class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                     <!-- Kolom Teks -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Kisah Sukses Mitra Kami</h2>
+                        <p class="text-brand-muted leading-relaxed mb-6">
+                      Semua orang bisa sukses jika diberi kesempatan yang tepat. Untuk sukses di Shuang Hor, tidak perlu menjadi seorang influencer atau artis. Bukan pula yang paling pintar atau memiliki pendidikan tinggi yang meraih kesuksesan. Mereka semua orang biasa. Kalau mereka bisa,  kita semua pasti bisa.
+                        </p>
+                        <a href="/testimoni.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                            Lihat Testimoni
+                        </a>
+                    </div>
+                    <!-- Kolom Gambar -->
+                    <div class="relative w-110 max-w-lg mx-auto md:mx-0 ml-24">
+                        <!-- Kotak Background -->
+                    
+                        <!-- Foto Orang -->
+                       <iframe class="ml-36 relative w-auto h-110 z-10 object-cover rounded-lg shadow-2xl" src="https://www.youtube.com/embed/er0CHSCx0J4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <!-- <section class="py-20 bg-brand-primary">
+            <div class="container mx-auto px-6 text-center">
+                <a href="#" class="inline-block bg-white text-brand-primary font-bold text-lg py-4 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-100">
+                    DAFTAR MITRA SEKARANG!
+                </a>
+            </div>
+        </section> -->
+
+        <section class="py-16 bg-brand-red">
+    <div class="container mx-auto">
+        <div class="flex flex-col items-center text-white">
+            
+            <h2 class="text-3xl md:text-3xl font-semibold text-center max-w-none">
+"Kesempatan itu seperti matahari terbit. Ketika kamu menunggu terlalu lama, kamu akan
+kehilangannya” <br>(William Arthur Ward)
+            </h2>
+        
+            
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+     <footer class="bg-white py-8 mt-auto border-t">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <div class="flex space-x-4 mb-6">
+                <a href="https://www.facebook.com/tabina.sg?locale=id_ID" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@pastijuwara111" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rietafuad/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/pasti_juwara/" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="https://wa.me/628121444510" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="message-circle"></i> <!-- Placeholder for WhatsApp -->
+                </a>
+            </div>
+            <p class="text-brand-muted">&copy; 2025 Pasti Juwara. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+         <!-- Tombol Daftar & Cuan -->
+             <a href="daftar.html" 
+               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
+                <center>Daftar  <br>&<br> Cuan</center>
+             </a>
+    
+    <!-- Video Modal -->
+    <div id="video-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 transition-opacity duration-300">
+        <div class="bg-black w-full max-w-4xl aspect-video relative">
+            <!-- Close Button -->
+            <button id="close-modal-btn" class="absolute -top-10 right-0 text-white hover:text-gray-300 z-10">
+                <i data-lucide="x" class="h-8 w-8"></i>
+            </button>
+            <!-- Div for the modal player -->
+            <div id="modal-video-player" class="w-full h-full"></div>
+        </div>
+    </div>
+
+
+    <!-- YouTube IFrame API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Glide.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+    <script>
+        // Inisialisasi Lucide Icons
+        
+
+        // Logika Carousel Sederhana dengan Teks Dinamis
+        document.addEventListener('DOMContentLoaded', function () {
+
+                    lucide.createIcons({
+        icons: lucide.icons
+    });
+            const carouselItems = document.querySelectorAll('#hero-carousel .carousel-item');
+            const carouselTexts = document.querySelectorAll('#hero-carousel .carousel-text-item');
+            
+            if (carouselItems.length > 0) {
+                let currentItem = 0;
+                function showItem(index) {
+                    // Tampilkan gambar yang sesuai
+                    carouselItems.forEach((item, i) => {
+                        item.style.opacity = i === index ? '1' : '0';
+                    });
+                    
+                    // Tampilkan teks yang sesuai
+                    if (carouselTexts.length > 0) {
+                        carouselTexts.forEach((text, i) => {
+                           text.style.opacity = i === index ? '1' : '0';
+                        });
+                    }
+                }
+                
+                function nextItem() {
+                    currentItem = (currentItem + 1) % carouselItems.length;
+                    showItem(currentItem);
+                }
+                setInterval(nextItem, 5000);
+            }
+
+            // Glide.js Product Slider
+            const glideEl = document.querySelector('.glide');
+            if (glideEl) {
+                new Glide(glideEl, {
+                    type: 'carousel',
+                    startAt: 0, 
+                    perView: 1,
+                    focusAt: 'center',
+                    peek: { before: 100, after: 100 }, 
+                    gap: 20,
+                    autoplay: 4000,
+                    breakpoints: {
+                        1024: {
+                            perView: 1,
+                            peek: { before: 80, after: 80 }
+                        },
+                        768: {
+                            perView: 1,
+                            peek: { before: 50, after: 50 }
+                        }
+                    }
+                }).mount();
+            }
+        });
+
+        // Logika YouTube Player
+        let bgPlayer, modalPlayer;
+        const videoId = 'PYW1OY6AXFE'; // Ganti dengan ID video YouTube Anda
+ 
+
+        function onYouTubeIframeAPIReady() {
+            if(document.getElementById('background-video-player')) {
+                bgPlayer = new YT.Player('background-video-player', {
+                    videoId: videoId,
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'fs': 0, 'cc_load_policy': 0, 'iv_load_policy': 3, 'autohide': 0, 'mute': 1, 'playlist': videoId },
+                    events: { 'onReady': function(event) { event.target.playVideo(); } }
+                });
+            }
+
+            if(document.getElementById('modal-video-player')) {
+                modalPlayer = new YT.Player('modal-video-player', {
+                    videoId: videoId,
+                    playerVars: { 'controls': 1, 'showinfo': 0, 'modestbranding': 1 }
+                });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoSection = document.getElementById('interactive-video-section');
+            const videoModal = document.getElementById('video-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            if (videoSection) {
+                 videoSection.addEventListener('click', () => {
+                    videoModal.classList.remove('hidden');
+                    if(modalPlayer) modalPlayer.playVideo();
+                });
+            }
+
+            function closeModal() {
+                videoModal.classList.add('hidden');
+                if(modalPlayer) modalPlayer.stopVideo();
+            }
+
+            if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            
+            if(videoModal) videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

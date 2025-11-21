@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Profil Perusahaan</title>
+    <title>Beranda - Pasti Juwara</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,358 +38,289 @@
                       '110': '35rem', 
                     },
                    width: {
-        '110': "30rem", 
-      
-        '120': '35rem',    
-        '128': '40rem',  
-        '144': '48rem',    
-      }
+                        '110': "30rem", 
+                        '120': '35rem',    
+                        '128': '40rem',  
+                        '144': '48rem',    
+                    }
                 }
-                
             }
         }
     </script>
 
     <style>
-
         .custom-border-box {
-         position: relative;
-         border-top: 2px solid #d62626;
-         border-bottom: 2px solid #d62626;
-         border-left: 2px dashed #d62626;
-         border-right: 2px dashed #d62626;
-         margin: 15px 5px;
-         padding: 20px;
-     }
+            position: relative;
+            border-top: 2px solid #d62626;
+            border-bottom: 2px solid #d62626;
+            border-left: 2px dashed #d62626;
+            border-right: 2px dashed #d62626;
+            margin: 15px 0; /* Diubah agar aman di mobile */
+            padding: 20px;
+        }
 
-     @media (min-width: 1660px) {
-         .custom-border-box {
+        @media (min-width: 768px) {
+             .custom-border-box {
+                margin: 15px 20px;
+            }
+        }
 
-             margin: 15px 400px;
-         }
-     }
+        @media (min-width: 1660px) {
+            .custom-border-box {
+                margin: 15px 400px;
+            }
+        }
 
-     .daftar-cuan-btn {
- 
-         transition: all 0.3s ease;
-     }
-     .daftar-cuan-btn:hover {
-         transform: translateY(-2px);
-         box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
-     }
-     /* Custom styles */
-     body {
-         font-family: 'Inter', sans-serif;
-     }
-     /* Style untuk transisi carousel */
-     .carousel-item {
-         transition: opacity 1s ease-in-out;
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-     }
-     .carousel-text-item {
-        transition: opacity 1s ease-in-out;
-     }
+        .daftar-cuan-btn {
+            transition: all 0.3s ease;
+        }
+        .daftar-cuan-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Style untuk transisi carousel */
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-text-item {
+            transition: opacity 1s ease-in-out;
+        }
 
-     /* Transisi untuk panah di Event */
-     .group:hover .arrow-icon {
-         transform: translateX(4px);
-     }
-     /* Mencegah klik pada iframe video latar belakang */
-     #background-video-player iframe {
-         pointer-events: none;
-     }
+        /* Mencegah klik pada iframe video latar belakang */
+        #background-video-player iframe {
+            pointer-events: none;
+        }
 
-      /* REVISED Custom Glide.js Styles */
-     .glide__slide {
-  
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-     }
+        /* REVISED Custom Glide.js Styles */
+        .glide__slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
 
-     .glide__slide img {
-  
-        width: 100%;
-        max-height: 400px; 
-        object-fit: contain;
-     }
-     
-     .glide__arrows {
-         position: absolute;
-         top: 50%;
-         transform: translateY(-50%);
-         width: 100%;
-         display: flex;
-         justify-content: space-between;
-         pointer-events: none;
-         z-index: 10;
-     }
+        .glide__slide img {
+            width: 100%;
+            max-height: 400px; 
+            object-fit: contain;
+        }
+        
+        .glide__bullets {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
 
-     .glide__arrow {
-         background: rgba(255, 255, 255, 0.9);
-         border: 2px solid #B91C1C;
-         border-radius: 50%;
-         width: 50px;
-         height: 50px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         pointer-events: all;
-         transition: all 0.3s ease;
-         cursor: pointer;
-         color: #B91C1C;
-     }
+        .glide__bullet {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d1d5db;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-     .glide__arrow:hover {
-         background: #B91C1C;
-         color: white;
-         transform: scale(1.1);
-     }
-     
-     .glide__arrow--left {
-         margin-left: -25px; 
-     }
-
-     .glide__arrow--right {
-         margin-right: -25px; 
-     }
-
-     .glide__bullets {
-         display: flex;
-         justify-content: center;
-         margin-top: 2rem;
-         gap: 0.5rem;
-     }
-
-     .glide__bullet {
-         width: 12px;
-         height: 12px;
-         border-radius: 50%;
-         background: #d1d5db;
-         border: none;
-         cursor: pointer;
-         transition: all 0.3s ease;
-     }
-
-     .glide__bullet--active {
-         background: #B91C1C;
-         transform: scale(1.3);
-     }
-
+        .glide__bullet--active {
+            background: #B91C1C;
+            transform: scale(1.3);
+        }
+        
+        /* Fix Iframe Responsive */
+        .aspect-video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+        .aspect-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="bg-brand-light text-brand-dark min-h-screen flex flex-col">
 
     <!-- Header & Navbar -->
-   <header class="bg-white backdrop-blur-md shadow-sm border-b fixed w-full z-50 border-gray-100 flex-shrink-0">
-        <div class="container mx-auto px-6">
-    <div class="container mx-auto px-6">
-        <nav class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex-shrink-0 mt-3 mb-3">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/logopastijuwara.jpg" alt="Logo" class="h-20 w-20 object-contain">
-                </a>
-            </div>
-            
-            <!-- Navigation Links (Desktop) -->
-            <ul class="hidden lg:flex items-center space-x-6">
-                <li><a href="index.html" class="nav-link active font-semibold text-red-700">Beranda</a></li>
-                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profil</a></li>
-                <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
-                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
-                <!-- <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li> -->
-                <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
-                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
-                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
-                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
-            </ul>
+    <header class="bg-white backdrop-blur-md shadow-sm border-b border-gray-100 fixed w-full z-50 flex-shrink-0 top-0">
+        <div class="container mx-auto px-4 md:px-6">
+            <nav class="flex items-center justify-between h-20 md:h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                         <!-- Fallback image jika logo tidak ada -->
+                        <img src="images/logopastijuwara.jpg" alt="Logo" class="h-14 w-14 md:h-20 md:w-20 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/80x80/ef4444/white?text=Logo';">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links (Desktop) -->
+                <ul class="hidden lg:flex items-center space-x-6">
+                    <li><a href="index.html" class="nav-link active font-semibold text-red-700">Beranda</a></li>
+                    <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profil</a></li>
+                    <li><a href="kopijuwara.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Kopi Juwara</a></li>
+                    <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
+                    <li><a href="bisnis11.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
+                    <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
+                    <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+                </ul>
 
-            <!-- Right Side Actions -->
-            <div class="flex items-center space-x-4">
+                <!-- Right Side Actions (Mobile Hamburger) -->
+                <div class="flex items-center lg:invisible">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none">
+                        <i data-lucide="menu" class="h-7 w-7 text-gray-700"></i>
+                    </button>
+                </div>
+
+                  
+            </nav>
+        </div>
 
         
 
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
-                </button>
-            </div>
-        </nav>
-    </div>
-    </header>
-   <header class="bg-white backdrop-blur-md shadow-sm border-b border-gray-100 flex-shrink-0">
-        <div class="container mx-auto px-6">
-    <div class="container mx-auto px-6">
-        <nav class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex-shrink-0 mt-3 mb-3">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/Logo.png" alt="Logo" class="h-20 w-20 object-contain">
-                </a>
-            </div>
-            
-            <!-- Navigation Links (Desktop) -->
-            <ul class="hidden lg:flex items-center space-x-6">
-                <li><a href="index.html" class="nav-link active font-semibold text-red-700">Beranda</a></li>
-                <li><a href="profile.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Profile</a></li>
-                <li><a href="gallery.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Gallery</a></li>
-                <li><a href="shuang-hor.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Shuang Hor</a></li>
-                <li><a href="belanja.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Belanja</a></li>
-                <li><a href="bisnis.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Bisnis 111</a></li>
-                <li><a href="testimoni.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">Testimoni</a></li>
-                <li><a href="faq.html" class="nav-link text-gray-700 hover:text-red-700 font-medium transition-colors">FAQ</a></li>
+        <!-- Mobile Menu Dropdown (Ditambahkan agar tombol hamburger berfungsi) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full h-screen overflow-y-auto pb-32 z-40">
+            <ul class="flex flex-col py-4 px-6 space-y-4">
+                <li><a href="index.html" class="block text-lg font-semibold text-red-700 py-2 border-b border-gray-50">Beranda</a></li>
+                <li><a href="profile.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">Profil</a></li>
+                <li><a href="kopijuwara.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">Kopi Juwara</a></li>
+                <li><a href="shuang-hor.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">Shuang Hor</a></li>
+                <li><a href="bisnis11.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">Bisnis 111</a></li>
+                <li><a href="belanja.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">Belanja</a></li>
+                <li><a href="testimoni.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">Testimoni</a></li>
+                <li><a href="faq.html" class="block text-lg text-gray-700 hover:text-red-700 font-medium py-2 border-b border-gray-50">FAQ</a></li>
             </ul>
-
-            <!-- Right Side Actions -->
-            <div class="flex items-center space-x-4">
-
-       
-            
-
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-                    <i data-lucide="menu" class="h-6 w-6 text-gray-700"></i>
-                </button>
-            </div>
-        </nav>
-    </div>
+        </div>
     </header>
 
-    <main class="flex-grow"> <!-- padding-top dihapus dari sini -->
+    <main class="flex-grow pt-20 md:pt-24"> <!-- Tambahan padding-top agar konten tidak tertutup header fixed -->
+        
         <!-- Hero Section -->
-        <section id="hero-carousel" class="relative w-full h-screen overflow-hidden">
+        <section id="hero-carousel" class="relative w-full h-[calc(100vh-5rem)] md:h-screen overflow-hidden">
             <!-- Carousel Image Items -->
             <div class="carousel-item opacity-100">
-                <img src="images/fotober3baru.jpg" alt="Gambar Latar Belakang 1" class="w-full h-full object-cover xl:object-cover">
+                <img src="images/fotober3baru.jpg" alt="Gambar Latar Belakang 1" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/333/white?text=Slide+1';">
             </div>
             <div class="carousel-item opacity-0">
-                <img src="images/gambarbanyak.jpg" alt="Gambar Latar Belakang 2" class="w-full h-full object-cover object-top xl:object-cover">
+                <img src="images/gambarbanyak.jpg" alt="Gambar Latar Belakang 2" class="w-full h-full object-cover object-top" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/555/white?text=Slide+2';">
             </div>
-            <!-- <div class="carousel-item opacity-0">
-                <img src="images/fotodualand.jpg" alt="Gambar Latar Belakang 3" class="w-full h-full object-cover object-top xl:object-cover">
-            </div> -->
 
             <!-- Overlay Gelap -->
             <div class="absolute inset-0 bg-brand-dark/50"></div>
 
             <!-- Teks di Tengah -->
-            <div class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center mb-24 text-center text-white p-4 z-10">
-                <!-- Container Teks dengan Tinggi Tetap -->
-                <div class="relative w-full max-w-8xl h-48 flex items-center justify-center">
+            <div class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center mb-12 md:mb-24 text-center text-white p-4 z-10">
+                <!-- Container Teks -->
+                <div class="relative w-full max-w-4xl h-auto md:h-48 flex items-center justify-center">
                     <!-- Text for Slide 1 -->
-                    <div class="carousel-text-item opacity-100 absolute inset-0 flex flex-col items-center justify-center max-w-8xl">
-                        <h1 class="text-2xl md:text-3xl font-bold leading-tight mb-4">Berbagi Manfaat, Membangun Peluang dan Tumbuh Bersama</h1>
-                        <div class="flex items-center justify-center">
-                            <p class="text-lg md:text-xl">
-                                Janesse Gan – Triple Diamond Shuang Hor, mentor tim <strong>Pasti Juwara</strong> yang merupakan bagian dari komunitas <strong>Juwara Bersama. </strong>
+                    <div class="carousel-text-item opacity-100 absolute inset-0 flex flex-col items-center justify-center w-full px-4">
+                        <h1 class="text-xl md:text-3xl font-bold leading-tight mb-2 md:mb-4">Berbagi Manfaat, Membangun Peluang dan Tumbuh Bersama</h1>
+                        <div class="flex flex-col md:flex-row items-center justify-center">
+                            <p class="text-sm md:text-xl">
+                                Janesse Gan – Triple Diamond Shuang Hor, mentor tim <strong>Pasti Juwara</strong>.
                             </p> 
-                            <img src="images/logojuwara.jpg" class="size-20 object-contain ml-2" alt="">
+                            <img src="images/logojuwara.jpg" class="h-12 w-12 md:h-20 md:w-20 object-contain mt-2 md:mt-0 md:ml-2 bg-white rounded-full p-1" alt="Logo Juwara" onerror="this.style.display='none'">
                         </div>
                     </div>
                     <!-- Text for Slide 2 -->
-                    <div class="carousel-text-item opacity-0 absolute inset-0 flex flex-col items-center justify-center">
-                        <p class="text-lg md:text-xl max-w-prose mx-auto">Saya percaya bahwa kesehatan dan kesejahteraan finansial adalah hak setiap orang. Melalui Shuang Hor, saya ingin membuka peluang bagi lebih banyak individu di Indonesia untuk meraih hidup yang lebih sehat, sukses dan sejahtera.</p>
-                        <div class="flex items-center justify-center mt-4">
-                            <p class="text-lg md:text-xl">
+                    <div class="carousel-text-item opacity-0 absolute inset-0 flex flex-col items-center justify-center w-full px-4">
+                        <p class="text-sm md:text-xl max-w-prose mx-auto">Saya percaya bahwa kesehatan dan kesejahteraan finansial adalah hak setiap orang.</p>
+                        <div class="flex flex-col md:flex-row items-center justify-center mt-4">
+                            <p class="text-sm md:text-xl">
                                 Janesse Gan – Triple Diamond Shuang Hor
                             </p> 
-                            <img src="images/logojuwara.jpg" class="size-20 object-contain ml-2" alt="">
+                             <img src="images/logojuwara.jpg" class="h-12 w-12 md:h-20 md:w-20 object-contain mt-2 md:mt-0 md:ml-2 bg-white rounded-full p-1" alt="Logo Juwara" onerror="this.style.display='none'">
                         </div>
                     </div>
-                    <!-- Text for Slide 3
-                    <div class="carousel-text-item opacity-0 absolute inset-0 flex flex-col items-center justify-center">
-                        <p class="text-lg md:text-xl max-w-prose mx-auto">Saya percaya bahwa kesehatan dan kesejahteraan finansial adalah hak setiap orang. Melalui Shuang Hor, saya ingin membuka peluang bagi lebih banyak individu di Indonesia untuk meraih hidup yang lebih sehat, sukses dan sejahtera.</p>
-                        <div class="flex items-center justify-center mt-4">
-                            <p class="text-lg md:text-xl">
-                                Janesse Gan – Triple Diamond Shuang Hor
-                            </p> 
-                            <img src="images/logojuwara.jpg" class="size-20 object-contain ml-2" alt="">
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
 
         <!-- Profile Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 -gap12 items-center">
+        <section class="py-12 md:py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- FIX: Grid layout diperbaiki, margin dihilangkan di mobile -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <!-- Kolom Gambar -->
-                    <div class="relative w-auto h-auto max-w-auto mx-auto my-12 md:mx-0">
-                        <!-- Kotak Background -->
-                        <div class="absolute bottom-0 left-0 w-[90%] h-[90%] bg-brand-accent/30 rounded-lg z-0 transform -translate-x-4 translate-y-4"></div>
+                    <div class="relative w-full max-w-md mx-auto md:max-w-none md:mx-0 mb-8 md:mb-0">
+                        <!-- Kotak Background (Hiasan) -->
+                        <div class="absolute bottom-0 left-0 w-[90%] h-[90%] bg-brand-accent/30 rounded-lg z-0 transform -translate-x-2 translate-y-2 md:-translate-x-4 md:translate-y-4"></div>
                         <!-- Foto Orang -->
-                        <img src="/images/fotodualand.jpg" alt="Foto Profil Pendiri" class="relative w-auto h-110 object-[45%_90%] z-10 object-cover rounded-lg shadow-2xl">
-                        
-                        
+                        <img src="/images/fotodualand.jpg" alt="Foto Profil Pendiri" class="relative w-full h-auto md:h-110 object-cover md:object-[45%_90%] z-10 rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x800/ccc/333?text=Foto+Pendiri';">
                     </div>
                     
                     <!-- Kolom Teks -->
-                    <div class="text-center md:text-left ml-14">
-                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Sudahkah anda ikut serta menjadi bagian bisnis termudah di dunia?</h2>
-                       <p class="text-brand-muted leading-relaxed mb-6">
-   Bersama kami: saya Rieta Fuad dan upline Daisy Fuad dengan arahan dari mentor utama Triple
-Diamond Ms. Janesse Gan, ayo gabung tim <strong>Pasti Juwara.</strong> Anda <strong>bisa bekerja dari HP dimana
-saja, kapan saja</strong> dan <strong>tidak diperlukan pengalaman. Sambil menikmati kopi sehat SH Juwara
-Cafe (Kopi Juwara), mari menjadi lebih sehat dan mendapat cuan serta meningkatkan
-kualitas hidup anda.</strong>
-</p>
+                    <!-- FIX: Menghapus ml-14 yang membuat layout mobile rusak -->
+                    <div class="text-left w-full">
+                        <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 leading-snug">Sudahkah anda ikut serta menjadi bagian bisnis termudah di dunia?</h2>
+                        <p class="text-brand-muted leading-relaxed mb-6 text-sm md:text-base text-justify md:text-left">
+                            Bersama kami: saya Rieta Fuad dan upline Daisy Fuad dengan arahan dari mentor utama Triple Diamond Ms. Janesse Gan, ayo gabung tim <strong>Pasti Juwara.</strong> Anda <strong>bisa bekerja dari HP dimana saja, kapan saja</strong> dan <strong>tidak diperlukan pengalaman. Sambil menikmati kopi sehat SH Juwara Cafe (Kopi Juwara), mari menjadi lebih sehat dan mendapat cuan serta meningkatkan kualitas hidup anda.</strong>
+                        </p>
 
-                        <a href="/profile.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                        <a href="profile.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 text-sm md:text-base">
                             Lihat Profil
                         </a>
-                    </div>
-                        <p class="text-center text-sm text-brand-muted italic">
-                            Upline Daisy Fuad (kiri) dan Rieta Fuad (kanan) saat menghadiri Shuang Hor Distributor Rally
-cum Diamond Award Presentation di Johor Bahru Malaysia, 17 Agustus 2025
+                        <p class="text-xs md:text-sm text-brand-muted italic mt-6 border-l-4 border-brand-primary pl-4">
+                            Upline Daisy Fuad (kiri) dan Rieta Fuad (kanan) saat menghadiri Shuang Hor Distributor Rally cum Diamond Award Presentation di Johor Bahru Malaysia, 17 Agustus 2025
                         </p>
+                    </div>
                 </div>
-                
             </div>
         </section>  
 
         <!-- Join Kemitraan Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
-                    Jadi Mitra Kami dan Dapatkan <span class="bg-brand-primary text-white px-3 py-1 rounded-md inline-block">46 Juta/Bulan</span>
+        <section class="py-12 md:py-20 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6 text-center">
+                <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+                    Jadi Mitra Kami dan Dapatkan <br class="md:hidden"> <span class="bg-brand-primary text-white px-3 py-1 rounded-md inline-block mt-2 md:mt-0">46 Juta/Bulan</span>
                 </h2>
-                <p class="max-w-4xl mx-auto text-base text-brand-muted leading-relaxed mb-16">
-                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan <strong>mengajak 1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami. Dalam waktu <strong>1 tahun,</strong> potensi penghasilan bisa mencapai <strong>Rp46 juta per bulan.</strong> Sebuah peluang bisnis yang mudah dijalankan, tanpa <strong>perlu stok</strong> atau <strong>modal besar.</strong>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <p class="max-w-4xl mx-auto text-sm md:text-base text-brand-muted leading-relaxed mb-10 md:mb-16">
+                    Dengan konsep sederhana <strong>1 kotak kopi per bulan</strong> dan <strong>mengajak 1 teman setiap bulan</strong>, Anda dapat membangun jaringan yang berkembang secara alami.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto">
                     <!-- Feature 1 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
-                            <i data-lucide="coffee" class="h-14 w-14 text-brand-primary"></i>
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="bg-brand-primary/10 rounded-full h-20 w-20 md:h-28 md:w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="coffee" class="h-10 w-10 md:h-14 md:w-14 text-brand-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
-                        <p class="text-brand-muted px-4">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">Minum 1 Kotak/Bulan</h3>
+                        <p class="text-sm md:text-base text-brand-muted">Kamu hanya perlu membeli dan menikmati <strong>1 kotak kopi</strong> setiap bulan.</p>
                     </div>
                     <!-- Feature 2 -->
-                    <div class="flex flex-col items-center">
-                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
-                            <i data-lucide="users" class="h-14 w-14 text-brand-primary"></i>
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                         <div class="bg-brand-primary/10 rounded-full h-20 w-20 md:h-28 md:w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="h-10 w-10 md:h-14 md:w-14 text-brand-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
-                        <p class="text-brand-muted px-4">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">Ajak 1 Teman/Bulan</h3>
+                        <p class="text-sm md:text-base text-brand-muted">Ajak <strong>1 teman</strong> untuk bergabung dan melakukan hal yang sama</p>
                     </div>
                     <!-- Feature 3 -->
-                    <div class="flex flex-col items-center">
-                         <div class="bg-brand-primary/10 rounded-full h-28 w-28 flex items-center justify-center mb-4">
-                            <i data-lucide="calendar-check" class="h-14 w-14 text-brand-primary"></i>
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                         <div class="bg-brand-primary/10 rounded-full h-20 w-20 md:h-28 md:w-28 flex items-center justify-center mb-4">
+                            <i data-lucide="calendar-check" class="h-10 w-10 md:h-14 md:w-14 text-brand-primary"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">1 Tahun Konsisten</h3>
-                        <p class="text-brand-muted px-4">Konsisten selama <strong>12 bulan,</strong> dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan.</strong></p>
+                        <h3 class="text-lg md:text-xl font-bold mb-2">1 Tahun Konsisten</h3>
+                        <p class="text-sm md:text-base text-brand-muted">Konsisten selama <strong>12 bulan,</strong> dan kamu bisa mencapai penghasilan hingga <strong>Rp46 juta per bulan.</strong></p>
                     </div>
                 </div>
-                <div class="mt-16">
-                     <a href="/bisnis11.html" class="inline-flex items-center bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                <div class="mt-10 md:mt-16">
+                     <a href="bisnis11.html" class="inline-flex items-center bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 text-sm md:text-base">
                         Pelajari Selengkapnya
                         <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
                     </a>
@@ -397,8 +328,7 @@ cum Diamond Award Presentation di Johor Bahru Malaysia, 17 Agustus 2025
             </div>
         </section>
 
-        <!-- Product Section with Glide.js REVISED -->
-        <section class="py-20 bg-brand-light">
+         <section class="py-20 bg-brand-light">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <!-- Kolom Teks -->
@@ -572,182 +502,170 @@ cum Diamond Award Presentation di Johor Bahru Malaysia, 17 Agustus 2025
         </section>
 
         <!-- Interactive Video Section -->
-        <section id="interactive-video-section" class="relative w-full h-[60vh] overflow-hidden cursor-pointer group">
+        <section id="interactive-video-section" class="relative w-full h-[40vh] md:h-[60vh] overflow-hidden cursor-pointer group bg-black">
             <!-- Div for the background player -->
-            <div id="background-video-player" class="absolute top-0 left-0 w-full h-full scale-125"></div>
+            <div id="background-video-player" class="absolute top-0 left-0 w-full h-full scale-150 md:scale-125 opacity-60"></div>
             <!-- Overlay and Play Button -->
-            <div id="video-overlay" class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300">
+            <div id="video-overlay" class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300">
                 <div class="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:bg-white/40 transition-colors duration-300 transform group-hover:scale-110">
-                     <i data-lucide="play" class="h-5 w-5 md:h-5 md:w-5 text-white fill-white"></i>
+                     <i data-lucide="play" class="h-8 w-8 md:h-10 md:w-10 text-white fill-white"></i>
                 </div>
             </div>
         </section>
 
 
         <!-- Jadilah Bagian Dari Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-16">
-                    Jadilah bagian dari <span class="bg-brand-primary text-white px-3 py-1 rounded-md">Pasti Juwara</span>
+        <section class="py-12 md:py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6 text-center">
+                <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-8 md:mb-16">
+                    Jadilah bagian dari <span class="bg-brand-primary text-white px-3 py-1 rounded-md inline-block mt-2 md:mt-0">Pasti Juwara</span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-8 max-w-5xl mx-auto">
                     <!-- Kolom Kiri -->
-                    <div class="space-y-6 text-left">
-                        <!-- Item 1 -->
-                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
-                            <i data-lucide="gem" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
-                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Memiliki mentor Triple Diamond Janesse Gan.</span>
-                        </a>
-                        <div class="border-b border-gray-200"></div>
-                        <!-- Item 2 -->
-                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
-                            <i data-lucide="users-2" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
-                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Komunitas yang Suportif & Eksklusif</span>
-                        </a>
+                    <div class="space-y-4 md:space-y-6 text-left">
+                        <div class="group flex items-center space-x-4 p-3 md:p-4 rounded-lg hover:bg-brand-primary transition-colors">
+                            <i data-lucide="gem" class="h-6 w-6 md:h-8 md:w-8 text-brand-primary group-hover:text-white"></i>
+                            <span class="font-semibold text-base md:text-lg text-brand-dark group-hover:text-white">Mentor Triple Diamond Janesse Gan.</span>
+                        </div>
+                        <div class="border-b border-gray-200 invisible md:visible"></div>
+                        <div class="group flex items-center space-x-4 p-3 md:p-4 rounded-lg hover:bg-brand-primary transition-colors">
+                            <i data-lucide="users-2" class="h-6 w-6 md:h-8 md:w-8 text-brand-primary group-hover:text-white"></i>
+                            <span class="font-semibold text-base md:text-lg text-brand-dark group-hover:text-white">Komunitas Suportif & Eksklusif</span>
+                        </div>
                     </div>
                     <!-- Kolom Kanan -->
-                    <div class="space-y-6 text-left">
-                         <!-- Item 3 -->
-                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
-                            <i data-lucide="banknote" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
-                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Potensi Penghasilan yang Tak Terbatas</span>
-                        </a>
-                        <div class="border-b border-gray-200"></div>
-                        <!-- Item 4 -->
-                        <a href="#" class="group flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 hover:bg-brand-primary">
-                            <i data-lucide="monitor-play" class="h-8 w-8 text-brand-muted group-hover:text-white transition-colors duration-300"></i>
-                            <span class="font-semibold text-lg text-brand-muted group-hover:text-white transition-colors duration-300">Akses ke Webinar dan Event Eksklusif</span>
-                        </a>
+                    <div class="space-y-4 md:space-y-6 text-left">
+                        <div class="group flex items-center space-x-4 p-3 md:p-4 rounded-lg hover:bg-brand-primary transition-colors">
+                            <i data-lucide="banknote" class="h-6 w-6 md:h-8 md:w-8 text-brand-primary group-hover:text-white"></i>
+                            <span class="font-semibold text-base md:text-lg text-brand-dark group-hover:text-white">Potensi Penghasilan Tak Terbatas</span>
+                        </div>
+                         <div class="border-b border-gray-200 invisible md:visible"></div>
+                        <div class=" group flex items-center space-x-4 p-3 md:p-4 rounded-lg hover:bg-brand-primary transition-colors">
+                            <i data-lucide="monitor-play" class="h-6 w-6 md:h-8 md:w-8 text-brand-primary group-hover:text-white"></i>
+                            <span class="font-semibold text-base md:text-lg text-brand-dark group-hover:text-white">Akses Webinar & Event Eksklusif</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Another Profile Section -->
-        <section class="py-20 bg-brand-light">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Kisah Sukses Section -->
+        <section class="py-12 md:py-20 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- FIX: Grid layout diubah agar responsif, menghapus ml-24 dan ml-36 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                      <!-- Kolom Teks -->
-                    <div class="text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Kisah Sukses Mitra Kami</h2>
-                        <p class="text-brand-muted leading-relaxed mb-6">
-                      Semua orang bisa sukses jika diberi kesempatan yang tepat. Untuk sukses di Shuang Hor, tidak perlu menjadi seorang influencer atau artis. Bukan pula yang paling pintar atau memiliki pendidikan tinggi yang meraih kesuksesan. Mereka semua orang biasa. Kalau mereka bisa,  kita semua pasti bisa.
+                    <div class="text-center lg:text-left order-2 lg:order-1">
+                        <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4">Kisah Sukses Mitra Kami</h2>
+                        <p class="text-brand-muted leading-relaxed mb-6 text-sm md:text-base text-justify md:text-left">
+                            Semua orang bisa sukses jika diberi kesempatan yang tepat. Untuk sukses di Shuang Hor, tidak perlu menjadi seorang influencer atau artis. Bukan pula yang paling pintar atau memiliki pendidikan tinggi yang meraih kesuksesan. Mereka semua orang biasa. Kalau mereka bisa, kita semua pasti bisa.
                         </p>
-                        <a href="/testimoni.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
-                            Lihat Testimoni
+                        <a href="testimoni.html" class="inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-transform transform hover:scale-105">
+                            Lihat Testimoni
                         </a>
                     </div>
-                    <!-- Kolom Gambar -->
-                    <div class="relative w-110 max-w-lg mx-auto md:mx-0 ml-24">
-                        <!-- Kotak Background -->
                     
-                        <!-- Foto Orang -->
-                       <iframe class="ml-36 relative w-auto h-110 z-10 object-cover rounded-lg shadow-2xl" src="https://www.youtube.com/embed/er0CHSCx0J4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- Kolom Video (Iframe Responsive) -->
+                    <div class="order-1 lg:order-2 w-full">
+                        <div class="aspect-video-container rounded-xl shadow-2xl overflow-hidden">
+                            <iframe src="https://www.youtube.com/embed/er0CHSCx0J4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA Section -->
-        <!-- <section class="py-20 bg-brand-primary">
-            <div class="container mx-auto px-6 text-center">
-                <a href="#" class="inline-block bg-white text-brand-primary font-bold text-lg py-4 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-100">
-                    DAFTAR MITRA SEKARANG!
-                </a>
+        <!-- Quote Akhir -->
+        <section class="py-12 md:py-16 bg-brand-red">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col items-center text-white text-center">
+                    <h2 class="text-xl md:text-3xl font-semibold italic max-w-4xl">
+                        "Kesempatan itu seperti matahari terbit. Ketika kamu menunggu terlalu lama, kamu akan kehilangannya”
+                    </h2>
+                    <p class="mt-4 text-sm md:text-lg font-medium opacity-90">— William Arthur Ward</p>
+                </div>
             </div>
-        </section> -->
-
-        <section class="py-16 bg-brand-red">
-    <div class="container mx-auto">
-        <div class="flex flex-col items-center text-white">
-            
-            <h2 class="text-3xl md:text-3xl font-semibold text-center max-w-none">
-"Kesempatan itu seperti matahari terbit. Ketika kamu menunggu terlalu lama, kamu akan
-kehilangannya” <br>(William Arthur Ward)
-            </h2>
-        
-            
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
     <!-- Footer -->
-     <footer class="bg-white py-8 mt-auto border-t">
+     <footer class="bg-white py-8 mt-auto border-t pb-24 md:pb-8">
         <div class="container mx-auto px-6 flex flex-col items-center">
-            <div class="flex space-x-4 mb-6">
-                <a href="https://www.facebook.com/tabina.sg?locale=id_ID" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
-                    <i data-lucide="facebook"></i>
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+                <a href="https://www.facebook.com/tabina.sg?locale=id_ID" target="_blank" class="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="facebook" class="w-5 h-5 md:w-6 md:h-6"></i>
                 </a>
-                <a href="https://www.youtube.com/@pastijuwara111" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
-                    <i data-lucide="youtube"></i>
+                <a href="https://www.youtube.com/@pastijuwara111" target="_blank" class="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="youtube" class="w-5 h-5 md:w-6 md:h-6"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/rietafuad/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
-                    <i data-lucide="linkedin"></i>
+                <a href="https://www.linkedin.com/in/rietafuad/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5 md:w-6 md:h-6"></i>
                 </a>
-                <a href="https://www.instagram.com/pasti_juwara/" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
-                    <i data-lucide="instagram"></i>
+                <a href="https://www.instagram.com/pasti_juwara/" target="_blank" class="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6"></i>
                 </a>
-                <a href="https://wa.me/628121444510" target="_blank" class="h-12 w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
-                    <i data-lucide="message-circle"></i> <!-- Placeholder for WhatsApp -->
+                <a href="https://wa.me/628121444510" target="_blank" class="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center border-2 border-gray-300 rounded-full text-brand-muted hover:bg-brand-accent hover:border-brand-muted transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5 md:w-6 md:h-6"></i> 
                 </a>
             </div>
-            <p class="text-brand-muted">&copy; 2025 Pasti Juwara. All Rights Reserved.</p>
+            <p class="text-brand-muted text-sm text-center">&copy; 2025 Pasti Juwara. All Rights Reserved.</p>
         </div>
     </footer>
 
-         <!-- Tombol Daftar & Cuan -->
-             <a href="daftar.html" 
-               class=" text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-6 right-6 z-50 bg-white shadow-lg rounded-xl p-4 px-10 flex items-center space-x-2 text-brand-light font-semibold hover:shadow-xl transition-shadow">
-                <center>Daftar  <br>&<br> Cuan</center>
-             </a>
+    <!-- Tombol Daftar & Cuan -->
+    <a href="daftar.html" 
+       class="group text-base md:text-xl daftar-cuan-btn bg-gradient-to-r from-amber-500 to-red-500 fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 shadow-lg rounded-xl p-3 px-6 md:p-4 md:px-10 flex items-center justify-center text-brand-light font-semibold hover:shadow-xl transition-all text-white text-center">
+        <span>Daftar<br>&<br>Cuan</span>
+    </a>
     
     <!-- Video Modal -->
-    <div id="video-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 transition-opacity duration-300">
-        <div class="bg-black w-full max-w-4xl aspect-video relative">
+    <div id="video-modal" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="w-full max-w-4xl aspect-video relative bg-black rounded-lg overflow-hidden shadow-2xl">
             <!-- Close Button -->
-            <button id="close-modal-btn" class="absolute -top-10 right-0 text-white hover:text-gray-300 z-10">
-                <i data-lucide="x" class="h-8 w-8"></i>
+            <button id="close-modal-btn" class="absolute top-2 right-2 md:-top-10 md:-right-10 text-white bg-black/50 md:bg-transparent rounded-full p-1 md:p-0 hover:text-gray-300 z-20">
+                <i data-lucide="x" class="h-6 w-6 md:h-8 md:w-8"></i>
             </button>
             <!-- Div for the modal player -->
             <div id="modal-video-player" class="w-full h-full"></div>
         </div>
     </div>
 
-
     <!-- YouTube IFrame API Script -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <!-- Glide.js Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
     <script>
-        // Inisialisasi Lucide Icons
-        
-
-        // Logika Carousel Sederhana dengan Teks Dinamis
         document.addEventListener('DOMContentLoaded', function () {
+            // 1. Init Icons
+            lucide.createIcons({ icons: lucide.icons });
 
-                    lucide.createIcons({
-        icons: lucide.icons
-    });
+            // 2. Mobile Menu Logic
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+                
+                // Close menu when link clicked
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => menu.classList.add('hidden'));
+                });
+            }
+
+            // 3. Carousel Text Logic
             const carouselItems = document.querySelectorAll('#hero-carousel .carousel-item');
             const carouselTexts = document.querySelectorAll('#hero-carousel .carousel-text-item');
             
             if (carouselItems.length > 0) {
                 let currentItem = 0;
                 function showItem(index) {
-                    // Tampilkan gambar yang sesuai
-                    carouselItems.forEach((item, i) => {
-                        item.style.opacity = i === index ? '1' : '0';
-                    });
-                    
-                    // Tampilkan teks yang sesuai
+                    carouselItems.forEach((item, i) => item.style.opacity = i === index ? '1' : '0');
                     if (carouselTexts.length > 0) {
-                        carouselTexts.forEach((text, i) => {
-                           text.style.opacity = i === index ? '1' : '0';
-                        });
+                        carouselTexts.forEach((text, i) => text.style.opacity = i === index ? '1' : '0');
                     }
                 }
-                
                 function nextItem() {
                     currentItem = (currentItem + 1) % carouselItems.length;
                     showItem(currentItem);
@@ -755,7 +673,7 @@ kehilangannya” <br>(William Arthur Ward)
                 setInterval(nextItem, 5000);
             }
 
-            // Glide.js Product Slider
+           // 4. Glide.js Product Slider (UPDATED)
             const glideEl = document.querySelector('.glide');
             if (glideEl) {
                 new Glide(glideEl, {
@@ -763,27 +681,25 @@ kehilangannya” <br>(William Arthur Ward)
                     startAt: 0, 
                     perView: 1,
                     focusAt: 'center',
+                    // Default untuk Desktop (Ada intipan kiri-kanan)
                     peek: { before: 100, after: 100 }, 
                     gap: 20,
                     autoplay: 4000,
+                    // Pengaturan Responsif (Mobile)
                     breakpoints: {
-                        1024: {
-                            perView: 1,
-                            peek: { before: 80, after: 80 }
-                        },
-                        768: {
-                            perView: 1,
-                            peek: { before: 50, after: 50 }
+                        768: { // Jika layar kurang dari 768px (HP/Tablet Kecil)
+                            peek: 0,   // Matikan intipan (Full width)
+                            gap: 10,   // Jarak antar item lebih kecil
+                            perView: 1 
                         }
                     }
                 }).mount();
             }
         });
 
-        // Logika YouTube Player
+        // 5. YouTube Player Logic
         let bgPlayer, modalPlayer;
-        const videoId = 'PYW1OY6AXFE'; // Ganti dengan ID video YouTube Anda
- 
+        const videoId = 'PYW1OY6AXFE'; 
 
         function onYouTubeIframeAPIReady() {
             if(document.getElementById('background-video-player')) {
@@ -802,6 +718,7 @@ kehilangannya” <br>(William Arthur Ward)
             }
         }
         
+        // Video Modal Logic
         document.addEventListener('DOMContentLoaded', function() {
             const videoSection = document.getElementById('interactive-video-section');
             const videoModal = document.getElementById('video-modal');
@@ -810,21 +727,19 @@ kehilangannya” <br>(William Arthur Ward)
             if (videoSection) {
                  videoSection.addEventListener('click', () => {
                     videoModal.classList.remove('hidden');
-                    if(modalPlayer) modalPlayer.playVideo();
+                    if(modalPlayer && typeof modalPlayer.playVideo === 'function') modalPlayer.playVideo();
                 });
             }
 
             function closeModal() {
                 videoModal.classList.add('hidden');
-                if(modalPlayer) modalPlayer.stopVideo();
+                if(modalPlayer && typeof modalPlayer.stopVideo === 'function') modalPlayer.stopVideo();
             }
 
             if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
             
             if(videoModal) videoModal.addEventListener('click', (e) => {
-                if (e.target === videoModal) {
-                    closeModal();
-                }
+                if (e.target === videoModal) closeModal();
             });
         });
     </script>

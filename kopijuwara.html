@@ -141,6 +141,20 @@
                 </div>
             </nav>
         </div>
+
+          <!-- Mobile Menu Dropdown (Ditambahkan Baru) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full h-screen overflow-y-auto pb-24">
+            <ul class="flex flex-col py-4 px-6 space-y-4">
+                <li><a href="index.html" class="block text-gray-700 hover:text-red-700 font-medium">Beranda</a></li>
+                <li><a href="profile.html" class="block font-semibold hover:text-red-700">Profil</a></li>
+                <li><a href="kopijuwara.html" class="block text-gray-700 text-red-700 font-medium">Kopi Juwara</a></li>
+                <li><a href="shuang-hor.html" class="block text-gray-700 hover:text-red-700 font-medium">Shuang Hor</a></li>
+                <li><a href="bisnis11.html" class="block text-gray-700 hover:text-red-700 font-medium">Bisnis 111</a></li>
+                <li><a href="belanja.html" class="block text-gray-700 hover:text-red-700 font-medium">Belanja</a></li>
+                <li><a href="testimoni.html" class="block text-gray-700 hover:text-red-700 font-medium">Testimoni</a></li>
+                <li><a href="faq.html" class="block text-gray-700 hover:text-red-700 font-medium">FAQ</a></li>
+            </ul>
+        </div>
     </header>
 
     <main class="pt-24">
@@ -335,6 +349,21 @@
     </a>
     
     <script>
+
+         // 2. Mobile Menu Logic
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+                
+                // Close menu when link clicked
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => menu.classList.add('hidden'));
+                });
+            }
         // Inisialisasi ikon Lucide
         lucide.createIcons({
             icons: lucide.icons
@@ -349,6 +378,7 @@
         var span = document.getElementsByClassName("close")[0];
 
         // Ambil SEMUA gambar dengan class "clickable-img"
+        
         var images = document.querySelectorAll(".clickable-img");
 
         // Loop melalui setiap gambar dan tambahkan event listener
